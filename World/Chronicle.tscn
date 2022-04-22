@@ -52,6 +52,7 @@ valign = 1
 autowrap = true
 
 [node name="PlayerListHeaders" type="Control" parent="."]
+visible = false
 margin_left = 300.0
 margin_top = 100.0
 margin_right = 300.0
