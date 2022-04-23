@@ -68,7 +68,7 @@ extents = Vector2( 700, 650 )
 [node name="GameWorld" type="Node2D"]
 script = ExtResource( 1 )
 factions = [ "Armed Rats", "Spooks", "Flightless Birds", "Geology Gang" ]
-faction_power = [ 50, 50, 40, 40 ]
+faction_power = [ 60, 70, 40, 40 ]
 faction_aggression = [ 71.25, 69.75, 75, 75 ]
 faction_creeps = [ [ Object(KinematicBody2D,"_import_path":NodePath(""),"pause_mode":1,"process_priority":0,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 1583.09, -1513.28 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":1,"z_as_relative":true,"collision_layer":5,"collision_mask":1,"input_pickable":false,"collision/safe_margin":0.08,"motion/sync_to_physics":false,"script":ExtResource( 2 ),"id":-1,"busy":false,"role":"Enemy","aggressive":true,"type":ExtResource( 15 ),"move_speed":50,"horizontal":0,"vertical":0,"feeling_generous":false,"health":5,"max_health":5,"position_check_counter":0)
 , Object(KinematicBody2D,"_import_path":NodePath(""),"pause_mode":1,"process_priority":0,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 13.0054, -1530.08 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":1,"z_as_relative":true,"collision_layer":5,"collision_mask":1,"input_pickable":false,"collision/safe_margin":0.08,"motion/sync_to_physics":false,"script":ExtResource( 2 ),"id":-1,"busy":false,"role":"Enemy","aggressive":true,"type":ExtResource( 12 ),"move_speed":50,"horizontal":0,"vertical":0,"feeling_generous":false,"health":5,"max_health":5,"position_check_counter":0)
@@ -95,6 +95,11 @@ faction_creeps = [ [ Object(KinematicBody2D,"_import_path":NodePath(""),"pause_m
 , Object(KinematicBody2D,"_import_path":NodePath(""),"pause_mode":1,"process_priority":0,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 569.091, -590.303 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":1,"z_as_relative":true,"collision_layer":13,"collision_mask":1,"input_pickable":false,"collision/safe_margin":0.08,"motion/sync_to_physics":false,"script":ExtResource( 2 ),"id":-1,"busy":false,"role":"Enemy","aggressive":false,"type":ExtResource( 15 ),"move_speed":50,"horizontal":0,"vertical":0,"feeling_generous":false,"health":5,"max_health":5,"position_check_counter":0)
 , Object(KinematicBody2D,"_import_path":NodePath(""),"pause_mode":1,"process_priority":0,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 465.742, -112.236 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":1,"z_as_relative":true,"collision_layer":13,"collision_mask":1,"input_pickable":false,"collision/safe_margin":0.08,"motion/sync_to_physics":false,"script":ExtResource( 2 ),"id":-1,"busy":false,"role":"Enemy","aggressive":false,"type":ExtResource( 12 ),"move_speed":50,"horizontal":0,"vertical":0,"feeling_generous":true,"health":5,"max_health":5,"position_check_counter":0)
 , Object(KinematicBody2D,"_import_path":NodePath(""),"pause_mode":1,"process_priority":0,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 937.435, -1295.9 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":1,"z_as_relative":true,"collision_layer":5,"collision_mask":1,"input_pickable":false,"collision/safe_margin":0.08,"motion/sync_to_physics":false,"script":ExtResource( 2 ),"id":-1,"busy":false,"role":"Enemy","aggressive":true,"type":ExtResource( 12 ),"move_speed":50,"horizontal":0,"vertical":-1,"feeling_generous":false,"health":5,"max_health":5,"position_check_counter":0)
+, Object(KinematicBody2D,"_import_path":NodePath(""),"pause_mode":1,"process_priority":0,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 786.187, -173.231 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":1,"z_as_relative":true,"collision_layer":5,"collision_mask":1,"input_pickable":false,"collision/safe_margin":0.08,"motion/sync_to_physics":false,"script":ExtResource( 2 ),"id":-1,"busy":false,"role":"Enemy","aggressive":true,"type":ExtResource( 11 ),"move_speed":50,"horizontal":0,"vertical":0,"feeling_generous":false,"health":7,"max_health":7,"position_check_counter":0)
+, Object(KinematicBody2D,"_import_path":NodePath(""),"pause_mode":1,"process_priority":0,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 2001.5, -393.424 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":1,"z_as_relative":true,"collision_layer":5,"collision_mask":1,"input_pickable":false,"collision/safe_margin":0.08,"motion/sync_to_physics":false,"script":ExtResource( 2 ),"id":-1,"busy":false,"role":"Enemy","aggressive":true,"type":ExtResource( 11 ),"move_speed":50,"horizontal":0,"vertical":0,"feeling_generous":false,"health":7,"max_health":7,"position_check_counter":0)
+, Object(KinematicBody2D,"_import_path":NodePath(""),"pause_mode":1,"process_priority":0,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( -36.9257, -1305.42 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":1,"z_as_relative":true,"collision_layer":5,"collision_mask":1,"input_pickable":false,"collision/safe_margin":0.08,"motion/sync_to_physics":false,"script":ExtResource( 2 ),"id":-1,"busy":false,"role":"Enemy","aggressive":true,"type":ExtResource( 15 ),"move_speed":50,"horizontal":0,"vertical":0,"feeling_generous":false,"health":5,"max_health":5,"position_check_counter":0)
+, Object(KinematicBody2D,"_import_path":NodePath(""),"pause_mode":1,"process_priority":0,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 727.226, -758.576 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":1,"z_as_relative":true,"collision_layer":5,"collision_mask":1,"input_pickable":false,"collision/safe_margin":0.08,"motion/sync_to_physics":false,"script":ExtResource( 2 ),"id":-1,"busy":false,"role":"Enemy","aggressive":true,"type":ExtResource( 7 ),"move_speed":50,"horizontal":1,"vertical":0,"feeling_generous":false,"health":18,"max_health":18,"position_check_counter":0)
+, Object(KinematicBody2D,"_import_path":NodePath(""),"pause_mode":1,"process_priority":0,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 1150.93, -1508.58 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":1,"z_as_relative":true,"collision_layer":5,"collision_mask":1,"input_pickable":false,"collision/safe_margin":0.08,"motion/sync_to_physics":false,"script":ExtResource( 2 ),"id":-1,"busy":false,"role":"Enemy","aggressive":true,"type":ExtResource( 12 ),"move_speed":50,"horizontal":0,"vertical":0,"feeling_generous":false,"health":5,"max_health":5,"position_check_counter":0)
  ], [ Object(KinematicBody2D,"_import_path":NodePath(""),"pause_mode":1,"process_priority":0,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 254.686, 1006.36 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":1,"z_as_relative":true,"collision_layer":5,"collision_mask":1,"input_pickable":false,"collision/safe_margin":0.08,"motion/sync_to_physics":false,"script":ExtResource( 2 ),"id":-1,"busy":false,"role":"Enemy","aggressive":true,"type":ExtResource( 9 ),"move_speed":50,"horizontal":0,"vertical":0,"feeling_generous":false,"health":9,"max_health":9,"position_check_counter":0)
 , Object(KinematicBody2D,"_import_path":NodePath(""),"pause_mode":1,"process_priority":0,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 487.226, 1753.42 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":1,"z_as_relative":true,"collision_layer":5,"collision_mask":1,"input_pickable":false,"collision/safe_margin":0.08,"motion/sync_to_physics":false,"script":ExtResource( 2 ),"id":-1,"busy":false,"role":"Enemy","aggressive":true,"type":ExtResource( 8 ),"move_speed":50,"horizontal":0,"vertical":0,"feeling_generous":false,"health":5,"max_health":5,"position_check_counter":0)
 , Object(KinematicBody2D,"_import_path":NodePath(""),"pause_mode":1,"process_priority":0,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 367.924, 307.194 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":1,"z_as_relative":true,"collision_layer":13,"collision_mask":1,"input_pickable":false,"collision/safe_margin":0.08,"motion/sync_to_physics":false,"script":ExtResource( 2 ),"id":-1,"busy":false,"role":"Enemy","aggressive":false,"type":ExtResource( 8 ),"move_speed":50,"horizontal":-1,"vertical":0,"feeling_generous":true,"health":5,"max_health":5,"position_check_counter":0)
@@ -120,6 +125,16 @@ faction_creeps = [ [ Object(KinematicBody2D,"_import_path":NodePath(""),"pause_m
 , Object(KinematicBody2D,"_import_path":NodePath(""),"pause_mode":1,"process_priority":0,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 1290.07, 1967.79 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":1,"z_as_relative":true,"collision_layer":5,"collision_mask":1,"input_pickable":false,"collision/safe_margin":0.08,"motion/sync_to_physics":false,"script":ExtResource( 2 ),"id":-1,"busy":false,"role":"Enemy","aggressive":true,"type":ExtResource( 8 ),"move_speed":50,"horizontal":0,"vertical":0,"feeling_generous":false,"health":5,"max_health":5,"position_check_counter":0)
 , Object(KinematicBody2D,"_import_path":NodePath(""),"pause_mode":1,"process_priority":0,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 329.805, 759.741 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":1,"z_as_relative":true,"collision_layer":5,"collision_mask":1,"input_pickable":false,"collision/safe_margin":0.08,"motion/sync_to_physics":false,"script":ExtResource( 2 ),"id":-1,"busy":false,"role":"Enemy","aggressive":true,"type":ExtResource( 8 ),"move_speed":50,"horizontal":0,"vertical":0,"feeling_generous":false,"health":5,"max_health":5,"position_check_counter":0)
 , Object(KinematicBody2D,"_import_path":NodePath(""),"pause_mode":1,"process_priority":0,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 1431.43, 1142.58 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":1,"z_as_relative":true,"collision_layer":5,"collision_mask":1,"input_pickable":false,"collision/safe_margin":0.08,"motion/sync_to_physics":false,"script":ExtResource( 2 ),"id":-1,"busy":false,"role":"Enemy","aggressive":true,"type":ExtResource( 9 ),"move_speed":50,"horizontal":0,"vertical":0,"feeling_generous":false,"health":9,"max_health":9,"position_check_counter":0)
+, Object(KinematicBody2D,"_import_path":NodePath(""),"pause_mode":1,"process_priority":0,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 854.239, 1574.58 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":1,"z_as_relative":true,"collision_layer":13,"collision_mask":1,"input_pickable":false,"collision/safe_margin":0.08,"motion/sync_to_physics":false,"script":ExtResource( 2 ),"id":-1,"busy":false,"role":"Enemy","aggressive":false,"type":ExtResource( 10 ),"move_speed":50,"horizontal":0,"vertical":0,"feeling_generous":false,"health":4,"max_health":10,"position_check_counter":0)
+, Object(KinematicBody2D,"_import_path":NodePath(""),"pause_mode":1,"process_priority":0,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 1218.64, -179.823 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":1,"z_as_relative":true,"collision_layer":5,"collision_mask":1,"input_pickable":false,"collision/safe_margin":0.08,"motion/sync_to_physics":false,"script":ExtResource( 2 ),"id":-1,"busy":false,"role":"Enemy","aggressive":true,"type":ExtResource( 8 ),"move_speed":50,"horizontal":0,"vertical":0,"feeling_generous":false,"health":5,"max_health":5,"position_check_counter":0)
+, Object(KinematicBody2D,"_import_path":NodePath(""),"pause_mode":1,"process_priority":0,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 1929.92, -165.475 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":1,"z_as_relative":true,"collision_layer":5,"collision_mask":1,"input_pickable":false,"collision/safe_margin":0.08,"motion/sync_to_physics":false,"script":ExtResource( 2 ),"id":-1,"busy":false,"role":"Enemy","aggressive":true,"type":ExtResource( 8 ),"move_speed":50,"horizontal":0,"vertical":1,"feeling_generous":false,"health":5,"max_health":5,"position_check_counter":0)
+, Object(KinematicBody2D,"_import_path":NodePath(""),"pause_mode":1,"process_priority":0,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 840.593, 840.575 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":1,"z_as_relative":true,"collision_layer":5,"collision_mask":1,"input_pickable":false,"collision/safe_margin":0.08,"motion/sync_to_physics":false,"script":ExtResource( 2 ),"id":-1,"busy":false,"role":"Enemy","aggressive":true,"type":ExtResource( 8 ),"move_speed":50,"horizontal":0,"vertical":0,"feeling_generous":false,"health":5,"max_health":5,"position_check_counter":0)
+, Object(KinematicBody2D,"_import_path":NodePath(""),"pause_mode":1,"process_priority":0,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 1230.58, 1497.5 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":1,"z_as_relative":true,"collision_layer":5,"collision_mask":1,"input_pickable":false,"collision/safe_margin":0.08,"motion/sync_to_physics":false,"script":ExtResource( 2 ),"id":-1,"busy":false,"role":"Enemy","aggressive":true,"type":ExtResource( 9 ),"move_speed":50,"horizontal":0,"vertical":0,"feeling_generous":false,"health":9,"max_health":9,"position_check_counter":0)
+, Object(KinematicBody2D,"_import_path":NodePath(""),"pause_mode":1,"process_priority":0,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 544.891, 1526.58 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":1,"z_as_relative":true,"collision_layer":5,"collision_mask":1,"input_pickable":false,"collision/safe_margin":0.08,"motion/sync_to_physics":false,"script":ExtResource( 2 ),"id":-1,"busy":false,"role":"Enemy","aggressive":true,"type":ExtResource( 10 ),"move_speed":50,"horizontal":0,"vertical":0,"feeling_generous":false,"health":10,"max_health":10,"position_check_counter":0)
+, Object(KinematicBody2D,"_import_path":NodePath(""),"pause_mode":1,"process_priority":0,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 845.075, 1595.81 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":1,"z_as_relative":true,"collision_layer":5,"collision_mask":1,"input_pickable":false,"collision/safe_margin":0.08,"motion/sync_to_physics":false,"script":ExtResource( 2 ),"id":-1,"busy":false,"role":"Enemy","aggressive":true,"type":ExtResource( 9 ),"move_speed":50,"horizontal":0,"vertical":0,"feeling_generous":false,"health":9,"max_health":9,"position_check_counter":0)
+, Object(KinematicBody2D,"_import_path":NodePath(""),"pause_mode":1,"process_priority":0,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 441.144, 859.206 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":1,"z_as_relative":true,"collision_layer":5,"collision_mask":1,"input_pickable":false,"collision/safe_margin":0.08,"motion/sync_to_physics":false,"script":ExtResource( 2 ),"id":-1,"busy":false,"role":"Enemy","aggressive":true,"type":ExtResource( 9 ),"move_speed":50,"horizontal":0,"vertical":0,"feeling_generous":false,"health":9,"max_health":9,"position_check_counter":0)
+, Object(KinematicBody2D,"_import_path":NodePath(""),"pause_mode":1,"process_priority":0,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 1546.76, 1461.44 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":1,"z_as_relative":true,"collision_layer":5,"collision_mask":1,"input_pickable":false,"collision/safe_margin":0.08,"motion/sync_to_physics":false,"script":ExtResource( 2 ),"id":-1,"busy":false,"role":"Enemy","aggressive":true,"type":ExtResource( 10 ),"move_speed":50,"horizontal":-1,"vertical":0,"feeling_generous":false,"health":10,"max_health":10,"position_check_counter":0)
+, Object(KinematicBody2D,"_import_path":NodePath(""),"pause_mode":1,"process_priority":0,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 1242.93, 298.711 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":1,"z_as_relative":true,"collision_layer":5,"collision_mask":1,"input_pickable":false,"collision/safe_margin":0.08,"motion/sync_to_physics":false,"script":ExtResource( 2 ),"id":-1,"busy":false,"role":"Enemy","aggressive":true,"type":ExtResource( 10 ),"move_speed":50,"horizontal":0,"vertical":0,"feeling_generous":false,"health":10,"max_health":10,"position_check_counter":0)
  ], [  ], [  ] ]
 faction_creep_types = [ [ ExtResource( 15 ), ExtResource( 12 ), ExtResource( 11 ), ExtResource( 7 ), ExtResource( 19 ) ], [ ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 13 ), ExtResource( 6 ) ], [  ], [  ] ]
 faction_boss = [ Object(KinematicBody2D,"_import_path":NodePath(""),"pause_mode":1,"process_priority":0,"visible":true,"modulate":Color( 1, 1, 1, 1 ),"self_modulate":Color( 1, 1, 1, 1 ),"show_behind_parent":false,"light_mask":1,"material":null,"use_parent_material":false,"position":Vector2( 1696, -1888 ),"rotation":0.0,"scale":Vector2( 1, 1 ),"z_index":1,"z_as_relative":true,"collision_layer":5,"collision_mask":1,"input_pickable":false,"collision/safe_margin":0.08,"motion/sync_to_physics":false,"script":ExtResource( 2 ),"__meta__":{
@@ -640,8 +655,8 @@ collision_mask = 0
 script = ExtResource( 38 )
 large = true
 tier = 0
-contents = [ ExtResource( 32 ) ]
-contents_count = [ 1 ]
+contents = [ ExtResource( 32 ), ExtResource( 32 ) ]
+contents_count = [ 1, 1 ]
 loot_pool = [ [ ExtResource( 32 ), ExtResource( 37 ) ], [ ExtResource( 32 ), ExtResource( 37 ), ExtResource( 33 ), ExtResource( 30 ), ExtResource( 39 ), ExtResource( 36 ), ExtResource( 35 ) ], [ ExtResource( 33 ), ExtResource( 31 ), ExtResource( 30 ), ExtResource( 34 ) ] ]
 
 [node name="TreasureChest26" type="KinematicBody2D" parent="WorldObejcts/TreasureChests" instance=ExtResource( 20 )]
@@ -651,8 +666,8 @@ collision_mask = 0
 script = ExtResource( 38 )
 large = true
 tier = 0
-contents = [ ExtResource( 37 ) ]
-contents_count = [ 1 ]
+contents = [ ExtResource( 37 ), ExtResource( 32 ) ]
+contents_count = [ 1, 1 ]
 loot_pool = [ [ ExtResource( 32 ), ExtResource( 37 ) ], [ ExtResource( 32 ), ExtResource( 37 ), ExtResource( 33 ), ExtResource( 30 ), ExtResource( 39 ), ExtResource( 36 ), ExtResource( 35 ) ], [ ExtResource( 33 ), ExtResource( 31 ), ExtResource( 30 ), ExtResource( 34 ) ] ]
 
 [node name="TreasureChest21" type="KinematicBody2D" parent="WorldObejcts/TreasureChests" instance=ExtResource( 20 )]
@@ -662,8 +677,8 @@ collision_mask = 0
 script = ExtResource( 38 )
 large = true
 tier = 0
-contents = [ ExtResource( 37 ) ]
-contents_count = [ 1 ]
+contents = [ ExtResource( 37 ), ExtResource( 32 ) ]
+contents_count = [ 1, 1 ]
 loot_pool = [ [ ExtResource( 32 ), ExtResource( 37 ) ], [ ExtResource( 32 ), ExtResource( 37 ), ExtResource( 33 ), ExtResource( 30 ), ExtResource( 39 ), ExtResource( 36 ), ExtResource( 35 ) ], [ ExtResource( 33 ), ExtResource( 31 ), ExtResource( 30 ), ExtResource( 34 ) ] ]
 
 [node name="TreasureChest10" type="KinematicBody2D" parent="WorldObejcts/TreasureChests" instance=ExtResource( 20 )]
@@ -673,8 +688,8 @@ collision_mask = 0
 script = ExtResource( 38 )
 large = true
 tier = 0
-contents = [ ExtResource( 37 ) ]
-contents_count = [ 1 ]
+contents = [ ExtResource( 37 ), ExtResource( 37 ) ]
+contents_count = [ 1, 1 ]
 loot_pool = [ [ ExtResource( 32 ), ExtResource( 37 ) ], [ ExtResource( 32 ), ExtResource( 37 ), ExtResource( 33 ), ExtResource( 30 ), ExtResource( 39 ), ExtResource( 36 ), ExtResource( 35 ) ], [ ExtResource( 33 ), ExtResource( 31 ), ExtResource( 30 ), ExtResource( 34 ) ] ]
 
 [node name="TreasureChest11" type="KinematicBody2D" parent="WorldObejcts/TreasureChests" instance=ExtResource( 20 )]
@@ -684,8 +699,8 @@ collision_mask = 0
 script = ExtResource( 38 )
 large = true
 tier = 0
-contents = [ ExtResource( 32 ) ]
-contents_count = [ 1 ]
+contents = [ ExtResource( 32 ), ExtResource( 37 ) ]
+contents_count = [ 1, 1 ]
 loot_pool = [ [ ExtResource( 32 ), ExtResource( 37 ) ], [ ExtResource( 32 ), ExtResource( 37 ), ExtResource( 33 ), ExtResource( 30 ), ExtResource( 39 ), ExtResource( 36 ), ExtResource( 35 ) ], [ ExtResource( 33 ), ExtResource( 31 ), ExtResource( 30 ), ExtResource( 34 ) ] ]
 
 [node name="TreasureChest12" type="KinematicBody2D" parent="WorldObejcts/TreasureChests" instance=ExtResource( 20 )]
@@ -695,8 +710,8 @@ collision_mask = 0
 script = ExtResource( 38 )
 large = true
 tier = 1
-contents = [ ExtResource( 36 ) ]
-contents_count = [ 1 ]
+contents = [ ExtResource( 36 ), ExtResource( 37 ) ]
+contents_count = [ 1, 1 ]
 loot_pool = [ [ ExtResource( 32 ), ExtResource( 37 ) ], [ ExtResource( 32 ), ExtResource( 37 ), ExtResource( 33 ), ExtResource( 30 ), ExtResource( 39 ), ExtResource( 36 ), ExtResource( 35 ) ], [ ExtResource( 33 ), ExtResource( 31 ), ExtResource( 30 ), ExtResource( 34 ) ] ]
 
 [node name="TreasureChest23" type="KinematicBody2D" parent="WorldObejcts/TreasureChests" instance=ExtResource( 20 )]
@@ -706,8 +721,8 @@ collision_mask = 0
 script = ExtResource( 38 )
 large = true
 tier = 0
-contents = [ ExtResource( 32 ) ]
-contents_count = [ 1 ]
+contents = [ ExtResource( 32 ), ExtResource( 37 ) ]
+contents_count = [ 1, 1 ]
 loot_pool = [ [ ExtResource( 32 ), ExtResource( 37 ) ], [ ExtResource( 32 ), ExtResource( 37 ), ExtResource( 33 ), ExtResource( 30 ), ExtResource( 39 ), ExtResource( 36 ), ExtResource( 35 ) ], [ ExtResource( 33 ), ExtResource( 31 ), ExtResource( 30 ), ExtResource( 34 ) ] ]
 
 [node name="TreasureChest13" type="KinematicBody2D" parent="WorldObejcts/TreasureChests" instance=ExtResource( 20 )]
@@ -717,19 +732,20 @@ collision_mask = 0
 script = ExtResource( 38 )
 large = true
 tier = 2
-contents = [ ExtResource( 34 ) ]
-contents_count = [ 1 ]
+contents = [ ExtResource( 34 ), ExtResource( 31 ) ]
+contents_count = [ 1, 1 ]
 loot_pool = [ [ ExtResource( 32 ), ExtResource( 37 ) ], [ ExtResource( 32 ), ExtResource( 37 ), ExtResource( 33 ), ExtResource( 30 ), ExtResource( 39 ), ExtResource( 36 ), ExtResource( 35 ) ], [ ExtResource( 33 ), ExtResource( 31 ), ExtResource( 30 ), ExtResource( 34 ) ] ]
 
 [node name="TreasureChest14" type="KinematicBody2D" parent="WorldObejcts/TreasureChests" instance=ExtResource( 20 )]
+visible = false
 position = Vector2( 1792, 1760 )
 collision_layer = 8
 collision_mask = 0
 script = ExtResource( 38 )
 large = true
 tier = 1
-contents = [ ExtResource( 36 ) ]
-contents_count = [ 1 ]
+contents = [  ]
+contents_count = [  ]
 loot_pool = [ [ ExtResource( 32 ), ExtResource( 37 ) ], [ ExtResource( 32 ), ExtResource( 37 ), ExtResource( 33 ), ExtResource( 30 ), ExtResource( 39 ), ExtResource( 36 ), ExtResource( 35 ) ], [ ExtResource( 33 ), ExtResource( 31 ), ExtResource( 30 ), ExtResource( 34 ) ] ]
 
 [node name="TreasureChest15" type="KinematicBody2D" parent="WorldObejcts/TreasureChests" instance=ExtResource( 20 )]
@@ -739,8 +755,8 @@ collision_mask = 0
 script = ExtResource( 38 )
 large = true
 tier = 1
-contents = [ ExtResource( 32 ) ]
-contents_count = [ 1 ]
+contents = [ ExtResource( 32 ), ExtResource( 33 ) ]
+contents_count = [ 1, 1 ]
 loot_pool = [ [ ExtResource( 32 ), ExtResource( 37 ) ], [ ExtResource( 32 ), ExtResource( 37 ), ExtResource( 33 ), ExtResource( 30 ), ExtResource( 39 ), ExtResource( 36 ), ExtResource( 35 ) ], [ ExtResource( 33 ), ExtResource( 31 ), ExtResource( 30 ), ExtResource( 34 ) ] ]
 
 [node name="TreasureChest19" type="KinematicBody2D" parent="WorldObejcts/TreasureChests" instance=ExtResource( 20 )]
@@ -750,8 +766,8 @@ collision_mask = 0
 script = ExtResource( 38 )
 large = true
 tier = 0
-contents = [ ExtResource( 32 ) ]
-contents_count = [ 1 ]
+contents = [ ExtResource( 32 ), ExtResource( 32 ) ]
+contents_count = [ 1, 1 ]
 loot_pool = [ [ ExtResource( 32 ), ExtResource( 37 ) ], [ ExtResource( 32 ), ExtResource( 37 ), ExtResource( 33 ), ExtResource( 30 ), ExtResource( 39 ), ExtResource( 36 ), ExtResource( 35 ) ], [ ExtResource( 33 ), ExtResource( 31 ), ExtResource( 30 ), ExtResource( 34 ) ] ]
 
 [node name="TreasureChest20" type="KinematicBody2D" parent="WorldObejcts/TreasureChests" instance=ExtResource( 20 )]
@@ -761,8 +777,8 @@ collision_mask = 0
 script = ExtResource( 38 )
 large = true
 tier = 0
-contents = [ ExtResource( 37 ) ]
-contents_count = [ 1 ]
+contents = [ ExtResource( 37 ), ExtResource( 32 ) ]
+contents_count = [ 1, 1 ]
 loot_pool = [ [ ExtResource( 32 ), ExtResource( 37 ) ], [ ExtResource( 32 ), ExtResource( 37 ), ExtResource( 33 ), ExtResource( 30 ), ExtResource( 39 ), ExtResource( 36 ), ExtResource( 35 ) ], [ ExtResource( 33 ), ExtResource( 31 ), ExtResource( 30 ), ExtResource( 34 ) ] ]
 
 [node name="TreasureChest16" type="KinematicBody2D" parent="WorldObejcts/TreasureChests" instance=ExtResource( 20 )]
@@ -772,8 +788,8 @@ collision_mask = 0
 script = ExtResource( 38 )
 large = true
 tier = 1
-contents = [ ExtResource( 36 ) ]
-contents_count = [ 1 ]
+contents = [ ExtResource( 36 ), ExtResource( 33 ) ]
+contents_count = [ 1, 1 ]
 loot_pool = [ [ ExtResource( 32 ), ExtResource( 37 ) ], [ ExtResource( 32 ), ExtResource( 37 ), ExtResource( 33 ), ExtResource( 30 ), ExtResource( 39 ), ExtResource( 36 ), ExtResource( 35 ) ], [ ExtResource( 33 ), ExtResource( 31 ), ExtResource( 30 ), ExtResource( 34 ) ] ]
 
 [node name="TreasureChest17" type="KinematicBody2D" parent="WorldObejcts/TreasureChests" instance=ExtResource( 20 )]
@@ -783,8 +799,8 @@ collision_mask = 0
 script = ExtResource( 38 )
 large = true
 tier = 1
-contents = [ ExtResource( 35 ) ]
-contents_count = [ 1 ]
+contents = [ ExtResource( 35 ), ExtResource( 39 ) ]
+contents_count = [ 1, 1 ]
 loot_pool = [ [ ExtResource( 32 ), ExtResource( 37 ) ], [ ExtResource( 32 ), ExtResource( 37 ), ExtResource( 33 ), ExtResource( 30 ), ExtResource( 39 ), ExtResource( 36 ), ExtResource( 35 ) ], [ ExtResource( 33 ), ExtResource( 31 ), ExtResource( 30 ), ExtResource( 34 ) ] ]
 
 [node name="TreasureChest18" type="KinematicBody2D" parent="WorldObejcts/TreasureChests" instance=ExtResource( 20 )]
@@ -794,8 +810,8 @@ collision_mask = 0
 script = ExtResource( 38 )
 large = true
 tier = 1
-contents = [ ExtResource( 36 ) ]
-contents_count = [ 1 ]
+contents = [ ExtResource( 36 ), ExtResource( 37 ) ]
+contents_count = [ 1, 1 ]
 loot_pool = [ [ ExtResource( 32 ), ExtResource( 37 ) ], [ ExtResource( 32 ), ExtResource( 37 ), ExtResource( 33 ), ExtResource( 30 ), ExtResource( 39 ), ExtResource( 36 ), ExtResource( 35 ) ], [ ExtResource( 33 ), ExtResource( 31 ), ExtResource( 30 ), ExtResource( 34 ) ] ]
 
 [node name="TreasureChest24" type="KinematicBody2D" parent="WorldObejcts/TreasureChests" instance=ExtResource( 20 )]
@@ -805,8 +821,8 @@ collision_mask = 0
 script = ExtResource( 38 )
 large = true
 tier = 1
-contents = [ ExtResource( 35 ) ]
-contents_count = [ 1 ]
+contents = [ ExtResource( 35 ), ExtResource( 36 ) ]
+contents_count = [ 1, 1 ]
 loot_pool = [ [ ExtResource( 32 ), ExtResource( 37 ) ], [ ExtResource( 32 ), ExtResource( 37 ), ExtResource( 33 ), ExtResource( 30 ), ExtResource( 39 ), ExtResource( 36 ), ExtResource( 35 ) ], [ ExtResource( 33 ), ExtResource( 31 ), ExtResource( 30 ), ExtResource( 34 ) ] ]
 
 [node name="TreasureChest2" type="KinematicBody2D" parent="WorldObejcts/TreasureChests" instance=ExtResource( 20 )]
@@ -816,8 +832,8 @@ collision_mask = 0
 script = ExtResource( 38 )
 large = true
 tier = 1
-contents = [ ExtResource( 35 ) ]
-contents_count = [ 1 ]
+contents = [ ExtResource( 35 ), ExtResource( 39 ) ]
+contents_count = [ 1, 1 ]
 loot_pool = [ [ ExtResource( 32 ), ExtResource( 37 ) ], [ ExtResource( 32 ), ExtResource( 37 ), ExtResource( 33 ), ExtResource( 30 ), ExtResource( 39 ), ExtResource( 36 ), ExtResource( 35 ) ], [ ExtResource( 33 ), ExtResource( 31 ), ExtResource( 30 ), ExtResource( 34 ) ] ]
 
 [node name="TreasureChest3" type="KinematicBody2D" parent="WorldObejcts/TreasureChests" instance=ExtResource( 20 )]
@@ -827,8 +843,8 @@ collision_mask = 0
 script = ExtResource( 38 )
 large = true
 tier = 1
-contents = [ ExtResource( 33 ) ]
-contents_count = [ 1 ]
+contents = [ ExtResource( 33 ), ExtResource( 37 ) ]
+contents_count = [ 1, 1 ]
 loot_pool = [ [ ExtResource( 32 ), ExtResource( 37 ) ], [ ExtResource( 32 ), ExtResource( 37 ), ExtResource( 33 ), ExtResource( 30 ), ExtResource( 39 ), ExtResource( 36 ), ExtResource( 35 ) ], [ ExtResource( 33 ), ExtResource( 31 ), ExtResource( 30 ), ExtResource( 34 ) ] ]
 
 [node name="TreasureChest22" type="KinematicBody2D" parent="WorldObejcts/TreasureChests" instance=ExtResource( 20 )]
@@ -838,8 +854,8 @@ collision_mask = 0
 script = ExtResource( 38 )
 large = true
 tier = 0
-contents = [ ExtResource( 32 ) ]
-contents_count = [ 1 ]
+contents = [ ExtResource( 32 ), ExtResource( 37 ) ]
+contents_count = [ 1, 1 ]
 loot_pool = [ [ ExtResource( 32 ), ExtResource( 37 ) ], [ ExtResource( 32 ), ExtResource( 37 ), ExtResource( 33 ), ExtResource( 30 ), ExtResource( 39 ), ExtResource( 36 ), ExtResource( 35 ) ], [ ExtResource( 33 ), ExtResource( 31 ), ExtResource( 30 ), ExtResource( 34 ) ] ]
 
 [node name="TreasureChest4" type="KinematicBody2D" parent="WorldObejcts/TreasureChests" instance=ExtResource( 20 )]
@@ -849,8 +865,8 @@ collision_mask = 0
 script = ExtResource( 38 )
 large = true
 tier = 1
-contents = [ ExtResource( 32 ) ]
-contents_count = [ 1 ]
+contents = [ ExtResource( 32 ), ExtResource( 30 ) ]
+contents_count = [ 1, 1 ]
 loot_pool = [ [ ExtResource( 32 ), ExtResource( 37 ) ], [ ExtResource( 32 ), ExtResource( 37 ), ExtResource( 33 ), ExtResource( 30 ), ExtResource( 39 ), ExtResource( 36 ), ExtResource( 35 ) ], [ ExtResource( 33 ), ExtResource( 31 ), ExtResource( 30 ), ExtResource( 34 ) ] ]
 
 [node name="TreasureChest25" type="KinematicBody2D" parent="WorldObejcts/TreasureChests" instance=ExtResource( 20 )]
@@ -860,8 +876,8 @@ collision_mask = 0
 script = ExtResource( 38 )
 large = true
 tier = 1
-contents = [ ExtResource( 39 ) ]
-contents_count = [ 1 ]
+contents = [ ExtResource( 39 ), ExtResource( 30 ) ]
+contents_count = [ 1, 1 ]
 loot_pool = [ [ ExtResource( 32 ), ExtResource( 37 ) ], [ ExtResource( 32 ), ExtResource( 37 ), ExtResource( 33 ), ExtResource( 30 ), ExtResource( 39 ), ExtResource( 36 ), ExtResource( 35 ) ], [ ExtResource( 33 ), ExtResource( 31 ), ExtResource( 30 ), ExtResource( 34 ) ] ]
 
 [node name="TreasureChest5" type="KinematicBody2D" parent="WorldObejcts/TreasureChests" instance=ExtResource( 20 )]
@@ -871,8 +887,8 @@ collision_mask = 0
 script = ExtResource( 38 )
 large = true
 tier = 1
-contents = [ ExtResource( 35 ) ]
-contents_count = [ 1 ]
+contents = [ ExtResource( 35 ), ExtResource( 33 ) ]
+contents_count = [ 1, 1 ]
 loot_pool = [ [ ExtResource( 32 ), ExtResource( 37 ) ], [ ExtResource( 32 ), ExtResource( 37 ), ExtResource( 33 ), ExtResource( 30 ), ExtResource( 39 ), ExtResource( 36 ), ExtResource( 35 ) ], [ ExtResource( 33 ), ExtResource( 31 ), ExtResource( 30 ), ExtResource( 34 ) ] ]
 
 [node name="TreasureChest8" type="KinematicBody2D" parent="WorldObejcts/TreasureChests" instance=ExtResource( 20 )]
@@ -882,8 +898,8 @@ collision_mask = 0
 script = ExtResource( 38 )
 large = true
 tier = 1
-contents = [ ExtResource( 37 ) ]
-contents_count = [ 1 ]
+contents = [ ExtResource( 37 ), ExtResource( 32 ) ]
+contents_count = [ 1, 1 ]
 loot_pool = [ [ ExtResource( 32 ), ExtResource( 37 ) ], [ ExtResource( 32 ), ExtResource( 37 ), ExtResource( 33 ), ExtResource( 30 ), ExtResource( 39 ), ExtResource( 36 ), ExtResource( 35 ) ], [ ExtResource( 33 ), ExtResource( 31 ), ExtResource( 30 ), ExtResource( 34 ) ] ]
 
 [node name="TreasureChest9" type="KinematicBody2D" parent="WorldObejcts/TreasureChests" instance=ExtResource( 20 )]
@@ -893,8 +909,8 @@ collision_mask = 0
 script = ExtResource( 38 )
 large = true
 tier = 1
-contents = [ ExtResource( 39 ) ]
-contents_count = [ 1 ]
+contents = [ ExtResource( 39 ), ExtResource( 33 ) ]
+contents_count = [ 1, 1 ]
 loot_pool = [ [ ExtResource( 32 ), ExtResource( 37 ) ], [ ExtResource( 32 ), ExtResource( 37 ), ExtResource( 33 ), ExtResource( 30 ), ExtResource( 39 ), ExtResource( 36 ), ExtResource( 35 ) ], [ ExtResource( 33 ), ExtResource( 31 ), ExtResource( 30 ), ExtResource( 34 ) ] ]
 
 [node name="TreasureChest6" type="KinematicBody2D" parent="WorldObejcts/TreasureChests" instance=ExtResource( 20 )]
@@ -904,8 +920,8 @@ collision_mask = 0
 script = ExtResource( 38 )
 large = true
 tier = 1
-contents = [ ExtResource( 33 ) ]
-contents_count = [ 1 ]
+contents = [ ExtResource( 33 ), ExtResource( 33 ) ]
+contents_count = [ 1, 1 ]
 loot_pool = [ [ ExtResource( 32 ), ExtResource( 37 ) ], [ ExtResource( 32 ), ExtResource( 37 ), ExtResource( 33 ), ExtResource( 30 ), ExtResource( 39 ), ExtResource( 36 ), ExtResource( 35 ) ], [ ExtResource( 33 ), ExtResource( 31 ), ExtResource( 30 ), ExtResource( 34 ) ] ]
 
 [node name="TreasureChest7" type="KinematicBody2D" parent="WorldObejcts/TreasureChests" instance=ExtResource( 20 )]
@@ -915,8 +931,8 @@ collision_mask = 0
 script = ExtResource( 38 )
 large = true
 tier = 2
-contents = [ ExtResource( 33 ) ]
-contents_count = [ 1 ]
+contents = [ ExtResource( 33 ), ExtResource( 34 ) ]
+contents_count = [ 1, 1 ]
 loot_pool = [ [ ExtResource( 32 ), ExtResource( 37 ) ], [ ExtResource( 32 ), ExtResource( 37 ), ExtResource( 33 ), ExtResource( 30 ), ExtResource( 39 ), ExtResource( 36 ), ExtResource( 35 ) ], [ ExtResource( 33 ), ExtResource( 31 ), ExtResource( 30 ), ExtResource( 34 ) ] ]
 
 [node name="Points" type="Node2D" parent="."]
@@ -970,14 +986,14 @@ creator = "Super Johnny"
 creator_color = Color( 0.865741, 0.203752, 0.184839, 1 )
 
 [node name="TreasureChest" type="KinematicBody2D" parent="." instance=ExtResource( 20 )]
-position = Vector2( -94.1037, -64.6985 )
+position = Vector2( -38.576, -84.9629 )
 collision_layer = 8
 collision_mask = 0
 script = ExtResource( 38 )
 large = false
 tier = 0
-contents = [ ExtResource( 37 ) ]
-contents_count = [ 94 ]
+contents = [ ExtResource( 32 ) ]
+contents_count = [ 2 ]
 loot_pool = [ [ ExtResource( 32 ), ExtResource( 37 ) ], [ ExtResource( 32 ), ExtResource( 37 ), ExtResource( 33 ), ExtResource( 30 ), ExtResource( 39 ), ExtResource( 36 ), ExtResource( 35 ) ], [ ExtResource( 33 ), ExtResource( 31 ), ExtResource( 30 ), ExtResource( 34 ) ] ]
 
 [connection signal="pressed" from="DefaultNPCs/Mayor/Button" to="DefaultNPCs/Mayor" method="interact"]
