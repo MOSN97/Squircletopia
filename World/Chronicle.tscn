@@ -11,7 +11,7 @@ margin_top = -300.0
 margin_right = 300.0
 margin_bottom = 300.0
 script = ExtResource( 2 )
-entries = [ "23/4/2022 - [color=#dd342f]Super Johnny[/color] has moved into Squircletown!" ]
+entries = [ "23/4/2022 - [color=#dd342f]Super Johnny[/color] has moved into Squircletown!", "23/4/2022 - [color=#9ee42e]Joe Cool[/color] has moved into Squircletown!", "23/4/2022 - [color=#9ee42e]Joe Cool[/color] has slain fellow squircle [color=#dd342f]Super Johnny[/color]!!" ]
 
 [node name="Timeline" type="ScrollContainer" parent="."]
 anchor_right = 1.0
