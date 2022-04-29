@@ -11,7 +11,6 @@ margin_top = -300.0
 margin_right = 300.0
 margin_bottom = 300.0
 script = ExtResource( 2 )
-entries = [ "29/4/2022 - [color=#0704cf]JWOFOWF[/color] has moved into Squircletown!" ]
 
 [node name="Timeline" type="ScrollContainer" parent="."]
 anchor_right = 1.0
