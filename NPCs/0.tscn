@@ -16,16 +16,16 @@
 radius = 6.5
 
 [sub_resource type="CircleShape2D" id=4]
-radius = 35.0
+radius = 4.0
 
 [sub_resource type="CircleShape2D" id=5]
 radius = 60.0
 
 [node name="Squircle" type="KinematicBody2D"]
 pause_mode = 1
-position = Vector2( 1898.47, -628.096 )
+position = Vector2( 1830.74, -665.424 )
 z_index = 1
-collision_layer = 11
+collision_layer = 9
 script = ExtResource( 1 )
 character_name = "JOHNMAND"
 alive = true
