@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=2]
+[gd_scene load_steps=66 format=2]
 
 [ext_resource path="res://Scripts/GameWorld.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/Enemy.gd" type="Script" id=2]
@@ -18,7 +18,7 @@
 [ext_resource path="res://PermanentNPCs/Mayor.tres" type="Resource" id=16]
 [ext_resource path="res://PermanentNPCs/Shopkeeper.tres" type="Resource" id=17]
 [ext_resource path="res://PermanentNPCs/Healer.tres" type="Resource" id=18]
-[ext_resource path="res://Misc/Font30.tres" type="DynamicFont" id=19]
+[ext_resource path="res://Items/Consumables/Cookie.tres" type="Resource" id=19]
 [ext_resource path="res://Scenes/GameObjects/TreasureChest.tscn" type="PackedScene" id=20]
 [ext_resource path="res://Sprites/SquircleSprites/SquircleFaceNeutral.png" type="Texture" id=21]
 [ext_resource path="res://Sprites/SquircleSprites/SquircleBody.png" type="Texture" id=22]
@@ -29,6 +29,35 @@
 [ext_resource path="res://Sprites/Enemies/RatWithNuke.png" type="Texture" id=27]
 [ext_resource path="res://Scripts/PermanentNPC.gd" type="Script" id=28]
 [ext_resource path="res://Scripts/Oneshots/Glow.gd" type="Script" id=29]
+[ext_resource path="res://Items/Consumables/BagOfChips.tres" type="Resource" id=30]
+[ext_resource path="res://Items/Consumables/Burger.tres" type="Resource" id=31]
+[ext_resource path="res://Items/Consumables/Spaghetti.tres" type="Resource" id=32]
+[ext_resource path="res://Items/Hats/HockeyMask.tres" type="Resource" id=33]
+[ext_resource path="res://Items/Consumables/Signpost.tres" type="Resource" id=34]
+[ext_resource path="res://Items/Hats/WizardHat.tres" type="Resource" id=35]
+[ext_resource path="res://Items/Hats/PinkBow.tres" type="Resource" id=36]
+[ext_resource path="res://Items/Hats/HornedHelmet.tres" type="Resource" id=37]
+[ext_resource path="res://Items/Hats/BardHat.tres" type="Resource" id=38]
+[ext_resource path="res://Items/Scrolls/Joke.tres" type="Resource" id=39]
+[ext_resource path="res://Items/Scrolls/Headbutt.tres" type="Resource" id=40]
+[ext_resource path="res://Items/Hats/CowboyHat.tres" type="Resource" id=41]
+[ext_resource path="res://Items/Hats/Monocle.tres" type="Resource" id=42]
+[ext_resource path="res://Items/Hats/Sunglasses.tres" type="Resource" id=43]
+[ext_resource path="res://Items/Scrolls/Chillbolt.tres" type="Resource" id=44]
+[ext_resource path="res://Items/Scrolls/Intimidate.tres" type="Resource" id=45]
+[ext_resource path="res://Items/Hats/Tiara.tres" type="Resource" id=46]
+[ext_resource path="res://Items/Scrolls/Debate.tres" type="Resource" id=47]
+[ext_resource path="res://Items/Scrolls/Lightning.tres" type="Resource" id=48]
+[ext_resource path="res://Items/Scrolls/Heal.tres" type="Resource" id=49]
+[ext_resource path="res://Items/Scrolls/Fist of Fury.tres" type="Resource" id=50]
+[ext_resource path="res://Scripts/Oneshots/TreasureChest.gd" type="Script" id=51]
+[ext_resource path="res://Scenes/Enemy.tscn" type="PackedScene" id=52]
+[ext_resource path="res://Misc/Font30.tres" type="DynamicFont" id=53]
+[ext_resource path="res://Scripts/Oneshots/PressurePlate.gd" type="Script" id=54]
+[ext_resource path="res://Sprites/Equipment/ScottishHat.png" type="Texture" id=55]
+[ext_resource path="res://Sprites/Equipment/HeadMirror.png" type="Texture" id=56]
+[ext_resource path="res://Sprites/Equipment/SenseiHeadband.png" type="Texture" id=57]
+[ext_resource path="res://Sprites/Equipment/TopHat.png" type="Texture" id=58]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 6.5
@@ -53,8 +82,12 @@ extents = Vector2( 700, 650 )
 
 [node name="GameWorld" type="Node2D"]
 script = ExtResource( 1 )
+factions = [ "Armed Rats", "Spooks", "Flightless Birds", "Geology Gang" ]
+faction_power = [ 50, 50, 40, 40 ]
+faction_aggression = [ 75, 75, 75, 75 ]
 faction_creep_types = [ [ ExtResource( 15 ), ExtResource( 12 ), ExtResource( 11 ), ExtResource( 7 ), ExtResource( 5 ) ], [ ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 13 ), ExtResource( 6 ) ], [  ], [  ] ]
-faction_boss = [ NodePath("Enemies/RatWithNuke"), NodePath("Enemies/PumpkinKing"), null, null ]
+faction_peace = [ 0, 0, 0, 0 ]
+faction_defeat = [ false, false, false, false ]
 
 [node name="DefaultNPCs" type="Node2D" parent="."]
 
@@ -79,6 +112,7 @@ texture = ExtResource( 21 )
 
 [node name="HatSprite" type="Sprite" parent="DefaultNPCs/Mayor"]
 scale = Vector2( 0.15, 0.15 )
+texture = ExtResource( 58 )
 
 [node name="BonusHat" type="Sprite" parent="DefaultNPCs/Mayor/HatSprite"]
 texture = ExtResource( 4 )
@@ -108,8 +142,8 @@ margin_bottom = 80.0
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 2
 custom_constants/shadow_offset_y = 2
-custom_fonts/font = ExtResource( 19 )
-text = "Mcsquircle"
+custom_fonts/font = ExtResource( 53 )
+text = "Mayor Squirlington"
 align = 1
 valign = 1
 autowrap = true
@@ -156,6 +190,7 @@ texture = ExtResource( 21 )
 
 [node name="HatSprite" type="Sprite" parent="DefaultNPCs/Shopkeeper"]
 scale = Vector2( 0.15, 0.15 )
+texture = ExtResource( 55 )
 
 [node name="Shadow" type="Sprite" parent="DefaultNPCs/Shopkeeper"]
 position = Vector2( 0, 6 )
@@ -185,7 +220,7 @@ margin_bottom = 80.0
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 2
 custom_constants/shadow_offset_y = 2
-custom_fonts/font = ExtResource( 19 )
+custom_fonts/font = ExtResource( 53 )
 text = "Mcsquircle"
 align = 1
 valign = 1
@@ -233,6 +268,7 @@ texture = ExtResource( 21 )
 
 [node name="HatSprite" type="Sprite" parent="DefaultNPCs/Healer"]
 scale = Vector2( 0.15, 0.15 )
+texture = ExtResource( 56 )
 
 [node name="Shadow" type="Sprite" parent="DefaultNPCs/Healer"]
 position = Vector2( 0, 6 )
@@ -262,8 +298,8 @@ margin_bottom = 80.0
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 2
 custom_constants/shadow_offset_y = 2
-custom_fonts/font = ExtResource( 19 )
-text = "Mcsquircle"
+custom_fonts/font = ExtResource( 53 )
+text = "Doctor P.H.D."
 align = 1
 valign = 1
 autowrap = true
@@ -310,6 +346,7 @@ texture = ExtResource( 21 )
 
 [node name="HatSprite" type="Sprite" parent="DefaultNPCs/Sensei"]
 scale = Vector2( 0.15, 0.15 )
+texture = ExtResource( 57 )
 
 [node name="Shadow" type="Sprite" parent="DefaultNPCs/Sensei"]
 position = Vector2( 0, 6 )
@@ -339,8 +376,8 @@ margin_bottom = 80.0
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 2
 custom_constants/shadow_offset_y = 2
-custom_fonts/font = ExtResource( 19 )
-text = "Mcsquircle"
+custom_fonts/font = ExtResource( 53 )
+text = "Sensei Dalaballa"
 align = 1
 valign = 1
 autowrap = true
@@ -379,6 +416,7 @@ script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true
 }
+aggressive = true
 type = ExtResource( 5 )
 
 [node name="Sprite" type="Sprite" parent="Enemies/RatWithNuke"]
@@ -413,7 +451,7 @@ margin_bottom = 80.0
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 2
 custom_constants/shadow_offset_y = 2
-custom_fonts/font = ExtResource( 19 )
+custom_fonts/font = ExtResource( 53 )
 text = "Squircle"
 align = 1
 valign = 1
@@ -464,6 +502,7 @@ script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true
 }
+aggressive = true
 type = ExtResource( 6 )
 
 [node name="Sprite" type="Sprite" parent="Enemies/PumpkinKing"]
@@ -498,7 +537,7 @@ margin_bottom = 80.0
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 2
 custom_constants/shadow_offset_y = 2
-custom_fonts/font = ExtResource( 19 )
+custom_fonts/font = ExtResource( 53 )
 text = "Squircle"
 align = 1
 valign = 1
@@ -540,144 +579,826 @@ monitorable = false
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies/PumpkinKing/EnemyScanner"]
 shape = SubResource( 4 )
 
+[node name="Enemy" type="KinematicBody2D" parent="Enemies" instance=ExtResource( 52 )]
+pause_mode = 1
+position = Vector2( 1580.15, -1734.5 )
+z_index = 1
+collision_layer = 5
+script = ExtResource( 2 )
+aggressive = true
+type = ExtResource( 12 )
+
+[node name="@Enemy@134" type="KinematicBody2D" parent="Enemies" instance=ExtResource( 52 )]
+pause_mode = 1
+position = Vector2( 538.113, -580.072 )
+z_index = 1
+collision_layer = 5
+script = ExtResource( 2 )
+aggressive = true
+type = ExtResource( 15 )
+
+[node name="@Enemy@135" type="KinematicBody2D" parent="Enemies" instance=ExtResource( 52 )]
+pause_mode = 1
+position = Vector2( 417.757, -1314.5 )
+z_index = 1
+collision_layer = 5
+script = ExtResource( 2 )
+aggressive = true
+type = ExtResource( 12 )
+
+[node name="@Enemy@136" type="KinematicBody2D" parent="Enemies" instance=ExtResource( 52 )]
+pause_mode = 1
+position = Vector2( 1054.31, -823.972 )
+z_index = 1
+collision_layer = 5
+script = ExtResource( 2 )
+aggressive = true
+type = ExtResource( 12 )
+
+[node name="@Enemy@137" type="KinematicBody2D" parent="Enemies" instance=ExtResource( 52 )]
+pause_mode = 1
+position = Vector2( 1487.01, -972.419 )
+z_index = 1
+collision_layer = 5
+script = ExtResource( 2 )
+aggressive = true
+type = ExtResource( 12 )
+
+[node name="@Enemy@138" type="KinematicBody2D" parent="Enemies" instance=ExtResource( 52 )]
+pause_mode = 1
+position = Vector2( 1127.57, -1097.45 )
+z_index = 1
+collision_layer = 5
+script = ExtResource( 2 )
+aggressive = true
+type = ExtResource( 7 )
+
+[node name="@Enemy@139" type="KinematicBody2D" parent="Enemies" instance=ExtResource( 52 )]
+pause_mode = 1
+position = Vector2( 829.452, -1381.5 )
+z_index = 1
+collision_layer = 5
+script = ExtResource( 2 )
+aggressive = true
+type = ExtResource( 15 )
+
+[node name="@Enemy@140" type="KinematicBody2D" parent="Enemies" instance=ExtResource( 52 )]
+pause_mode = 1
+position = Vector2( 1579.57, -244.247 )
+z_index = 1
+collision_layer = 5
+script = ExtResource( 2 )
+aggressive = true
+type = ExtResource( 12 )
+
+[node name="@Enemy@141" type="KinematicBody2D" parent="Enemies" instance=ExtResource( 52 )]
+pause_mode = 1
+position = Vector2( 973.847, -95.3859 )
+z_index = 1
+collision_layer = 5
+script = ExtResource( 2 )
+aggressive = true
+type = ExtResource( 15 )
+
+[node name="@Enemy@142" type="KinematicBody2D" parent="Enemies" instance=ExtResource( 52 )]
+pause_mode = 1
+position = Vector2( 1100.73, -1120.74 )
+z_index = 1
+collision_layer = 5
+script = ExtResource( 2 )
+aggressive = true
+type = ExtResource( 11 )
+
+[node name="@Enemy@143" type="KinematicBody2D" parent="Enemies" instance=ExtResource( 52 )]
+pause_mode = 1
+position = Vector2( 1160.49, -1043.66 )
+z_index = 1
+collision_layer = 5
+script = ExtResource( 2 )
+aggressive = true
+type = ExtResource( 7 )
+
+[node name="@Enemy@144" type="KinematicBody2D" parent="Enemies" instance=ExtResource( 52 )]
+pause_mode = 1
+position = Vector2( 1376.22, -903.593 )
+z_index = 1
+collision_layer = 5
+script = ExtResource( 2 )
+aggressive = true
+type = ExtResource( 15 )
+
+[node name="@Enemy@145" type="KinematicBody2D" parent="Enemies" instance=ExtResource( 52 )]
+pause_mode = 1
+position = Vector2( 1479.38, -951.428 )
+z_index = 1
+collision_layer = 5
+script = ExtResource( 2 )
+aggressive = true
+type = ExtResource( 11 )
+
+[node name="@Enemy@146" type="KinematicBody2D" parent="Enemies" instance=ExtResource( 52 )]
+pause_mode = 1
+position = Vector2( 657.974, -1915.53 )
+z_index = 1
+collision_layer = 5
+script = ExtResource( 2 )
+aggressive = true
+type = ExtResource( 15 )
+
+[node name="@Enemy@147" type="KinematicBody2D" parent="Enemies" instance=ExtResource( 52 )]
+pause_mode = 1
+position = Vector2( 1573.08, -1450.63 )
+z_index = 1
+collision_layer = 5
+script = ExtResource( 2 )
+aggressive = true
+type = ExtResource( 15 )
+
+[node name="@Enemy@148" type="KinematicBody2D" parent="Enemies" instance=ExtResource( 52 )]
+pause_mode = 1
+position = Vector2( 1521.23, -985.424 )
+z_index = 1
+collision_layer = 5
+script = ExtResource( 2 )
+aggressive = true
+type = ExtResource( 11 )
+
+[node name="@Enemy@149" type="KinematicBody2D" parent="Enemies" instance=ExtResource( 52 )]
+pause_mode = 1
+position = Vector2( 1854.5, -906.382 )
+z_index = 1
+collision_layer = 5
+script = ExtResource( 2 )
+aggressive = true
+type = ExtResource( 15 )
+
+[node name="@Enemy@150" type="KinematicBody2D" parent="Enemies" instance=ExtResource( 52 )]
+pause_mode = 1
+position = Vector2( 695.924, -1453.83 )
+z_index = 1
+collision_layer = 5
+script = ExtResource( 2 )
+aggressive = true
+type = ExtResource( 12 )
+
+[node name="@Enemy@151" type="KinematicBody2D" parent="Enemies" instance=ExtResource( 52 )]
+pause_mode = 1
+position = Vector2( 1310.57, -1569.57 )
+z_index = 1
+collision_layer = 5
+script = ExtResource( 2 )
+aggressive = true
+type = ExtResource( 7 )
+
+[node name="@Enemy@152" type="KinematicBody2D" parent="Enemies" instance=ExtResource( 52 )]
+pause_mode = 1
+position = Vector2( 418.806, -718.635 )
+z_index = 1
+collision_layer = 5
+script = ExtResource( 2 )
+aggressive = true
+type = ExtResource( 15 )
+
+[node name="@Enemy@153" type="KinematicBody2D" parent="Enemies" instance=ExtResource( 52 )]
+pause_mode = 1
+position = Vector2( 160.865, -1625.5 )
+z_index = 1
+collision_layer = 5
+script = ExtResource( 2 )
+aggressive = true
+type = ExtResource( 12 )
+
+[node name="@Enemy@154" type="KinematicBody2D" parent="Enemies" instance=ExtResource( 52 )]
+pause_mode = 1
+position = Vector2( 798.576, -1699.11 )
+z_index = 1
+collision_layer = 5
+script = ExtResource( 2 )
+aggressive = true
+type = ExtResource( 15 )
+
+[node name="@Enemy@155" type="KinematicBody2D" parent="Enemies" instance=ExtResource( 52 )]
+pause_mode = 1
+position = Vector2( 1037.61, -1455.29 )
+z_index = 1
+collision_layer = 5
+script = ExtResource( 2 )
+aggressive = true
+type = ExtResource( 11 )
+
+[node name="@Enemy@156" type="KinematicBody2D" parent="Enemies" instance=ExtResource( 52 )]
+pause_mode = 1
+position = Vector2( 801.222, -1523.42 )
+z_index = 1
+collision_layer = 5
+script = ExtResource( 2 )
+aggressive = true
+type = ExtResource( 12 )
+
+[node name="@Enemy@157" type="KinematicBody2D" parent="Enemies" instance=ExtResource( 52 )]
+pause_mode = 1
+position = Vector2( 562.041, -665.414 )
+z_index = 1
+collision_layer = 5
+script = ExtResource( 2 )
+aggressive = true
+type = ExtResource( 15 )
+
+[node name="@Enemy@158" type="KinematicBody2D" parent="Enemies" instance=ExtResource( 52 )]
+pause_mode = 1
+position = Vector2( 68.7589, 1262.43 )
+z_index = 1
+collision_layer = 5
+script = ExtResource( 2 )
+aggressive = true
+type = ExtResource( 9 )
+
+[node name="@Enemy@159" type="KinematicBody2D" parent="Enemies" instance=ExtResource( 52 )]
+pause_mode = 1
+position = Vector2( 325.731, 757.768 )
+z_index = 1
+collision_layer = 5
+script = ExtResource( 2 )
+aggressive = true
+type = ExtResource( 8 )
+
+[node name="@Enemy@160" type="KinematicBody2D" parent="Enemies" instance=ExtResource( 52 )]
+pause_mode = 1
+position = Vector2( 854.508, 713.424 )
+z_index = 1
+collision_layer = 5
+script = ExtResource( 2 )
+aggressive = true
+type = ExtResource( 10 )
+
+[node name="@Enemy@161" type="KinematicBody2D" parent="Enemies" instance=ExtResource( 52 )]
+pause_mode = 1
+position = Vector2( 1358.87, 1566.63 )
+z_index = 1
+collision_layer = 5
+script = ExtResource( 2 )
+aggressive = true
+type = ExtResource( 13 )
+
+[node name="@Enemy@162" type="KinematicBody2D" parent="Enemies" instance=ExtResource( 52 )]
+pause_mode = 1
+position = Vector2( 1336.72, 295.072 )
+z_index = 1
+collision_layer = 5
+script = ExtResource( 2 )
+aggressive = true
+type = ExtResource( 8 )
+
+[node name="@Enemy@163" type="KinematicBody2D" parent="Enemies" instance=ExtResource( 52 )]
+pause_mode = 1
+position = Vector2( 378.768, 805.653 )
+z_index = 1
+collision_layer = 5
+script = ExtResource( 2 )
+aggressive = true
+type = ExtResource( 8 )
+
+[node name="@Enemy@164" type="KinematicBody2D" parent="Enemies" instance=ExtResource( 52 )]
+pause_mode = 1
+position = Vector2( 1150.5, 1690.77 )
+z_index = 1
+collision_layer = 5
+script = ExtResource( 2 )
+aggressive = true
+type = ExtResource( 8 )
+
+[node name="@Enemy@165" type="KinematicBody2D" parent="Enemies" instance=ExtResource( 52 )]
+pause_mode = 1
+position = Vector2( 646.525, 176.722 )
+z_index = 1
+collision_layer = 5
+script = ExtResource( 2 )
+aggressive = true
+type = ExtResource( 8 )
+
+[node name="@Enemy@166" type="KinematicBody2D" parent="Enemies" instance=ExtResource( 52 )]
+pause_mode = 1
+position = Vector2( 1665.5, 993.314 )
+z_index = 1
+collision_layer = 5
+script = ExtResource( 2 )
+aggressive = true
+type = ExtResource( 13 )
+
+[node name="@Enemy@167" type="KinematicBody2D" parent="Enemies" instance=ExtResource( 52 )]
+pause_mode = 1
+position = Vector2( 610.077, 1006.85 )
+z_index = 1
+collision_layer = 5
+script = ExtResource( 2 )
+aggressive = true
+type = ExtResource( 8 )
+
+[node name="@Enemy@168" type="KinematicBody2D" parent="Enemies" instance=ExtResource( 52 )]
+pause_mode = 1
+position = Vector2( 1323.8, 1485.92 )
+z_index = 1
+collision_layer = 5
+script = ExtResource( 2 )
+aggressive = true
+type = ExtResource( 8 )
+
+[node name="@Enemy@169" type="KinematicBody2D" parent="Enemies" instance=ExtResource( 52 )]
+pause_mode = 1
+position = Vector2( 446.137, 1527.13 )
+z_index = 1
+collision_layer = 5
+script = ExtResource( 2 )
+aggressive = true
+type = ExtResource( 8 )
+
+[node name="@Enemy@170" type="KinematicBody2D" parent="Enemies" instance=ExtResource( 52 )]
+pause_mode = 1
+position = Vector2( 565.916, 1644.49 )
+z_index = 1
+collision_layer = 5
+script = ExtResource( 2 )
+aggressive = true
+type = ExtResource( 9 )
+
+[node name="@Enemy@171" type="KinematicBody2D" parent="Enemies" instance=ExtResource( 52 )]
+pause_mode = 1
+position = Vector2( 972.297, 22.0434 )
+z_index = 1
+collision_layer = 5
+script = ExtResource( 2 )
+aggressive = true
+type = ExtResource( 8 )
+
+[node name="@Enemy@172" type="KinematicBody2D" parent="Enemies" instance=ExtResource( 52 )]
+pause_mode = 1
+position = Vector2( 512.329, 917.576 )
+z_index = 1
+collision_layer = 5
+script = ExtResource( 2 )
+aggressive = true
+type = ExtResource( 9 )
+
+[node name="@Enemy@173" type="KinematicBody2D" parent="Enemies" instance=ExtResource( 52 )]
+pause_mode = 1
+position = Vector2( 404.237, 1469.55 )
+z_index = 1
+collision_layer = 5
+script = ExtResource( 2 )
+aggressive = true
+type = ExtResource( 10 )
+
+[node name="@Enemy@174" type="KinematicBody2D" parent="Enemies" instance=ExtResource( 52 )]
+pause_mode = 1
+position = Vector2( 489.684, 598.5 )
+z_index = 1
+collision_layer = 5
+script = ExtResource( 2 )
+aggressive = true
+type = ExtResource( 9 )
+
+[node name="@Enemy@175" type="KinematicBody2D" parent="Enemies" instance=ExtResource( 52 )]
+pause_mode = 1
+position = Vector2( 1453.13, 1311.73 )
+z_index = 1
+collision_layer = 5
+script = ExtResource( 2 )
+aggressive = true
+type = ExtResource( 8 )
+
+[node name="@Enemy@176" type="KinematicBody2D" parent="Enemies" instance=ExtResource( 52 )]
+pause_mode = 1
+position = Vector2( 1300.66, 239.593 )
+z_index = 1
+collision_layer = 5
+script = ExtResource( 2 )
+aggressive = true
+type = ExtResource( 10 )
+
+[node name="@Enemy@177" type="KinematicBody2D" parent="Enemies" instance=ExtResource( 52 )]
+pause_mode = 1
+position = Vector2( 1825.95, 1418.52 )
+z_index = 1
+collision_layer = 5
+script = ExtResource( 2 )
+aggressive = true
+type = ExtResource( 8 )
+
+[node name="@Enemy@178" type="KinematicBody2D" parent="Enemies" instance=ExtResource( 52 )]
+pause_mode = 1
+position = Vector2( 459.045, 833.811 )
+z_index = 1
+collision_layer = 5
+script = ExtResource( 2 )
+aggressive = true
+type = ExtResource( 8 )
+
+[node name="@Enemy@179" type="KinematicBody2D" parent="Enemies" instance=ExtResource( 52 )]
+pause_mode = 1
+position = Vector2( 601.137, 998.328 )
+z_index = 1
+collision_layer = 5
+script = ExtResource( 2 )
+aggressive = true
+type = ExtResource( 8 )
+
+[node name="@Enemy@180" type="KinematicBody2D" parent="Enemies" instance=ExtResource( 52 )]
+pause_mode = 1
+position = Vector2( 1203.24, 252.666 )
+z_index = 1
+collision_layer = 5
+script = ExtResource( 2 )
+aggressive = true
+type = ExtResource( 8 )
+
+[node name="@Enemy@181" type="KinematicBody2D" parent="Enemies" instance=ExtResource( 52 )]
+pause_mode = 1
+position = Vector2( 1886.58, 211.283 )
+z_index = 1
+collision_layer = 5
+script = ExtResource( 2 )
+aggressive = true
+type = ExtResource( 8 )
+
+[node name="@Enemy@182" type="KinematicBody2D" parent="Enemies" instance=ExtResource( 52 )]
+pause_mode = 1
+position = Vector2( 1202.78, 342.505 )
+z_index = 1
+collision_layer = 5
+script = ExtResource( 2 )
+aggressive = true
+type = ExtResource( 8 )
+
 [node name="WorldObejcts" type="Node2D" parent="."]
 
 [node name="Graveyard" type="Node2D" parent="WorldObejcts"]
 position = Vector2( 560, -80 )
 
-[node name="GraveyardRevive" parent="WorldObejcts" instance=ExtResource( 3 )]
+[node name="GraveyardRevive" type="Area2D" parent="WorldObejcts" instance=ExtResource( 3 )]
 position = Vector2( 568, -240 )
+collision_layer = 0
+collision_mask = 2
+monitorable = false
+script = ExtResource( 54 )
+type = "REVIVE"
 
 [node name="PermanentTreasureChests" type="Node2D" parent="WorldObejcts"]
 
-[node name="TreasureChest" parent="WorldObejcts/PermanentTreasureChests" instance=ExtResource( 20 )]
+[node name="TreasureChest" type="KinematicBody2D" parent="WorldObejcts/PermanentTreasureChests" instance=ExtResource( 20 )]
+visible = false
 position = Vector2( 688, -688 )
+collision_layer = 8
+collision_mask = 0
+script = ExtResource( 51 )
 large = true
+tier = 0
+enabled = false
+contents = [  ]
+contents_count = [  ]
+loot_pool = [ [ ExtResource( 19 ), ExtResource( 30 ) ], [ ExtResource( 19 ), ExtResource( 30 ), ExtResource( 32 ), ExtResource( 34 ), ExtResource( 37 ), ExtResource( 36 ), ExtResource( 35 ), ExtResource( 41 ), ExtResource( 49 ), ExtResource( 49 ), ExtResource( 44 ), ExtResource( 39 ), ExtResource( 50 ) ], [ ExtResource( 32 ), ExtResource( 31 ), ExtResource( 34 ), ExtResource( 33 ), ExtResource( 42 ), ExtResource( 38 ), ExtResource( 43 ), ExtResource( 46 ), ExtResource( 40 ), ExtResource( 48 ), ExtResource( 47 ), ExtResource( 45 ) ] ]
 
-[node name="TreasureChest26" parent="WorldObejcts/PermanentTreasureChests" instance=ExtResource( 20 )]
+[node name="TreasureChest26" type="KinematicBody2D" parent="WorldObejcts/PermanentTreasureChests" instance=ExtResource( 20 )]
+visible = false
 position = Vector2( 1968, -688 )
+collision_layer = 8
+collision_mask = 0
+script = ExtResource( 51 )
 large = true
+tier = 0
+enabled = false
+contents = [  ]
+contents_count = [  ]
+loot_pool = [ [ ExtResource( 19 ), ExtResource( 30 ) ], [ ExtResource( 19 ), ExtResource( 30 ), ExtResource( 32 ), ExtResource( 34 ), ExtResource( 37 ), ExtResource( 36 ), ExtResource( 35 ), ExtResource( 41 ), ExtResource( 49 ), ExtResource( 49 ), ExtResource( 44 ), ExtResource( 39 ), ExtResource( 50 ) ], [ ExtResource( 32 ), ExtResource( 31 ), ExtResource( 34 ), ExtResource( 33 ), ExtResource( 42 ), ExtResource( 38 ), ExtResource( 43 ), ExtResource( 46 ), ExtResource( 40 ), ExtResource( 48 ), ExtResource( 47 ), ExtResource( 45 ) ] ]
 
-[node name="TreasureChest21" parent="WorldObejcts/PermanentTreasureChests" instance=ExtResource( 20 )]
+[node name="TreasureChest21" type="KinematicBody2D" parent="WorldObejcts/PermanentTreasureChests" instance=ExtResource( 20 )]
+visible = false
 position = Vector2( -192, -752 )
+collision_layer = 8
+collision_mask = 0
+script = ExtResource( 51 )
 large = true
+tier = 0
+enabled = false
+contents = [  ]
+contents_count = [  ]
+loot_pool = [ [ ExtResource( 19 ), ExtResource( 30 ) ], [ ExtResource( 19 ), ExtResource( 30 ), ExtResource( 32 ), ExtResource( 34 ), ExtResource( 37 ), ExtResource( 36 ), ExtResource( 35 ), ExtResource( 41 ), ExtResource( 49 ), ExtResource( 49 ), ExtResource( 44 ), ExtResource( 39 ), ExtResource( 50 ) ], [ ExtResource( 32 ), ExtResource( 31 ), ExtResource( 34 ), ExtResource( 33 ), ExtResource( 42 ), ExtResource( 38 ), ExtResource( 43 ), ExtResource( 46 ), ExtResource( 40 ), ExtResource( 48 ), ExtResource( 47 ), ExtResource( 45 ) ] ]
 
-[node name="TreasureChest28" parent="WorldObejcts/PermanentTreasureChests" instance=ExtResource( 20 )]
+[node name="TreasureChest28" type="KinematicBody2D" parent="WorldObejcts/PermanentTreasureChests" instance=ExtResource( 20 )]
+visible = false
 position = Vector2( -472, -24 )
+collision_layer = 8
+collision_mask = 0
+script = ExtResource( 51 )
 large = true
+tier = 0
+enabled = false
+contents = [  ]
+contents_count = [  ]
+loot_pool = [ [ ExtResource( 19 ), ExtResource( 30 ) ], [ ExtResource( 19 ), ExtResource( 30 ), ExtResource( 32 ), ExtResource( 34 ), ExtResource( 37 ), ExtResource( 36 ), ExtResource( 35 ), ExtResource( 41 ), ExtResource( 49 ), ExtResource( 49 ), ExtResource( 44 ), ExtResource( 39 ), ExtResource( 50 ) ], [ ExtResource( 32 ), ExtResource( 31 ), ExtResource( 34 ), ExtResource( 33 ), ExtResource( 42 ), ExtResource( 38 ), ExtResource( 43 ), ExtResource( 46 ), ExtResource( 40 ), ExtResource( 48 ), ExtResource( 47 ), ExtResource( 45 ) ] ]
 
-[node name="TreasureChest10" parent="WorldObejcts/PermanentTreasureChests" instance=ExtResource( 20 )]
+[node name="TreasureChest10" type="KinematicBody2D" parent="WorldObejcts/PermanentTreasureChests" instance=ExtResource( 20 )]
+visible = false
 position = Vector2( 1288, -104 )
+collision_layer = 8
+collision_mask = 0
+script = ExtResource( 51 )
 large = true
+tier = 0
+enabled = false
+contents = [  ]
+contents_count = [  ]
+loot_pool = [ [ ExtResource( 19 ), ExtResource( 30 ) ], [ ExtResource( 19 ), ExtResource( 30 ), ExtResource( 32 ), ExtResource( 34 ), ExtResource( 37 ), ExtResource( 36 ), ExtResource( 35 ), ExtResource( 41 ), ExtResource( 49 ), ExtResource( 49 ), ExtResource( 44 ), ExtResource( 39 ), ExtResource( 50 ) ], [ ExtResource( 32 ), ExtResource( 31 ), ExtResource( 34 ), ExtResource( 33 ), ExtResource( 42 ), ExtResource( 38 ), ExtResource( 43 ), ExtResource( 46 ), ExtResource( 40 ), ExtResource( 48 ), ExtResource( 47 ), ExtResource( 45 ) ] ]
 
-[node name="TreasureChest11" parent="WorldObejcts/PermanentTreasureChests" instance=ExtResource( 20 )]
+[node name="TreasureChest11" type="KinematicBody2D" parent="WorldObejcts/PermanentTreasureChests" instance=ExtResource( 20 )]
 position = Vector2( 600, 1256 )
+collision_layer = 8
+collision_mask = 0
+script = ExtResource( 51 )
 large = true
+tier = 0
+enabled = true
+contents = [ ExtResource( 30 ) ]
+contents_count = [ 1 ]
+loot_pool = [ [ ExtResource( 19 ), ExtResource( 30 ) ], [ ExtResource( 19 ), ExtResource( 30 ), ExtResource( 32 ), ExtResource( 34 ), ExtResource( 37 ), ExtResource( 36 ), ExtResource( 35 ), ExtResource( 41 ), ExtResource( 49 ), ExtResource( 49 ), ExtResource( 44 ), ExtResource( 39 ), ExtResource( 50 ) ], [ ExtResource( 32 ), ExtResource( 31 ), ExtResource( 34 ), ExtResource( 33 ), ExtResource( 42 ), ExtResource( 38 ), ExtResource( 43 ), ExtResource( 46 ), ExtResource( 40 ), ExtResource( 48 ), ExtResource( 47 ), ExtResource( 45 ) ] ]
 
-[node name="TreasureChest12" parent="WorldObejcts/PermanentTreasureChests" instance=ExtResource( 20 )]
+[node name="TreasureChest12" type="KinematicBody2D" parent="WorldObejcts/PermanentTreasureChests" instance=ExtResource( 20 )]
+visible = false
 position = Vector2( 320, 1760 )
+collision_layer = 8
+collision_mask = 0
+script = ExtResource( 51 )
 large = true
 tier = 1
+enabled = false
+contents = [  ]
+contents_count = [  ]
+loot_pool = [ [ ExtResource( 19 ), ExtResource( 30 ) ], [ ExtResource( 19 ), ExtResource( 30 ), ExtResource( 32 ), ExtResource( 34 ), ExtResource( 37 ), ExtResource( 36 ), ExtResource( 35 ), ExtResource( 41 ), ExtResource( 49 ), ExtResource( 49 ), ExtResource( 44 ), ExtResource( 39 ), ExtResource( 50 ) ], [ ExtResource( 32 ), ExtResource( 31 ), ExtResource( 34 ), ExtResource( 33 ), ExtResource( 42 ), ExtResource( 38 ), ExtResource( 43 ), ExtResource( 46 ), ExtResource( 40 ), ExtResource( 48 ), ExtResource( 47 ), ExtResource( 45 ) ] ]
 
-[node name="TreasureChest23" parent="WorldObejcts/PermanentTreasureChests" instance=ExtResource( 20 )]
+[node name="TreasureChest23" type="KinematicBody2D" parent="WorldObejcts/PermanentTreasureChests" instance=ExtResource( 20 )]
 position = Vector2( 80, 1960 )
+collision_layer = 8
+collision_mask = 0
+script = ExtResource( 51 )
 large = true
+tier = 0
+enabled = true
+contents = [ ExtResource( 30 ) ]
+contents_count = [ 1 ]
+loot_pool = [ [ ExtResource( 19 ), ExtResource( 30 ) ], [ ExtResource( 19 ), ExtResource( 30 ), ExtResource( 32 ), ExtResource( 34 ), ExtResource( 37 ), ExtResource( 36 ), ExtResource( 35 ), ExtResource( 41 ), ExtResource( 49 ), ExtResource( 49 ), ExtResource( 44 ), ExtResource( 39 ), ExtResource( 50 ) ], [ ExtResource( 32 ), ExtResource( 31 ), ExtResource( 34 ), ExtResource( 33 ), ExtResource( 42 ), ExtResource( 38 ), ExtResource( 43 ), ExtResource( 46 ), ExtResource( 40 ), ExtResource( 48 ), ExtResource( 47 ), ExtResource( 45 ) ] ]
 
-[node name="TreasureChest27" parent="WorldObejcts/PermanentTreasureChests" instance=ExtResource( 20 )]
+[node name="TreasureChest27" type="KinematicBody2D" parent="WorldObejcts/PermanentTreasureChests" instance=ExtResource( 20 )]
+visible = false
 position = Vector2( -472, 1616 )
+collision_layer = 8
+collision_mask = 0
+script = ExtResource( 51 )
 large = true
+tier = 0
+enabled = false
+contents = [  ]
+contents_count = [  ]
+loot_pool = [ [ ExtResource( 19 ), ExtResource( 30 ) ], [ ExtResource( 19 ), ExtResource( 30 ), ExtResource( 32 ), ExtResource( 34 ), ExtResource( 37 ), ExtResource( 36 ), ExtResource( 35 ), ExtResource( 41 ), ExtResource( 49 ), ExtResource( 49 ), ExtResource( 44 ), ExtResource( 39 ), ExtResource( 50 ) ], [ ExtResource( 32 ), ExtResource( 31 ), ExtResource( 34 ), ExtResource( 33 ), ExtResource( 42 ), ExtResource( 38 ), ExtResource( 43 ), ExtResource( 46 ), ExtResource( 40 ), ExtResource( 48 ), ExtResource( 47 ), ExtResource( 45 ) ] ]
 
-[node name="TreasureChest13" parent="WorldObejcts/PermanentTreasureChests" instance=ExtResource( 20 )]
+[node name="TreasureChest13" type="KinematicBody2D" parent="WorldObejcts/PermanentTreasureChests" instance=ExtResource( 20 )]
 position = Vector2( 672, 1864 )
+collision_layer = 8
+collision_mask = 0
+script = ExtResource( 51 )
 large = true
 tier = 2
+enabled = true
+contents = [ ExtResource( 45 ) ]
+contents_count = [ 1 ]
+loot_pool = [ [ ExtResource( 19 ), ExtResource( 30 ) ], [ ExtResource( 19 ), ExtResource( 30 ), ExtResource( 32 ), ExtResource( 34 ), ExtResource( 37 ), ExtResource( 36 ), ExtResource( 35 ), ExtResource( 41 ), ExtResource( 49 ), ExtResource( 49 ), ExtResource( 44 ), ExtResource( 39 ), ExtResource( 50 ) ], [ ExtResource( 32 ), ExtResource( 31 ), ExtResource( 34 ), ExtResource( 33 ), ExtResource( 42 ), ExtResource( 38 ), ExtResource( 43 ), ExtResource( 46 ), ExtResource( 40 ), ExtResource( 48 ), ExtResource( 47 ), ExtResource( 45 ) ] ]
 
-[node name="TreasureChest14" parent="WorldObejcts/PermanentTreasureChests" instance=ExtResource( 20 )]
+[node name="TreasureChest14" type="KinematicBody2D" parent="WorldObejcts/PermanentTreasureChests" instance=ExtResource( 20 )]
+visible = false
 position = Vector2( 1792, 1760 )
+collision_layer = 8
+collision_mask = 0
+script = ExtResource( 51 )
 large = true
 tier = 1
+enabled = false
+contents = [  ]
+contents_count = [  ]
+loot_pool = [ [ ExtResource( 19 ), ExtResource( 30 ) ], [ ExtResource( 19 ), ExtResource( 30 ), ExtResource( 32 ), ExtResource( 34 ), ExtResource( 37 ), ExtResource( 36 ), ExtResource( 35 ), ExtResource( 41 ), ExtResource( 49 ), ExtResource( 49 ), ExtResource( 44 ), ExtResource( 39 ), ExtResource( 50 ) ], [ ExtResource( 32 ), ExtResource( 31 ), ExtResource( 34 ), ExtResource( 33 ), ExtResource( 42 ), ExtResource( 38 ), ExtResource( 43 ), ExtResource( 46 ), ExtResource( 40 ), ExtResource( 48 ), ExtResource( 47 ), ExtResource( 45 ) ] ]
 
-[node name="TreasureChest15" parent="WorldObejcts/PermanentTreasureChests" instance=ExtResource( 20 )]
+[node name="TreasureChest15" type="KinematicBody2D" parent="WorldObejcts/PermanentTreasureChests" instance=ExtResource( 20 )]
+visible = false
 position = Vector2( 784, 848 )
+collision_layer = 8
+collision_mask = 0
+script = ExtResource( 51 )
 large = true
 tier = 1
+enabled = false
+contents = [  ]
+contents_count = [  ]
+loot_pool = [ [ ExtResource( 19 ), ExtResource( 30 ) ], [ ExtResource( 19 ), ExtResource( 30 ), ExtResource( 32 ), ExtResource( 34 ), ExtResource( 37 ), ExtResource( 36 ), ExtResource( 35 ), ExtResource( 41 ), ExtResource( 49 ), ExtResource( 49 ), ExtResource( 44 ), ExtResource( 39 ), ExtResource( 50 ) ], [ ExtResource( 32 ), ExtResource( 31 ), ExtResource( 34 ), ExtResource( 33 ), ExtResource( 42 ), ExtResource( 38 ), ExtResource( 43 ), ExtResource( 46 ), ExtResource( 40 ), ExtResource( 48 ), ExtResource( 47 ), ExtResource( 45 ) ] ]
 
-[node name="TreasureChest19" parent="WorldObejcts/PermanentTreasureChests" instance=ExtResource( 20 )]
+[node name="TreasureChest19" type="KinematicBody2D" parent="WorldObejcts/PermanentTreasureChests" instance=ExtResource( 20 )]
+visible = false
 position = Vector2( 1984, 696 )
+collision_layer = 8
+collision_mask = 0
+script = ExtResource( 51 )
 large = true
+tier = 0
+enabled = false
+contents = [  ]
+contents_count = [  ]
+loot_pool = [ [ ExtResource( 19 ), ExtResource( 30 ) ], [ ExtResource( 19 ), ExtResource( 30 ), ExtResource( 32 ), ExtResource( 34 ), ExtResource( 37 ), ExtResource( 36 ), ExtResource( 35 ), ExtResource( 41 ), ExtResource( 49 ), ExtResource( 49 ), ExtResource( 44 ), ExtResource( 39 ), ExtResource( 50 ) ], [ ExtResource( 32 ), ExtResource( 31 ), ExtResource( 34 ), ExtResource( 33 ), ExtResource( 42 ), ExtResource( 38 ), ExtResource( 43 ), ExtResource( 46 ), ExtResource( 40 ), ExtResource( 48 ), ExtResource( 47 ), ExtResource( 45 ) ] ]
 
-[node name="TreasureChest20" parent="WorldObejcts/PermanentTreasureChests" instance=ExtResource( 20 )]
+[node name="TreasureChest20" type="KinematicBody2D" parent="WorldObejcts/PermanentTreasureChests" instance=ExtResource( 20 )]
 position = Vector2( 1728, 200 )
+collision_layer = 8
+collision_mask = 0
+script = ExtResource( 51 )
 large = true
+tier = 0
+enabled = true
+contents = [ ExtResource( 30 ) ]
+contents_count = [ 1 ]
+loot_pool = [ [ ExtResource( 19 ), ExtResource( 30 ) ], [ ExtResource( 19 ), ExtResource( 30 ), ExtResource( 32 ), ExtResource( 34 ), ExtResource( 37 ), ExtResource( 36 ), ExtResource( 35 ), ExtResource( 41 ), ExtResource( 49 ), ExtResource( 49 ), ExtResource( 44 ), ExtResource( 39 ), ExtResource( 50 ) ], [ ExtResource( 32 ), ExtResource( 31 ), ExtResource( 34 ), ExtResource( 33 ), ExtResource( 42 ), ExtResource( 38 ), ExtResource( 43 ), ExtResource( 46 ), ExtResource( 40 ), ExtResource( 48 ), ExtResource( 47 ), ExtResource( 45 ) ] ]
 
-[node name="TreasureChest16" parent="WorldObejcts/PermanentTreasureChests" instance=ExtResource( 20 )]
+[node name="TreasureChest16" type="KinematicBody2D" parent="WorldObejcts/PermanentTreasureChests" instance=ExtResource( 20 )]
 position = Vector2( 1536, 1160 )
+collision_layer = 8
+collision_mask = 0
+script = ExtResource( 51 )
 large = true
 tier = 1
+enabled = true
+contents = [ ExtResource( 49 ) ]
+contents_count = [ 1 ]
+loot_pool = [ [ ExtResource( 19 ), ExtResource( 30 ) ], [ ExtResource( 19 ), ExtResource( 30 ), ExtResource( 32 ), ExtResource( 34 ), ExtResource( 37 ), ExtResource( 36 ), ExtResource( 35 ), ExtResource( 41 ), ExtResource( 49 ), ExtResource( 49 ), ExtResource( 44 ), ExtResource( 39 ), ExtResource( 50 ) ], [ ExtResource( 32 ), ExtResource( 31 ), ExtResource( 34 ), ExtResource( 33 ), ExtResource( 42 ), ExtResource( 38 ), ExtResource( 43 ), ExtResource( 46 ), ExtResource( 40 ), ExtResource( 48 ), ExtResource( 47 ), ExtResource( 45 ) ] ]
 
-[node name="TreasureChest17" parent="WorldObejcts/PermanentTreasureChests" instance=ExtResource( 20 )]
+[node name="TreasureChest17" type="KinematicBody2D" parent="WorldObejcts/PermanentTreasureChests" instance=ExtResource( 20 )]
+visible = false
 position = Vector2( 968, 1160 )
+collision_layer = 8
+collision_mask = 0
+script = ExtResource( 51 )
 large = true
 tier = 1
+enabled = false
+contents = [  ]
+contents_count = [  ]
+loot_pool = [ [ ExtResource( 19 ), ExtResource( 30 ) ], [ ExtResource( 19 ), ExtResource( 30 ), ExtResource( 32 ), ExtResource( 34 ), ExtResource( 37 ), ExtResource( 36 ), ExtResource( 35 ), ExtResource( 41 ), ExtResource( 49 ), ExtResource( 49 ), ExtResource( 44 ), ExtResource( 39 ), ExtResource( 50 ) ], [ ExtResource( 32 ), ExtResource( 31 ), ExtResource( 34 ), ExtResource( 33 ), ExtResource( 42 ), ExtResource( 38 ), ExtResource( 43 ), ExtResource( 46 ), ExtResource( 40 ), ExtResource( 48 ), ExtResource( 47 ), ExtResource( 45 ) ] ]
 
-[node name="TreasureChest18" parent="WorldObejcts/PermanentTreasureChests" instance=ExtResource( 20 )]
+[node name="TreasureChest18" type="KinematicBody2D" parent="WorldObejcts/PermanentTreasureChests" instance=ExtResource( 20 )]
+visible = false
 position = Vector2( 2008, 1672 )
+collision_layer = 8
+collision_mask = 0
+script = ExtResource( 51 )
 large = true
 tier = 1
+enabled = false
+contents = [  ]
+contents_count = [  ]
+loot_pool = [ [ ExtResource( 19 ), ExtResource( 30 ) ], [ ExtResource( 19 ), ExtResource( 30 ), ExtResource( 32 ), ExtResource( 34 ), ExtResource( 37 ), ExtResource( 36 ), ExtResource( 35 ), ExtResource( 41 ), ExtResource( 49 ), ExtResource( 49 ), ExtResource( 44 ), ExtResource( 39 ), ExtResource( 50 ) ], [ ExtResource( 32 ), ExtResource( 31 ), ExtResource( 34 ), ExtResource( 33 ), ExtResource( 42 ), ExtResource( 38 ), ExtResource( 43 ), ExtResource( 46 ), ExtResource( 40 ), ExtResource( 48 ), ExtResource( 47 ), ExtResource( 45 ) ] ]
 
-[node name="TreasureChest24" parent="WorldObejcts/PermanentTreasureChests" instance=ExtResource( 20 )]
+[node name="TreasureChest24" type="KinematicBody2D" parent="WorldObejcts/PermanentTreasureChests" instance=ExtResource( 20 )]
 position = Vector2( 944, 2040 )
+collision_layer = 8
+collision_mask = 0
+script = ExtResource( 51 )
 large = true
 tier = 1
+enabled = true
+contents = [ ExtResource( 19 ) ]
+contents_count = [ 1 ]
+loot_pool = [ [ ExtResource( 19 ), ExtResource( 30 ) ], [ ExtResource( 19 ), ExtResource( 30 ), ExtResource( 32 ), ExtResource( 34 ), ExtResource( 37 ), ExtResource( 36 ), ExtResource( 35 ), ExtResource( 41 ), ExtResource( 49 ), ExtResource( 49 ), ExtResource( 44 ), ExtResource( 39 ), ExtResource( 50 ) ], [ ExtResource( 32 ), ExtResource( 31 ), ExtResource( 34 ), ExtResource( 33 ), ExtResource( 42 ), ExtResource( 38 ), ExtResource( 43 ), ExtResource( 46 ), ExtResource( 40 ), ExtResource( 48 ), ExtResource( 47 ), ExtResource( 45 ) ] ]
 
-[node name="TreasureChest2" parent="WorldObejcts/PermanentTreasureChests" instance=ExtResource( 20 )]
+[node name="TreasureChest2" type="KinematicBody2D" parent="WorldObejcts/PermanentTreasureChests" instance=ExtResource( 20 )]
+visible = false
 position = Vector2( 640, -856 )
+collision_layer = 8
+collision_mask = 0
+script = ExtResource( 51 )
 large = true
 tier = 1
+enabled = false
+contents = [  ]
+contents_count = [  ]
+loot_pool = [ [ ExtResource( 19 ), ExtResource( 30 ) ], [ ExtResource( 19 ), ExtResource( 30 ), ExtResource( 32 ), ExtResource( 34 ), ExtResource( 37 ), ExtResource( 36 ), ExtResource( 35 ), ExtResource( 41 ), ExtResource( 49 ), ExtResource( 49 ), ExtResource( 44 ), ExtResource( 39 ), ExtResource( 50 ) ], [ ExtResource( 32 ), ExtResource( 31 ), ExtResource( 34 ), ExtResource( 33 ), ExtResource( 42 ), ExtResource( 38 ), ExtResource( 43 ), ExtResource( 46 ), ExtResource( 40 ), ExtResource( 48 ), ExtResource( 47 ), ExtResource( 45 ) ] ]
 
-[node name="TreasureChest3" parent="WorldObejcts/PermanentTreasureChests" instance=ExtResource( 20 )]
+[node name="TreasureChest3" type="KinematicBody2D" parent="WorldObejcts/PermanentTreasureChests" instance=ExtResource( 20 )]
 position = Vector2( -32, -2008 )
+collision_layer = 8
+collision_mask = 0
+script = ExtResource( 51 )
 large = true
 tier = 1
+enabled = true
+contents = [ ExtResource( 19 ) ]
+contents_count = [ 1 ]
+loot_pool = [ [ ExtResource( 19 ), ExtResource( 30 ) ], [ ExtResource( 19 ), ExtResource( 30 ), ExtResource( 32 ), ExtResource( 34 ), ExtResource( 37 ), ExtResource( 36 ), ExtResource( 35 ), ExtResource( 41 ), ExtResource( 49 ), ExtResource( 49 ), ExtResource( 44 ), ExtResource( 39 ), ExtResource( 50 ) ], [ ExtResource( 32 ), ExtResource( 31 ), ExtResource( 34 ), ExtResource( 33 ), ExtResource( 42 ), ExtResource( 38 ), ExtResource( 43 ), ExtResource( 46 ), ExtResource( 40 ), ExtResource( 48 ), ExtResource( 47 ), ExtResource( 45 ) ] ]
 
-[node name="TreasureChest22" parent="WorldObejcts/PermanentTreasureChests" instance=ExtResource( 20 )]
+[node name="TreasureChest22" type="KinematicBody2D" parent="WorldObejcts/PermanentTreasureChests" instance=ExtResource( 20 )]
+visible = false
 position = Vector2( -176, -1824 )
+collision_layer = 8
+collision_mask = 0
+script = ExtResource( 51 )
 large = true
+tier = 0
+enabled = false
+contents = [  ]
+contents_count = [  ]
+loot_pool = [ [ ExtResource( 19 ), ExtResource( 30 ) ], [ ExtResource( 19 ), ExtResource( 30 ), ExtResource( 32 ), ExtResource( 34 ), ExtResource( 37 ), ExtResource( 36 ), ExtResource( 35 ), ExtResource( 41 ), ExtResource( 49 ), ExtResource( 49 ), ExtResource( 44 ), ExtResource( 39 ), ExtResource( 50 ) ], [ ExtResource( 32 ), ExtResource( 31 ), ExtResource( 34 ), ExtResource( 33 ), ExtResource( 42 ), ExtResource( 38 ), ExtResource( 43 ), ExtResource( 46 ), ExtResource( 40 ), ExtResource( 48 ), ExtResource( 47 ), ExtResource( 45 ) ] ]
 
-[node name="TreasureChest4" parent="WorldObejcts/PermanentTreasureChests" instance=ExtResource( 20 )]
+[node name="TreasureChest4" type="KinematicBody2D" parent="WorldObejcts/PermanentTreasureChests" instance=ExtResource( 20 )]
+visible = false
 position = Vector2( 672, -1808 )
+collision_layer = 8
+collision_mask = 0
+script = ExtResource( 51 )
 large = true
 tier = 1
+enabled = false
+contents = [  ]
+contents_count = [  ]
+loot_pool = [ [ ExtResource( 19 ), ExtResource( 30 ) ], [ ExtResource( 19 ), ExtResource( 30 ), ExtResource( 32 ), ExtResource( 34 ), ExtResource( 37 ), ExtResource( 36 ), ExtResource( 35 ), ExtResource( 41 ), ExtResource( 49 ), ExtResource( 49 ), ExtResource( 44 ), ExtResource( 39 ), ExtResource( 50 ) ], [ ExtResource( 32 ), ExtResource( 31 ), ExtResource( 34 ), ExtResource( 33 ), ExtResource( 42 ), ExtResource( 38 ), ExtResource( 43 ), ExtResource( 46 ), ExtResource( 40 ), ExtResource( 48 ), ExtResource( 47 ), ExtResource( 45 ) ] ]
 
-[node name="TreasureChest25" parent="WorldObejcts/PermanentTreasureChests" instance=ExtResource( 20 )]
+[node name="TreasureChest25" type="KinematicBody2D" parent="WorldObejcts/PermanentTreasureChests" instance=ExtResource( 20 )]
+visible = false
 position = Vector2( 1040, -1976 )
+collision_layer = 8
+collision_mask = 0
+script = ExtResource( 51 )
 large = true
 tier = 1
+enabled = false
+contents = [  ]
+contents_count = [  ]
+loot_pool = [ [ ExtResource( 19 ), ExtResource( 30 ) ], [ ExtResource( 19 ), ExtResource( 30 ), ExtResource( 32 ), ExtResource( 34 ), ExtResource( 37 ), ExtResource( 36 ), ExtResource( 35 ), ExtResource( 41 ), ExtResource( 49 ), ExtResource( 49 ), ExtResource( 44 ), ExtResource( 39 ), ExtResource( 50 ) ], [ ExtResource( 32 ), ExtResource( 31 ), ExtResource( 34 ), ExtResource( 33 ), ExtResource( 42 ), ExtResource( 38 ), ExtResource( 43 ), ExtResource( 46 ), ExtResource( 40 ), ExtResource( 48 ), ExtResource( 47 ), ExtResource( 45 ) ] ]
 
-[node name="TreasureChest5" parent="WorldObejcts/PermanentTreasureChests" instance=ExtResource( 20 )]
+[node name="TreasureChest5" type="KinematicBody2D" parent="WorldObejcts/PermanentTreasureChests" instance=ExtResource( 20 )]
+visible = false
 position = Vector2( 1936, -1984 )
+collision_layer = 8
+collision_mask = 0
+script = ExtResource( 51 )
 large = true
 tier = 1
+enabled = false
+contents = [  ]
+contents_count = [  ]
+loot_pool = [ [ ExtResource( 19 ), ExtResource( 30 ) ], [ ExtResource( 19 ), ExtResource( 30 ), ExtResource( 32 ), ExtResource( 34 ), ExtResource( 37 ), ExtResource( 36 ), ExtResource( 35 ), ExtResource( 41 ), ExtResource( 49 ), ExtResource( 49 ), ExtResource( 44 ), ExtResource( 39 ), ExtResource( 50 ) ], [ ExtResource( 32 ), ExtResource( 31 ), ExtResource( 34 ), ExtResource( 33 ), ExtResource( 42 ), ExtResource( 38 ), ExtResource( 43 ), ExtResource( 46 ), ExtResource( 40 ), ExtResource( 48 ), ExtResource( 47 ), ExtResource( 45 ) ] ]
 
-[node name="TreasureChest8" parent="WorldObejcts/PermanentTreasureChests" instance=ExtResource( 20 )]
+[node name="TreasureChest8" type="KinematicBody2D" parent="WorldObejcts/PermanentTreasureChests" instance=ExtResource( 20 )]
+visible = false
 position = Vector2( 1344, -1760 )
+collision_layer = 8
+collision_mask = 0
+script = ExtResource( 51 )
 large = true
 tier = 1
+enabled = false
+contents = [  ]
+contents_count = [  ]
+loot_pool = [ [ ExtResource( 19 ), ExtResource( 30 ) ], [ ExtResource( 19 ), ExtResource( 30 ), ExtResource( 32 ), ExtResource( 34 ), ExtResource( 37 ), ExtResource( 36 ), ExtResource( 35 ), ExtResource( 41 ), ExtResource( 49 ), ExtResource( 49 ), ExtResource( 44 ), ExtResource( 39 ), ExtResource( 50 ) ], [ ExtResource( 32 ), ExtResource( 31 ), ExtResource( 34 ), ExtResource( 33 ), ExtResource( 42 ), ExtResource( 38 ), ExtResource( 43 ), ExtResource( 46 ), ExtResource( 40 ), ExtResource( 48 ), ExtResource( 47 ), ExtResource( 45 ) ] ]
 
-[node name="TreasureChest9" parent="WorldObejcts/PermanentTreasureChests" instance=ExtResource( 20 )]
+[node name="TreasureChest9" type="KinematicBody2D" parent="WorldObejcts/PermanentTreasureChests" instance=ExtResource( 20 )]
+visible = false
 position = Vector2( 1816, -280 )
+collision_layer = 8
+collision_mask = 0
+script = ExtResource( 51 )
 large = true
 tier = 1
+enabled = false
+contents = [  ]
+contents_count = [  ]
+loot_pool = [ [ ExtResource( 19 ), ExtResource( 30 ) ], [ ExtResource( 19 ), ExtResource( 30 ), ExtResource( 32 ), ExtResource( 34 ), ExtResource( 37 ), ExtResource( 36 ), ExtResource( 35 ), ExtResource( 41 ), ExtResource( 49 ), ExtResource( 49 ), ExtResource( 44 ), ExtResource( 39 ), ExtResource( 50 ) ], [ ExtResource( 32 ), ExtResource( 31 ), ExtResource( 34 ), ExtResource( 33 ), ExtResource( 42 ), ExtResource( 38 ), ExtResource( 43 ), ExtResource( 46 ), ExtResource( 40 ), ExtResource( 48 ), ExtResource( 47 ), ExtResource( 45 ) ] ]
 
-[node name="TreasureChest6" parent="WorldObejcts/PermanentTreasureChests" instance=ExtResource( 20 )]
+[node name="TreasureChest6" type="KinematicBody2D" parent="WorldObejcts/PermanentTreasureChests" instance=ExtResource( 20 )]
 position = Vector2( 1984, -1360 )
+collision_layer = 8
+collision_mask = 0
+script = ExtResource( 51 )
 large = true
 tier = 1
+enabled = true
+contents = [ ExtResource( 36 ) ]
+contents_count = [ 1 ]
+loot_pool = [ [ ExtResource( 19 ), ExtResource( 30 ) ], [ ExtResource( 19 ), ExtResource( 30 ), ExtResource( 32 ), ExtResource( 34 ), ExtResource( 37 ), ExtResource( 36 ), ExtResource( 35 ), ExtResource( 41 ), ExtResource( 49 ), ExtResource( 49 ), ExtResource( 44 ), ExtResource( 39 ), ExtResource( 50 ) ], [ ExtResource( 32 ), ExtResource( 31 ), ExtResource( 34 ), ExtResource( 33 ), ExtResource( 42 ), ExtResource( 38 ), ExtResource( 43 ), ExtResource( 46 ), ExtResource( 40 ), ExtResource( 48 ), ExtResource( 47 ), ExtResource( 45 ) ] ]
 
-[node name="TreasureChest7" parent="WorldObejcts/PermanentTreasureChests" instance=ExtResource( 20 )]
+[node name="TreasureChest7" type="KinematicBody2D" parent="WorldObejcts/PermanentTreasureChests" instance=ExtResource( 20 )]
+visible = false
 position = Vector2( 1768, -1888 )
+collision_layer = 8
+collision_mask = 0
+script = ExtResource( 51 )
 large = true
 tier = 2
+enabled = false
+contents = [  ]
+contents_count = [  ]
+loot_pool = [ [ ExtResource( 19 ), ExtResource( 30 ) ], [ ExtResource( 19 ), ExtResource( 30 ), ExtResource( 32 ), ExtResource( 34 ), ExtResource( 37 ), ExtResource( 36 ), ExtResource( 35 ), ExtResource( 41 ), ExtResource( 49 ), ExtResource( 49 ), ExtResource( 44 ), ExtResource( 39 ), ExtResource( 50 ) ], [ ExtResource( 32 ), ExtResource( 31 ), ExtResource( 34 ), ExtResource( 33 ), ExtResource( 42 ), ExtResource( 38 ), ExtResource( 43 ), ExtResource( 46 ), ExtResource( 40 ), ExtResource( 48 ), ExtResource( 47 ), ExtResource( 45 ) ] ]
 
 [node name="Points" type="Node2D" parent="."]
 
@@ -718,7 +1439,7 @@ shape = SubResource( 101 )
 
 [node name="PlayerCreatedObjects" type="Node2D" parent="."]
 
-[node name="Tiles" parent="." instance=ExtResource( 23 )]
+[node name="Tiles" type="Node2D" parent="." instance=ExtResource( 23 )]
 
 [connection signal="pressed" from="DefaultNPCs/Mayor/Button" to="DefaultNPCs/Mayor" method="interact"]
 [connection signal="pressed" from="DefaultNPCs/Shopkeeper/Button" to="DefaultNPCs/Shopkeeper" method="interact"]
@@ -726,6 +1447,7 @@ shape = SubResource( 101 )
 [connection signal="pressed" from="DefaultNPCs/Sensei/Button" to="DefaultNPCs/Sensei" method="interact"]
 [connection signal="pressed" from="Enemies/RatWithNuke/Button" to="Enemies/RatWithNuke" method="interact"]
 [connection signal="pressed" from="Enemies/PumpkinKing/Button" to="Enemies/PumpkinKing" method="interact"]
+[connection signal="body_entered" from="WorldObejcts/GraveyardRevive" to="WorldObejcts/GraveyardRevive" method="player_entered"]
 [connection signal="body_entered" from="Regions/VillageArea" to="." method="enter_area" binds= [ "Village" ]]
 [connection signal="body_exited" from="Regions/VillageArea" to="." method="leave_area" binds= [ "Village" ]]
 [connection signal="body_entered" from="Regions/CastleArea" to="." method="enter_area" binds= [ "Castle" ]]
