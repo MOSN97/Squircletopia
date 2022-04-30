@@ -3,7 +3,7 @@
 [ext_resource path="res://Misc/Font45.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Scripts/Chronicle.gd" type="Script" id=2]
 [ext_resource path="res://Sprites/UI/Cross.png" type="Texture" id=3]
-[ext_resource path="res://Misc/Font30.tres" type="DynamicFont" id=5]
+[ext_resource path="res://Misc/Font30.tres" type="DynamicFont" id=52]
 
 [node name="Chronicle" type="Panel"]
 margin_left = -300.0
@@ -11,6 +11,7 @@ margin_top = -300.0
 margin_right = 300.0
 margin_bottom = 300.0
 script = ExtResource( 2 )
+entries = [ "30/4/2022 - [color=#8e536f]YOOOO[/color] has moved into Squircletown!" ]
 
 [node name="Timeline" type="ScrollContainer" parent="."]
 anchor_right = 1.0
@@ -136,7 +137,7 @@ margin_bottom = -3.0
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 2
 custom_constants/shadow_offset_y = 2
-custom_fonts/font = ExtResource( 5 )
+custom_fonts/font = ExtResource( 52 )
 text = "Timeline"
 align = 1
 valign = 1
@@ -156,7 +157,7 @@ margin_bottom = -3.0
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 2
 custom_constants/shadow_offset_y = 2
-custom_fonts/font = ExtResource( 5 )
+custom_fonts/font = ExtResource( 52 )
 text = "Player List"
 align = 1
 valign = 1
