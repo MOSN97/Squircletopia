@@ -20,16 +20,16 @@
 radius = 6.5
 
 [sub_resource type="CircleShape2D" id=4]
-radius = 60.0
+radius = 4.0
 
 [sub_resource type="CircleShape2D" id=5]
 radius = 60.0
 
-[node name="Squircle" type="KinematicBody2D"]
+[node name="@Squircle@167" type="KinematicBody2D"]
 pause_mode = 1
-position = Vector2( 261.024, -40.0106 )
+position = Vector2( 80.7671, 294.243 )
 z_index = 1
-collision_layer = 10
+collision_layer = 9
 script = ExtResource( 1 )
 character_name = "yooo"
 alive = true
@@ -37,7 +37,7 @@ guts = 1
 wisdom = 3
 charm = 20
 max_health = 35
-health = 23.0
+health = 30.0
 level = 6
 xp = 41.0
 morality = 13.9
@@ -61,7 +61,7 @@ texture = ExtResource( 22 )
 
 [node name="FaceSprite" type="Sprite" parent="."]
 modulate = Color( 0.798176, 0.513312, 0.293022, 1 )
-position = Vector2( -1, 0 )
+position = Vector2( 0, 0.5 )
 scale = Vector2( 0.125, 0.125 )
 texture = ExtResource( 21 )
 
