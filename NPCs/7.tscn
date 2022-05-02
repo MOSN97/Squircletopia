@@ -1,9 +1,6 @@
 [gd_scene load_steps=19 format=2]
 
-[ext_resource path="res://Scripts/Player.gd" type="Script" id=1]
-[ext_resource path="res://Items/Hats/Greathelm.tres" type="Resource" id=2]
 [ext_resource path="res://Items/Hats/Crown.tres" type="Resource" id=3]
-[ext_resource path="res://Items/Hats/TopHat.tres" type="Resource" id=4]
 [ext_resource path="res://Items/Consumables/Cookie.tres" type="Resource" id=19]
 [ext_resource path="res://Sprites/SquircleSprites/SquircleFaceNeutral.png" type="Texture" id=21]
 [ext_resource path="res://Sprites/SquircleSprites/SquircleBody.png" type="Texture" id=22]
@@ -15,6 +12,9 @@
 [ext_resource path="res://Items/Consumables/Signpost.tres" type="Resource" id=34]
 [ext_resource path="res://Misc/Font30.tres" type="DynamicFont" id=53]
 [ext_resource path="res://Sprites/Equipment/TopHat.png" type="Texture" id=58]
+[ext_resource path="res://Scripts/Player.gd" type="Script" id=61]
+[ext_resource path="res://Items/Hats/Greathelm.tres" type="Resource" id=63]
+[ext_resource path="res://Items/Hats/TopHat.tres" type="Resource" id=64]
 
 [sub_resource type="CircleShape2D" id=3]
 radius = 6.5
@@ -27,17 +27,17 @@ radius = 60.0
 
 [node name="@Squircle@167" type="KinematicBody2D"]
 pause_mode = 1
-position = Vector2( 80.7671, 294.243 )
+position = Vector2( 97.424, 281.743 )
 z_index = 1
 collision_layer = 9
-script = ExtResource( 1 )
+script = ExtResource( 61 )
 character_name = "yooo"
 alive = true
 guts = 1
 wisdom = 3
 charm = 20
 max_health = 35
-health = 30.0
+health = 35.0
 level = 6
 xp = 41.0
 morality = 13.9
@@ -45,10 +45,10 @@ inclination = [ 0, 0, 4 ]
 abilities = [ "ATTACK" ]
 spells = [ "FIREBALL", "HEAL" ]
 topics = [ "SMALL TALK", "COMPLIMENT", "INTIMIDATE", "DEBATE", "JOKE" ]
-inventory = [ ExtResource( 19 ), ExtResource( 34 ), ExtResource( 30 ), ExtResource( 31 ), ExtResource( 2 ), ExtResource( 3 ) ]
+inventory = [ ExtResource( 19 ), ExtResource( 34 ), ExtResource( 30 ), ExtResource( 31 ), ExtResource( 63 ), ExtResource( 3 ) ]
 inventory_count = [ 1, 1, 59, 29, 1, 1 ]
 chips = 293.0
-hat = ExtResource( 4 )
+hat = ExtResource( 64 )
 weapon = null
 greeting = "WE DID IT REDDIT"
 recruit_condition = "NOTHING"
@@ -68,7 +68,6 @@ texture = ExtResource( 21 )
 [node name="HatSprite" type="Sprite" parent="."]
 scale = Vector2( 0.15, 0.15 )
 texture = ExtResource( 58 )
-flip_h = true
 
 [node name="Shadow" type="Sprite" parent="."]
 position = Vector2( 0, 6 )
