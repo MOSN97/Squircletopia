@@ -1,8 +1,8 @@
-[gd_scene load_steps=61 format=2]
+[gd_scene load_steps=64 format=2]
 
 [ext_resource path="res://Scripts/GameWorld.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/Enemy.gd" type="Script" id=2]
-[ext_resource path="res://Scenes/GameObjects/PressurePlate.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Items/Hats/Crown.tres" type="Resource" id=3]
 [ext_resource path="res://Sprites/Equipment/Monocle.png" type="Texture" id=4]
 [ext_resource path="res://Enemies/RatWithNuke.tres" type="Resource" id=5]
 [ext_resource path="res://Enemies/SpookyPumpkin.tres" type="Resource" id=6]
@@ -23,8 +23,10 @@
 [ext_resource path="res://Sprites/SquircleSprites/SquircleFaceNeutral.png" type="Texture" id=21]
 [ext_resource path="res://Sprites/SquircleSprites/SquircleBody.png" type="Texture" id=22]
 [ext_resource path="res://Scenes/Tiles.tscn" type="PackedScene" id=23]
+[ext_resource path="res://Scripts/Oneshots/Grave.gd" type="Script" id=24]
 [ext_resource path="res://Sprites/SquircleSprites/Shadow.png" type="Texture" id=25]
 [ext_resource path="res://Sprites/UI/LightCircle.png" type="Texture" id=26]
+[ext_resource path="res://Scenes/GameObjects/Grave.tscn" type="PackedScene" id=27]
 [ext_resource path="res://Scripts/PermanentNPC.gd" type="Script" id=28]
 [ext_resource path="res://Scripts/Oneshots/Glow.gd" type="Script" id=29]
 [ext_resource path="res://Items/Consumables/BagOfChips.tres" type="Resource" id=30]
@@ -56,6 +58,7 @@
 [ext_resource path="res://Sprites/Equipment/HeadMirror.png" type="Texture" id=56]
 [ext_resource path="res://Sprites/Equipment/SenseiHeadband.png" type="Texture" id=57]
 [ext_resource path="res://Sprites/Equipment/TopHat.png" type="Texture" id=58]
+[ext_resource path="res://Scenes/GameObjects/PressurePlate.tscn" type="PackedScene" id=59]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 6.5
@@ -72,10 +75,10 @@ extents = Vector2( 700, 650 )
 [node name="GameWorld" type="Node2D"]
 script = ExtResource( 1 )
 factions = [ "Armed Rats", "Spooks", "Flightless Birds", "Geology Gang" ]
-faction_power = [ 80.0, 45.0, 40, 40 ]
-faction_aggression = [ 0.0, 100.0, 75, 75 ]
+faction_power = [ 32.5, 55.0, 40, 40 ]
+faction_aggression = [ 100.0, 100.0, 75, 75 ]
 faction_creep_types = [ [ ExtResource( 15 ), ExtResource( 12 ), ExtResource( 11 ), ExtResource( 7 ), ExtResource( 5 ) ], [ ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 13 ), ExtResource( 6 ) ], [  ], [  ] ]
-faction_peace = [ 1, 0, 0, 0 ]
+faction_peace = [ 0, 0, 0, 0 ]
 faction_defeat = [ false, false, false, false ]
 
 [node name="DefaultNPCs" type="Node2D" parent="."]
@@ -175,7 +178,7 @@ texture = ExtResource( 22 )
 
 [node name="FaceSprite" type="Sprite" parent="DefaultNPCs/Shopkeeper"]
 modulate = Color( 0.784314, 1, 0.490196, 1 )
-position = Vector2( 1, 0 )
+position = Vector2( 1, 0.5 )
 scale = Vector2( 0.125, 0.125 )
 texture = ExtResource( 21 )
 
@@ -332,7 +335,7 @@ texture = ExtResource( 22 )
 
 [node name="FaceSprite" type="Sprite" parent="DefaultNPCs/Sensei"]
 modulate = Color( 1, 0.294118, 0.568627, 1 )
-position = Vector2( 0, 0.5 )
+position = Vector2( -1, 0.5 )
 scale = Vector2( 0.125, 0.125 )
 texture = ExtResource( 21 )
 
@@ -390,7 +393,7 @@ __meta__ = {
 }
 
 [node name="Glow" type="Sprite" parent="DefaultNPCs/Sensei"]
-modulate = Color( 1, 1, 1, 0.35 )
+modulate = Color( 1, 1, 1, 0 )
 scale = Vector2( 0.3, 0.3 )
 z_index = -1
 texture = ExtResource( 26 )
@@ -402,79 +405,79 @@ script = ExtResource( 29 )
 
 [node name="@Enemy@134" type="KinematicBody2D" parent="Enemies" instance=ExtResource( 52 )]
 pause_mode = 1
-position = Vector2( 216.096, -881.497 )
+position = Vector2( 322.705, -1392.41 )
 z_index = 1
-collision_layer = 13
+collision_layer = 5
 script = ExtResource( 2 )
-aggressive = false
+aggressive = true
 type = ExtResource( 15 )
 
 [node name="@Enemy@136" type="KinematicBody2D" parent="Enemies" instance=ExtResource( 52 )]
 pause_mode = 1
-position = Vector2( 523.473, -701.317 )
+position = Vector2( 534.092, -484.401 )
 z_index = 1
-collision_layer = 13
+collision_layer = 5
 script = ExtResource( 2 )
-aggressive = false
+aggressive = true
 type = ExtResource( 12 )
 
 [node name="@Enemy@140" type="KinematicBody2D" parent="Enemies" instance=ExtResource( 52 )]
 pause_mode = 1
-position = Vector2( 1544.02, -384.625 )
+position = Vector2( 1884.59, -636.481 )
 z_index = 1
-collision_layer = 13
+collision_layer = 5
 script = ExtResource( 2 )
-aggressive = false
+aggressive = true
 type = ExtResource( 12 )
 
 [node name="@Enemy@147" type="KinematicBody2D" parent="Enemies" instance=ExtResource( 52 )]
 pause_mode = 1
-position = Vector2( 1728.9, -1420.43 )
+position = Vector2( 1710.5, -1366.58 )
 z_index = 1
-collision_layer = 13
+collision_layer = 5
 script = ExtResource( 2 )
-aggressive = false
+aggressive = true
 type = ExtResource( 15 )
 
 [node name="@Enemy@149" type="KinematicBody2D" parent="Enemies" instance=ExtResource( 52 )]
 pause_mode = 1
-position = Vector2( 1266.83, -1000.98 )
+position = Vector2( 1035.58, -922.601 )
 z_index = 1
-collision_layer = 13
+collision_layer = 5
 script = ExtResource( 2 )
-aggressive = false
+aggressive = true
 type = ExtResource( 15 )
 
 [node name="@Enemy@152" type="KinematicBody2D" parent="Enemies" instance=ExtResource( 52 )]
 pause_mode = 1
-position = Vector2( 6.44569, -1026.26 )
+position = Vector2( 107.742, -1200.19 )
 z_index = 1
-collision_layer = 13
+collision_layer = 5
 script = ExtResource( 2 )
-aggressive = false
+aggressive = true
 type = ExtResource( 15 )
 
 [node name="@Enemy@155" type="KinematicBody2D" parent="Enemies" instance=ExtResource( 52 )]
 pause_mode = 1
-position = Vector2( 1086.98, -1087.4 )
+position = Vector2( 1339.26, -1219.94 )
 z_index = 1
-collision_layer = 13
+collision_layer = 5
 script = ExtResource( 2 )
-aggressive = false
+aggressive = true
 type = ExtResource( 11 )
 
 [node name="@Enemy@157" type="KinematicBody2D" parent="Enemies" instance=ExtResource( 52 )]
 pause_mode = 1
-position = Vector2( 239.057, -852.567 )
+position = Vector2( 430.505, -1016.09 )
 z_index = 1
-collision_layer = 13
+collision_layer = 5
 script = ExtResource( 2 )
-aggressive = false
+aggressive = true
 type = ExtResource( 15 )
 
 [node name="@Enemy@159" type="KinematicBody2D" parent="Enemies" instance=ExtResource( 52 )]
 pause_mode = 1
-position = Vector2( 1015.59, 142.087 )
+position = Vector2( 984.28, -115.007 )
 z_index = 1
 collision_layer = 5
 script = ExtResource( 2 )
@@ -483,7 +486,7 @@ type = ExtResource( 8 )
 
 [node name="@Enemy@162" type="KinematicBody2D" parent="Enemies" instance=ExtResource( 52 )]
 pause_mode = 1
-position = Vector2( 894.801, 359.273 )
+position = Vector2( 764.566, 569.609 )
 z_index = 1
 collision_layer = 5
 script = ExtResource( 2 )
@@ -492,7 +495,7 @@ type = ExtResource( 8 )
 
 [node name="@Enemy@164" type="KinematicBody2D" parent="Enemies" instance=ExtResource( 52 )]
 pause_mode = 1
-position = Vector2( 1276.41, 1441.24 )
+position = Vector2( 1059.6, 1287.41 )
 z_index = 1
 collision_layer = 5
 script = ExtResource( 2 )
@@ -501,7 +504,7 @@ type = ExtResource( 8 )
 
 [node name="@Enemy@167" type="KinematicBody2D" parent="Enemies" instance=ExtResource( 52 )]
 pause_mode = 1
-position = Vector2( -389.899, 578.429 )
+position = Vector2( 10.2681, 623.731 )
 z_index = 1
 collision_layer = 5
 script = ExtResource( 2 )
@@ -510,7 +513,7 @@ type = ExtResource( 8 )
 
 [node name="@Enemy@170" type="KinematicBody2D" parent="Enemies" instance=ExtResource( 52 )]
 pause_mode = 1
-position = Vector2( 518.767, 1051.08 )
+position = Vector2( 334.5, 1152.96 )
 z_index = 1
 collision_layer = 5
 script = ExtResource( 2 )
@@ -519,7 +522,7 @@ type = ExtResource( 9 )
 
 [node name="@Enemy@172" type="KinematicBody2D" parent="Enemies" instance=ExtResource( 52 )]
 pause_mode = 1
-position = Vector2( -38.2971, 1398.27 )
+position = Vector2( 93.4497, 1131.25 )
 z_index = 1
 collision_layer = 5
 script = ExtResource( 2 )
@@ -528,7 +531,7 @@ type = ExtResource( 9 )
 
 [node name="@Enemy@176" type="KinematicBody2D" parent="Enemies" instance=ExtResource( 52 )]
 pause_mode = 1
-position = Vector2( 1396.42, 889.531 )
+position = Vector2( 1188.43, 1129.42 )
 z_index = 1
 collision_layer = 5
 script = ExtResource( 2 )
@@ -537,7 +540,7 @@ type = ExtResource( 10 )
 
 [node name="@Enemy@178" type="KinematicBody2D" parent="Enemies" instance=ExtResource( 52 )]
 pause_mode = 1
-position = Vector2( 512.555, 391.899 )
+position = Vector2( 226.164, 416.75 )
 z_index = 1
 collision_layer = 5
 script = ExtResource( 2 )
@@ -546,7 +549,7 @@ type = ExtResource( 8 )
 
 [node name="@Enemy@180" type="KinematicBody2D" parent="Enemies" instance=ExtResource( 52 )]
 pause_mode = 1
-position = Vector2( 1093.56, 532.9 )
+position = Vector2( 1077.42, 326.505 )
 z_index = 1
 collision_layer = 5
 script = ExtResource( 2 )
@@ -555,7 +558,7 @@ type = ExtResource( 8 )
 
 [node name="@Enemy@182" type="KinematicBody2D" parent="Enemies" instance=ExtResource( 52 )]
 pause_mode = 1
-position = Vector2( 478.576, -170.658 )
+position = Vector2( 446.505, -201.424 )
 z_index = 1
 collision_layer = 5
 script = ExtResource( 2 )
@@ -564,16 +567,16 @@ type = ExtResource( 8 )
 
 [node name="@Enemy@138" type="KinematicBody2D" parent="Enemies" instance=ExtResource( 52 )]
 pause_mode = 1
-position = Vector2( 1167.5, -482.477 )
+position = Vector2( 1575.58, -664.935 )
 z_index = 1
-collision_layer = 13
+collision_layer = 5
 script = ExtResource( 2 )
-aggressive = false
+aggressive = true
 type = ExtResource( 15 )
 
 [node name="@Enemy@140" type="KinematicBody2D" parent="Enemies" instance=ExtResource( 52 )]
 pause_mode = 1
-position = Vector2( 238.059, 1325.44 )
+position = Vector2( 129.739, 1316.29 )
 z_index = 1
 collision_layer = 5
 script = ExtResource( 2 )
@@ -582,7 +585,7 @@ type = ExtResource( 9 )
 
 [node name="@Enemy@142" type="KinematicBody2D" parent="Enemies" instance=ExtResource( 52 )]
 pause_mode = 1
-position = Vector2( 1333.14, 1881.22 )
+position = Vector2( 1569.42, 1712.57 )
 z_index = 1
 collision_layer = 5
 script = ExtResource( 2 )
@@ -591,34 +594,34 @@ type = ExtResource( 10 )
 
 [node name="@Enemy@136" type="KinematicBody2D" parent="Enemies" instance=ExtResource( 52 )]
 pause_mode = 1
-position = Vector2( 497.495, -1531.41 )
+position = Vector2( 419.918, -1331.06 )
 z_index = 1
-collision_layer = 13
+collision_layer = 5
 script = ExtResource( 2 )
-aggressive = false
+aggressive = true
 type = ExtResource( 7 )
 
 [node name="@Enemy@138" type="KinematicBody2D" parent="Enemies" instance=ExtResource( 52 )]
 pause_mode = 1
-position = Vector2( 11.5427, -1591.56 )
+position = Vector2( 80.5211, -1558.5 )
 z_index = 1
-collision_layer = 13
+collision_layer = 5
 script = ExtResource( 2 )
-aggressive = false
+aggressive = true
 type = ExtResource( 11 )
 
 [node name="@Enemy@137" type="KinematicBody2D" parent="Enemies" instance=ExtResource( 52 )]
 pause_mode = 1
-position = Vector2( 1781.24, -931.9 )
+position = Vector2( 1825.42, -1101.07 )
 z_index = 1
-collision_layer = 13
+collision_layer = 5
 script = ExtResource( 2 )
-aggressive = false
+aggressive = true
 type = ExtResource( 12 )
 
 [node name="@Enemy@140" type="KinematicBody2D" parent="Enemies" instance=ExtResource( 52 )]
 pause_mode = 1
-position = Vector2( -100.098, 451.962 )
+position = Vector2( -38.2419, 714.918 )
 z_index = 1
 collision_layer = 5
 script = ExtResource( 2 )
@@ -627,7 +630,7 @@ type = ExtResource( 10 )
 
 [node name="@Enemy@142" type="KinematicBody2D" parent="Enemies" instance=ExtResource( 52 )]
 pause_mode = 1
-position = Vector2( 1226.58, 1754.58 )
+position = Vector2( 1851.07, 1928.23 )
 z_index = 1
 collision_layer = 5
 script = ExtResource( 2 )
@@ -636,66 +639,57 @@ type = ExtResource( 13 )
 
 [node name="@Enemy@134" type="KinematicBody2D" parent="Enemies" instance=ExtResource( 52 )]
 pause_mode = 1
-position = Vector2( 278.791, -800.361 )
+position = Vector2( 521.026, -446.38 )
 z_index = 1
-collision_layer = 13
+collision_layer = 5
 script = ExtResource( 2 )
-aggressive = false
+aggressive = true
 type = ExtResource( 11 )
 
 [node name="@Enemy@138" type="KinematicBody2D" parent="Enemies" instance=ExtResource( 52 )]
 pause_mode = 1
-position = Vector2( 1847.39, -1581.92 )
+position = Vector2( 1760.29, -1578.59 )
 z_index = 1
-collision_layer = 13
+collision_layer = 5
 script = ExtResource( 2 )
-aggressive = false
+aggressive = true
 type = ExtResource( 7 )
 
 [node name="@Enemy@154" type="KinematicBody2D" parent="Enemies" instance=ExtResource( 52 )]
 pause_mode = 1
-position = Vector2( 1204.77, -438.575 )
+position = Vector2( 787.458, -391.136 )
 z_index = 1
-collision_layer = 13
+collision_layer = 5
 script = ExtResource( 2 )
-aggressive = false
+aggressive = true
 type = ExtResource( 11 )
 
 [node name="@Enemy@155" type="KinematicBody2D" parent="Enemies" instance=ExtResource( 52 )]
 pause_mode = 1
-position = Vector2( 353.723, -1384.63 )
+position = Vector2( 304.91, -1259.84 )
 z_index = 1
-collision_layer = 13
+collision_layer = 5
 script = ExtResource( 2 )
-aggressive = false
+aggressive = true
 type = ExtResource( 15 )
 
 [node name="@Enemy@156" type="KinematicBody2D" parent="Enemies" instance=ExtResource( 52 )]
 pause_mode = 1
-position = Vector2( 364.298, -519.091 )
+position = Vector2( 299.008, -886.847 )
 z_index = 1
-collision_layer = 13
+collision_layer = 5
 script = ExtResource( 2 )
-aggressive = false
+aggressive = true
 type = ExtResource( 11 )
 
 [node name="@Enemy@157" type="KinematicBody2D" parent="Enemies" instance=ExtResource( 52 )]
 pause_mode = 1
-position = Vector2( 1394.06, -812.358 )
+position = Vector2( 931.414, -925.101 )
 z_index = 1
-collision_layer = 13
+collision_layer = 5
 script = ExtResource( 2 )
-aggressive = false
+aggressive = true
 type = ExtResource( 7 )
-
-[node name="Enemy" type="KinematicBody2D" parent="Enemies" instance=ExtResource( 52 )]
-pause_mode = 1
-position = Vector2( 1678.81, -1910.89 )
-z_index = 1
-collision_layer = 13
-script = ExtResource( 2 )
-aggressive = false
-type = ExtResource( 5 )
 
 [node name="@Enemy@158" type="KinematicBody2D" parent="Enemies" instance=ExtResource( 52 )]
 pause_mode = 1
@@ -708,160 +702,142 @@ type = ExtResource( 6 )
 
 [node name="@Enemy@161" type="KinematicBody2D" parent="Enemies" instance=ExtResource( 52 )]
 pause_mode = 1
-position = Vector2( 780.261, -1589.01 )
+position = Vector2( 897.495, -1993.42 )
 z_index = 1
-collision_layer = 13
+collision_layer = 5
 script = ExtResource( 2 )
-aggressive = false
+aggressive = true
 type = ExtResource( 7 )
 
 [node name="@Enemy@162" type="KinematicBody2D" parent="Enemies" instance=ExtResource( 52 )]
 pause_mode = 1
-position = Vector2( 1457.41, -927.527 )
+position = Vector2( 1889.9, -1049.5 )
 z_index = 1
-collision_layer = 13
+collision_layer = 5
 script = ExtResource( 2 )
-aggressive = false
+aggressive = true
 type = ExtResource( 15 )
 
 [node name="@Enemy@163" type="KinematicBody2D" parent="Enemies" instance=ExtResource( 52 )]
 pause_mode = 1
-position = Vector2( 295.053, -721.578 )
+position = Vector2( 76.4428, -822.735 )
 z_index = 1
-collision_layer = 13
+collision_layer = 5
 script = ExtResource( 2 )
-aggressive = false
+aggressive = true
 type = ExtResource( 11 )
 
 [node name="@Enemy@164" type="KinematicBody2D" parent="Enemies" instance=ExtResource( 52 )]
 pause_mode = 1
-position = Vector2( 891.101, -1469.29 )
+position = Vector2( 689.998, -1246.02 )
 z_index = 1
-collision_layer = 13
+collision_layer = 5
 script = ExtResource( 2 )
-aggressive = false
+aggressive = true
 type = ExtResource( 11 )
 
 [node name="@Enemy@165" type="KinematicBody2D" parent="Enemies" instance=ExtResource( 52 )]
 pause_mode = 1
-position = Vector2( 1852.87, -1510.27 )
+position = Vector2( 1559.66, -1488.07 )
 z_index = 1
-collision_layer = 13
+collision_layer = 5
 script = ExtResource( 2 )
-aggressive = false
+aggressive = true
 type = ExtResource( 12 )
 
 [node name="@Enemy@166" type="KinematicBody2D" parent="Enemies" instance=ExtResource( 52 )]
 pause_mode = 1
-position = Vector2( -308.154, -553.681 )
+position = Vector2( -35.4506, -633.495 )
 z_index = 1
-collision_layer = 13
+collision_layer = 5
 script = ExtResource( 2 )
-aggressive = false
+aggressive = true
 type = ExtResource( 11 )
 
 [node name="@Enemy@167" type="KinematicBody2D" parent="Enemies" instance=ExtResource( 52 )]
 pause_mode = 1
-position = Vector2( -190.286, -931.564 )
+position = Vector2( -273.424, -982.503 )
 z_index = 1
-collision_layer = 13
+collision_layer = 5
 script = ExtResource( 2 )
-aggressive = false
+aggressive = true
 type = ExtResource( 11 )
 
 [node name="@Enemy@168" type="KinematicBody2D" parent="Enemies" instance=ExtResource( 52 )]
 pause_mode = 1
-position = Vector2( 1941.93, -630.425 )
+position = Vector2( 1756.24, -684.924 )
 z_index = 1
-collision_layer = 13
+collision_layer = 5
 script = ExtResource( 2 )
-aggressive = false
+aggressive = true
 type = ExtResource( 11 )
 
 [node name="@Enemy@169" type="KinematicBody2D" parent="Enemies" instance=ExtResource( 52 )]
 pause_mode = 1
-position = Vector2( -97.424, -1942.5 )
+position = Vector2( -17.2334, -1945.5 )
 z_index = 1
-collision_layer = 13
+collision_layer = 5
 script = ExtResource( 2 )
-aggressive = false
+aggressive = true
 type = ExtResource( 12 )
 
 [node name="@Enemy@170" type="KinematicBody2D" parent="Enemies" instance=ExtResource( 52 )]
 pause_mode = 1
-position = Vector2( 1744.02, -1423.88 )
+position = Vector2( 1638.28, -1554.43 )
 z_index = 1
-collision_layer = 13
+collision_layer = 5
 script = ExtResource( 2 )
-aggressive = false
+aggressive = true
 type = ExtResource( 7 )
 
 [node name="@Enemy@171" type="KinematicBody2D" parent="Enemies" instance=ExtResource( 52 )]
 pause_mode = 1
-position = Vector2( 478.576, -658.103 )
+position = Vector2( 513.365, -861.349 )
 z_index = 1
-collision_layer = 13
+collision_layer = 5
 script = ExtResource( 2 )
-aggressive = false
+aggressive = true
 type = ExtResource( 12 )
 
 [node name="@Enemy@172" type="KinematicBody2D" parent="Enemies" instance=ExtResource( 52 )]
 pause_mode = 1
-position = Vector2( 1406.49, -1638.5 )
+position = Vector2( 1407.07, -1724.64 )
 z_index = 1
-collision_layer = 13
+collision_layer = 5
 script = ExtResource( 2 )
-aggressive = false
+aggressive = true
 type = ExtResource( 12 )
 
 [node name="@Enemy@173" type="KinematicBody2D" parent="Enemies" instance=ExtResource( 52 )]
 pause_mode = 1
-position = Vector2( 1344.26, -314.122 )
+position = Vector2( 1418.01, -689.561 )
 z_index = 1
-collision_layer = 13
+collision_layer = 5
 script = ExtResource( 2 )
-aggressive = false
+aggressive = true
 type = ExtResource( 11 )
 
 [node name="@Enemy@174" type="KinematicBody2D" parent="Enemies" instance=ExtResource( 52 )]
 pause_mode = 1
-position = Vector2( 873.982, -566.396 )
+position = Vector2( 873.991, -336.455 )
 z_index = 1
-collision_layer = 13
+collision_layer = 5
 script = ExtResource( 2 )
-aggressive = false
+aggressive = true
 type = ExtResource( 11 )
 
 [node name="@Enemy@175" type="KinematicBody2D" parent="Enemies" instance=ExtResource( 52 )]
 pause_mode = 1
-position = Vector2( -83.5967, -1072.71 )
+position = Vector2( 397.081, -729.424 )
 z_index = 1
-collision_layer = 13
+collision_layer = 5
 script = ExtResource( 2 )
-aggressive = false
+aggressive = true
 type = ExtResource( 11 )
-
-[node name="@Enemy@176" type="KinematicBody2D" parent="Enemies" instance=ExtResource( 52 )]
-pause_mode = 1
-position = Vector2( 958.576, -890.089 )
-z_index = 1
-collision_layer = 13
-script = ExtResource( 2 )
-aggressive = false
-type = ExtResource( 7 )
-
-[node name="@Enemy@177" type="KinematicBody2D" parent="Enemies" instance=ExtResource( 52 )]
-pause_mode = 1
-position = Vector2( 622.576, -1897.97 )
-z_index = 1
-collision_layer = 13
-script = ExtResource( 2 )
-aggressive = false
-type = ExtResource( 7 )
 
 [node name="@Enemy@178" type="KinematicBody2D" parent="Enemies" instance=ExtResource( 52 )]
 pause_mode = 1
-position = Vector2( 1379.96, 1008.93 )
+position = Vector2( 1666.91, 826.566 )
 z_index = 1
 collision_layer = 5
 script = ExtResource( 2 )
@@ -870,7 +846,7 @@ type = ExtResource( 8 )
 
 [node name="@Enemy@179" type="KinematicBody2D" parent="Enemies" instance=ExtResource( 52 )]
 pause_mode = 1
-position = Vector2( 1534.41, 1561.76 )
+position = Vector2( 1558.71, 1417.43 )
 z_index = 1
 collision_layer = 5
 script = ExtResource( 2 )
@@ -879,7 +855,7 @@ type = ExtResource( 10 )
 
 [node name="@Enemy@180" type="KinematicBody2D" parent="Enemies" instance=ExtResource( 52 )]
 pause_mode = 1
-position = Vector2( 712.567, 1233.59 )
+position = Vector2( 673.424, 1100.23 )
 z_index = 1
 collision_layer = 5
 script = ExtResource( 2 )
@@ -888,7 +864,7 @@ type = ExtResource( 8 )
 
 [node name="@Enemy@181" type="KinematicBody2D" parent="Enemies" instance=ExtResource( 52 )]
 pause_mode = 1
-position = Vector2( 799.239, 790.5 )
+position = Vector2( 729.766, 938.926 )
 z_index = 1
 collision_layer = 5
 script = ExtResource( 2 )
@@ -897,52 +873,43 @@ type = ExtResource( 13 )
 
 [node name="@Enemy@162" type="KinematicBody2D" parent="Enemies" instance=ExtResource( 52 )]
 pause_mode = 1
-position = Vector2( 750.435, -1414.92 )
+position = Vector2( 600.91, -1488.93 )
 z_index = 1
-collision_layer = 13
+collision_layer = 5
 script = ExtResource( 2 )
-aggressive = false
+aggressive = true
 type = ExtResource( 12 )
 
 [node name="@Enemy@163" type="KinematicBody2D" parent="Enemies" instance=ExtResource( 52 )]
 pause_mode = 1
-position = Vector2( 1844.3, -646.675 )
+position = Vector2( 1985.5, -529.717 )
 z_index = 1
-collision_layer = 13
+collision_layer = 5
 script = ExtResource( 2 )
-aggressive = false
+aggressive = true
 type = ExtResource( 15 )
 
 [node name="@Enemy@164" type="KinematicBody2D" parent="Enemies" instance=ExtResource( 52 )]
 pause_mode = 1
-position = Vector2( 1631.57, -1853.99 )
+position = Vector2( 1570.3, -1747.07 )
 z_index = 1
-collision_layer = 13
+collision_layer = 5
 script = ExtResource( 2 )
-aggressive = false
+aggressive = true
 type = ExtResource( 12 )
 
 [node name="@Enemy@165" type="KinematicBody2D" parent="Enemies" instance=ExtResource( 52 )]
 pause_mode = 1
-position = Vector2( 1444.33, -903.245 )
+position = Vector2( 1439.29, -924.739 )
 z_index = 1
-collision_layer = 13
+collision_layer = 5
 script = ExtResource( 2 )
-aggressive = false
-type = ExtResource( 12 )
-
-[node name="@Enemy@166" type="KinematicBody2D" parent="Enemies" instance=ExtResource( 52 )]
-pause_mode = 1
-position = Vector2( 711.424, -1782.58 )
-z_index = 1
-collision_layer = 13
-script = ExtResource( 2 )
-aggressive = false
+aggressive = true
 type = ExtResource( 12 )
 
 [node name="@Enemy@167" type="KinematicBody2D" parent="Enemies" instance=ExtResource( 52 )]
 pause_mode = 1
-position = Vector2( 673.424, 1101.08 )
+position = Vector2( 785.496, 1174.58 )
 z_index = 1
 collision_layer = 5
 script = ExtResource( 2 )
@@ -951,7 +918,7 @@ type = ExtResource( 8 )
 
 [node name="@Enemy@168" type="KinematicBody2D" parent="Enemies" instance=ExtResource( 52 )]
 pause_mode = 1
-position = Vector2( 45.5942, 1917.26 )
+position = Vector2( 36.0751, 1849.93 )
 z_index = 1
 collision_layer = 5
 script = ExtResource( 2 )
@@ -960,7 +927,7 @@ type = ExtResource( 8 )
 
 [node name="@Enemy@169" type="KinematicBody2D" parent="Enemies" instance=ExtResource( 52 )]
 pause_mode = 1
-position = Vector2( 545.53, 1521.22 )
+position = Vector2( 305.581, 1602.52 )
 z_index = 1
 collision_layer = 5
 script = ExtResource( 2 )
@@ -969,7 +936,7 @@ type = ExtResource( 10 )
 
 [node name="@Enemy@170" type="KinematicBody2D" parent="Enemies" instance=ExtResource( 52 )]
 pause_mode = 1
-position = Vector2( 1299.56, 1553.6 )
+position = Vector2( 1315.96, 1495.06 )
 z_index = 1
 collision_layer = 5
 script = ExtResource( 2 )
@@ -978,19 +945,107 @@ type = ExtResource( 10 )
 
 [node name="@Enemy@171" type="KinematicBody2D" parent="Enemies" instance=ExtResource( 52 )]
 pause_mode = 1
-position = Vector2( 1498.99, 233.424 )
+position = Vector2( 1476.75, -172.573 )
 z_index = 1
 collision_layer = 5
 script = ExtResource( 2 )
 aggressive = true
 type = ExtResource( 9 )
 
+[node name="@Enemy@168" type="KinematicBody2D" parent="Enemies" instance=ExtResource( 52 )]
+pause_mode = 1
+position = Vector2( 1347.85, -950.732 )
+z_index = 1
+collision_layer = 5
+script = ExtResource( 2 )
+aggressive = true
+type = ExtResource( 11 )
+
+[node name="@Enemy@170" type="KinematicBody2D" parent="Enemies" instance=ExtResource( 52 )]
+pause_mode = 1
+position = Vector2( 679.315, -599.816 )
+z_index = 1
+collision_layer = 5
+script = ExtResource( 2 )
+aggressive = true
+type = ExtResource( 12 )
+
+[node name="@Enemy@172" type="KinematicBody2D" parent="Enemies" instance=ExtResource( 52 )]
+pause_mode = 1
+position = Vector2( 1723.19, -1399.05 )
+z_index = 1
+collision_layer = 5
+script = ExtResource( 2 )
+aggressive = true
+type = ExtResource( 11 )
+
+[node name="@Enemy@173" type="KinematicBody2D" parent="Enemies" instance=ExtResource( 52 )]
+pause_mode = 1
+position = Vector2( 1867.24, -225.469 )
+z_index = 1
+collision_layer = 5
+script = ExtResource( 2 )
+aggressive = true
+type = ExtResource( 10 )
+
+[node name="@Enemy@174" type="KinematicBody2D" parent="Enemies" instance=ExtResource( 52 )]
+pause_mode = 1
+position = Vector2( 1657.66, 1546.27 )
+z_index = 1
+collision_layer = 5
+script = ExtResource( 2 )
+aggressive = true
+type = ExtResource( 13 )
+
+[node name="@Enemy@175" type="KinematicBody2D" parent="Enemies" instance=ExtResource( 52 )]
+pause_mode = 1
+position = Vector2( 1756.85, 806.5 )
+z_index = 1
+collision_layer = 5
+script = ExtResource( 2 )
+aggressive = true
+type = ExtResource( 9 )
+
+[node name="@Enemy@176" type="KinematicBody2D" parent="Enemies" instance=ExtResource( 52 )]
+pause_mode = 1
+position = Vector2( 721.909, 1767.6 )
+z_index = 1
+collision_layer = 5
+script = ExtResource( 2 )
+aggressive = true
+type = ExtResource( 8 )
+
+[node name="@Enemy@177" type="KinematicBody2D" parent="Enemies" instance=ExtResource( 52 )]
+pause_mode = 1
+position = Vector2( 300.59, 573.657 )
+z_index = 1
+collision_layer = 5
+script = ExtResource( 2 )
+aggressive = true
+type = ExtResource( 8 )
+
 [node name="WorldObejcts" type="Node2D" parent="."]
 
 [node name="Graveyard" type="Node2D" parent="WorldObejcts"]
 position = Vector2( 560, -80 )
 
-[node name="GraveyardRevive" type="Area2D" parent="WorldObejcts" instance=ExtResource( 3 )]
+[node name="Grave" type="KinematicBody2D" parent="WorldObejcts/Graveyard" instance=ExtResource( 27 )]
+position = Vector2( -80, -96 )
+collision_layer = 9
+script = ExtResource( 24 )
+text = "Had a falling out with RED."
+grave_owner = "CHARM"
+owner_color = Color( 0.254697, 0.0481171, 0.844406, 1 )
+
+[node name="@Grave@990" type="KinematicBody2D" parent="WorldObejcts/Graveyard" instance=ExtResource( 27 )]
+position = Vector2( -48, -96 )
+collision_layer = 9
+script = ExtResource( 24 )
+text = "Met their end at the hands of RED."
+grave_owner = "freee"
+owner_color = Color( 0.183068, 0.658599, 0.329769, 1 )
+
+[node name="GraveyardRevive" type="Area2D" parent="WorldObejcts" instance=ExtResource( 59 )]
 position = Vector2( 568, -240 )
 collision_layer = 0
 collision_mask = 2
@@ -1026,16 +1081,15 @@ contents_count = [ 1 ]
 loot_pool = [ [ ExtResource( 19 ), ExtResource( 30 ) ], [ ExtResource( 19 ), ExtResource( 30 ), ExtResource( 32 ), ExtResource( 34 ), ExtResource( 37 ), ExtResource( 36 ), ExtResource( 35 ), ExtResource( 41 ), ExtResource( 49 ), ExtResource( 49 ), ExtResource( 44 ), ExtResource( 39 ), ExtResource( 50 ) ], [ ExtResource( 32 ), ExtResource( 31 ), ExtResource( 34 ), ExtResource( 33 ), ExtResource( 42 ), ExtResource( 38 ), ExtResource( 43 ), ExtResource( 46 ), ExtResource( 40 ), ExtResource( 48 ), ExtResource( 47 ), ExtResource( 45 ) ] ]
 
 [node name="TreasureChest21" type="KinematicBody2D" parent="WorldObejcts/PermanentTreasureChests" instance=ExtResource( 20 )]
-visible = false
 position = Vector2( -192, -752 )
 collision_layer = 8
 collision_mask = 0
 script = ExtResource( 51 )
 large = true
 tier = 0
-enabled = false
-contents = [  ]
-contents_count = [  ]
+enabled = true
+contents = [ ExtResource( 19 ) ]
+contents_count = [ 1 ]
 loot_pool = [ [ ExtResource( 19 ), ExtResource( 30 ) ], [ ExtResource( 19 ), ExtResource( 30 ), ExtResource( 32 ), ExtResource( 34 ), ExtResource( 37 ), ExtResource( 36 ), ExtResource( 35 ), ExtResource( 41 ), ExtResource( 49 ), ExtResource( 49 ), ExtResource( 44 ), ExtResource( 39 ), ExtResource( 50 ) ], [ ExtResource( 32 ), ExtResource( 31 ), ExtResource( 34 ), ExtResource( 33 ), ExtResource( 42 ), ExtResource( 38 ), ExtResource( 43 ), ExtResource( 46 ), ExtResource( 40 ), ExtResource( 48 ), ExtResource( 47 ), ExtResource( 45 ) ] ]
 
 [node name="TreasureChest28" type="KinematicBody2D" parent="WorldObejcts/PermanentTreasureChests" instance=ExtResource( 20 )]
@@ -1183,16 +1237,15 @@ contents_count = [ 1 ]
 loot_pool = [ [ ExtResource( 19 ), ExtResource( 30 ) ], [ ExtResource( 19 ), ExtResource( 30 ), ExtResource( 32 ), ExtResource( 34 ), ExtResource( 37 ), ExtResource( 36 ), ExtResource( 35 ), ExtResource( 41 ), ExtResource( 49 ), ExtResource( 49 ), ExtResource( 44 ), ExtResource( 39 ), ExtResource( 50 ) ], [ ExtResource( 32 ), ExtResource( 31 ), ExtResource( 34 ), ExtResource( 33 ), ExtResource( 42 ), ExtResource( 38 ), ExtResource( 43 ), ExtResource( 46 ), ExtResource( 40 ), ExtResource( 48 ), ExtResource( 47 ), ExtResource( 45 ) ] ]
 
 [node name="TreasureChest17" type="KinematicBody2D" parent="WorldObejcts/PermanentTreasureChests" instance=ExtResource( 20 )]
-visible = false
 position = Vector2( 968, 1160 )
 collision_layer = 8
 collision_mask = 0
 script = ExtResource( 51 )
 large = true
 tier = 1
-enabled = false
-contents = [  ]
-contents_count = [  ]
+enabled = true
+contents = [ ExtResource( 41 ) ]
+contents_count = [ 1 ]
 loot_pool = [ [ ExtResource( 19 ), ExtResource( 30 ) ], [ ExtResource( 19 ), ExtResource( 30 ), ExtResource( 32 ), ExtResource( 34 ), ExtResource( 37 ), ExtResource( 36 ), ExtResource( 35 ), ExtResource( 41 ), ExtResource( 49 ), ExtResource( 49 ), ExtResource( 44 ), ExtResource( 39 ), ExtResource( 50 ) ], [ ExtResource( 32 ), ExtResource( 31 ), ExtResource( 34 ), ExtResource( 33 ), ExtResource( 42 ), ExtResource( 38 ), ExtResource( 43 ), ExtResource( 46 ), ExtResource( 40 ), ExtResource( 48 ), ExtResource( 47 ), ExtResource( 45 ) ] ]
 
 [node name="TreasureChest18" type="KinematicBody2D" parent="WorldObejcts/PermanentTreasureChests" instance=ExtResource( 20 )]
@@ -1256,15 +1309,16 @@ contents_count = [ 1 ]
 loot_pool = [ [ ExtResource( 19 ), ExtResource( 30 ) ], [ ExtResource( 19 ), ExtResource( 30 ), ExtResource( 32 ), ExtResource( 34 ), ExtResource( 37 ), ExtResource( 36 ), ExtResource( 35 ), ExtResource( 41 ), ExtResource( 49 ), ExtResource( 49 ), ExtResource( 44 ), ExtResource( 39 ), ExtResource( 50 ) ], [ ExtResource( 32 ), ExtResource( 31 ), ExtResource( 34 ), ExtResource( 33 ), ExtResource( 42 ), ExtResource( 38 ), ExtResource( 43 ), ExtResource( 46 ), ExtResource( 40 ), ExtResource( 48 ), ExtResource( 47 ), ExtResource( 45 ) ] ]
 
 [node name="TreasureChest4" type="KinematicBody2D" parent="WorldObejcts/PermanentTreasureChests" instance=ExtResource( 20 )]
+visible = false
 position = Vector2( 672, -1808 )
 collision_layer = 8
 collision_mask = 0
 script = ExtResource( 51 )
 large = true
 tier = 1
-enabled = true
-contents = [ ExtResource( 19 ) ]
-contents_count = [ 1 ]
+enabled = false
+contents = [  ]
+contents_count = [  ]
 loot_pool = [ [ ExtResource( 19 ), ExtResource( 30 ) ], [ ExtResource( 19 ), ExtResource( 30 ), ExtResource( 32 ), ExtResource( 34 ), ExtResource( 37 ), ExtResource( 36 ), ExtResource( 35 ), ExtResource( 41 ), ExtResource( 49 ), ExtResource( 49 ), ExtResource( 44 ), ExtResource( 39 ), ExtResource( 50 ) ], [ ExtResource( 32 ), ExtResource( 31 ), ExtResource( 34 ), ExtResource( 33 ), ExtResource( 42 ), ExtResource( 38 ), ExtResource( 43 ), ExtResource( 46 ), ExtResource( 40 ), ExtResource( 48 ), ExtResource( 47 ), ExtResource( 45 ) ] ]
 
 [node name="TreasureChest25" type="KinematicBody2D" parent="WorldObejcts/PermanentTreasureChests" instance=ExtResource( 20 )]
@@ -1438,18 +1492,6 @@ contents = [ ExtResource( 19 ) ]
 contents_count = [ 1 ]
 loot_pool = [ [ ExtResource( 19 ), ExtResource( 30 ) ], [ ExtResource( 19 ), ExtResource( 30 ), ExtResource( 32 ), ExtResource( 34 ), ExtResource( 37 ), ExtResource( 36 ), ExtResource( 35 ), ExtResource( 41 ), ExtResource( 49 ), ExtResource( 49 ), ExtResource( 44 ), ExtResource( 39 ), ExtResource( 50 ) ], [ ExtResource( 32 ), ExtResource( 31 ), ExtResource( 34 ), ExtResource( 33 ), ExtResource( 42 ), ExtResource( 38 ), ExtResource( 43 ), ExtResource( 46 ), ExtResource( 40 ), ExtResource( 48 ), ExtResource( 47 ), ExtResource( 45 ) ] ]
 
-[node name="@TreasureChest@832" type="KinematicBody2D" parent="PlayerCreatedObjects" instance=ExtResource( 20 )]
-position = Vector2( 661.562, -1867.49 )
-collision_layer = 8
-collision_mask = 0
-script = ExtResource( 51 )
-large = false
-tier = 0
-enabled = false
-contents = [ ExtResource( 19 ) ]
-contents_count = [ 1 ]
-loot_pool = [ [ ExtResource( 19 ), ExtResource( 30 ) ], [ ExtResource( 19 ), ExtResource( 30 ), ExtResource( 32 ), ExtResource( 34 ), ExtResource( 37 ), ExtResource( 36 ), ExtResource( 35 ), ExtResource( 41 ), ExtResource( 49 ), ExtResource( 49 ), ExtResource( 44 ), ExtResource( 39 ), ExtResource( 50 ) ], [ ExtResource( 32 ), ExtResource( 31 ), ExtResource( 34 ), ExtResource( 33 ), ExtResource( 42 ), ExtResource( 38 ), ExtResource( 43 ), ExtResource( 46 ), ExtResource( 40 ), ExtResource( 48 ), ExtResource( 47 ), ExtResource( 45 ) ] ]
-
 [node name="@TreasureChest@1113" type="KinematicBody2D" parent="PlayerCreatedObjects" instance=ExtResource( 20 )]
 position = Vector2( 1699.13, -1902.5 )
 collision_layer = 8
@@ -1471,6 +1513,18 @@ large = false
 tier = 0
 enabled = false
 contents = [ ExtResource( 19 ) ]
+contents_count = [ 1 ]
+loot_pool = [ [ ExtResource( 19 ), ExtResource( 30 ) ], [ ExtResource( 19 ), ExtResource( 30 ), ExtResource( 32 ), ExtResource( 34 ), ExtResource( 37 ), ExtResource( 36 ), ExtResource( 35 ), ExtResource( 41 ), ExtResource( 49 ), ExtResource( 49 ), ExtResource( 44 ), ExtResource( 39 ), ExtResource( 50 ) ], [ ExtResource( 32 ), ExtResource( 31 ), ExtResource( 34 ), ExtResource( 33 ), ExtResource( 42 ), ExtResource( 38 ), ExtResource( 43 ), ExtResource( 46 ), ExtResource( 40 ), ExtResource( 48 ), ExtResource( 47 ), ExtResource( 45 ) ] ]
+
+[node name="@TreasureChest@900" type="KinematicBody2D" parent="PlayerCreatedObjects" instance=ExtResource( 20 )]
+position = Vector2( 1632.08, -1915.37 )
+collision_layer = 8
+collision_mask = 0
+script = ExtResource( 51 )
+large = false
+tier = 0
+enabled = false
+contents = [ ExtResource( 3 ) ]
 contents_count = [ 1 ]
 loot_pool = [ [ ExtResource( 19 ), ExtResource( 30 ) ], [ ExtResource( 19 ), ExtResource( 30 ), ExtResource( 32 ), ExtResource( 34 ), ExtResource( 37 ), ExtResource( 36 ), ExtResource( 35 ), ExtResource( 41 ), ExtResource( 49 ), ExtResource( 49 ), ExtResource( 44 ), ExtResource( 39 ), ExtResource( 50 ) ], [ ExtResource( 32 ), ExtResource( 31 ), ExtResource( 34 ), ExtResource( 33 ), ExtResource( 42 ), ExtResource( 38 ), ExtResource( 43 ), ExtResource( 46 ), ExtResource( 40 ), ExtResource( 48 ), ExtResource( 47 ), ExtResource( 45 ) ] ]
 
