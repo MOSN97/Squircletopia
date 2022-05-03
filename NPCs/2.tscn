@@ -22,16 +22,16 @@
 radius = 6.5
 
 [sub_resource type="CircleShape2D" id=4]
-radius = 60.0
+radius = 4.0
 
 [sub_resource type="CircleShape2D" id=5]
 radius = 60.0
 
-[node name="Squircle" type="KinematicBody2D"]
+[node name="@Squircle@148" type="KinematicBody2D"]
 pause_mode = 1
-position = Vector2( -25.5762, 70.709 )
+position = Vector2( -28.4184, 189.094 )
 z_index = 1
-collision_layer = 10
+collision_layer = 9
 script = ExtResource( 1 )
 character_name = "Sejepelle2"
 alive = true
@@ -62,8 +62,9 @@ scale = Vector2( 0.125, 0.125 )
 texture = ExtResource( 11 )
 
 [node name="FaceSprite" type="Sprite" parent="."]
+visible = false
 modulate = Color( 0.843198, 0.692849, 0.841531, 1 )
-position = Vector2( 1, 0 )
+position = Vector2( 0, -0.5 )
 scale = Vector2( 0.125, 0.125 )
 texture = ExtResource( 12 )
 
