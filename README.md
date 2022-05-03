@@ -1,8 +1,8 @@
 # Squircletopia! - A Thesis Game
 
-Play the game here: https://mosn97.github.io/Squircletopia/
+**Play the game here: https://mosn97.github.io/Squircletopia/**
 
-**NOTE: When you want to stop playing make sure to open up the pause menu (Esc) and click "Save and Quit". This will save your character as an NPC and the state of the game world.**
+NOTE: When you want to stop playing make sure to open up the pause menu (Esc) and click "Save and Quit". This will save your character as an NPC and the state of the game world.
 
 The game automactically takes you to a survey after you save and quit, but if something goes wrong it can be found here: https://forms.gle/6frv5u6uTv3RKwRt7
 
