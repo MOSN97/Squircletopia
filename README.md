@@ -10,4 +10,12 @@ The game automactically takes you to a survey after you save and quit, but if so
 
 - Squircletopia is a topdown RPG with turn-based combat where the village of Squircles must settle their differences with four hostile factions. Or destory them. Whatever works.
 - Controls: WASD or Arrow Keys to move; Shift to sprint. Click with the mouse or use Spacebar or Enter to interact with nearby objects.
-- This game uses several free-to-use assets. A credit list will be added here in the future.
+- This game uses several free-to-use assets. A credit list can be found below.
+
+## Credits
+
+- Game by MOSN
+- Music and SFX by FreeSFX.co.uk
+- Tileset by ArMM1998 (OpenGameArt.org)
+- Various battle SFX by Bart K., tarfmagougou, p0ss and Inspector J (OpenGameArt.org)
+- And thanks to the beta tester team!
