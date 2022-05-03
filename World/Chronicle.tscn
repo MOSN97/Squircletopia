@@ -1,17 +1,16 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Scripts/Chronicle.gd" type="Script" id=1]
-[ext_resource path="res://Misc/Font45.tres" type="DynamicFont" id=2]
-[ext_resource path="res://Misc/Font30.tres" type="DynamicFont" id=3]
-[ext_resource path="res://Sprites/UI/Cross.png" type="Texture" id=4]
+[ext_resource path="res://Misc/Font45.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Scripts/Chronicle.gd" type="Script" id=2]
+[ext_resource path="res://Sprites/UI/Cross.png" type="Texture" id=3]
+[ext_resource path="res://Misc/Font30.tres" type="DynamicFont" id=5]
 
 [node name="Chronicle" type="Panel"]
 margin_left = -300.0
 margin_top = -300.0
 margin_right = 300.0
 margin_bottom = 300.0
-script = ExtResource( 1 )
-entries = [ "3/5/2022 - [color=#2f0f6f]Test Joe[/color] has moved into Squircletown!", "3/5/2022 - [color=#64ea9f]Test 2[/color] has moved into Squircletown!" ]
+script = ExtResource( 2 )
 
 [node name="Timeline" type="ScrollContainer" parent="."]
 anchor_right = 1.0
@@ -47,7 +46,7 @@ margin_bottom = -550.0
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 3
 custom_constants/shadow_offset_y = 3
-custom_fonts/font = ExtResource( 2 )
+custom_fonts/font = ExtResource( 1 )
 text = "The Chronicle"
 align = 1
 valign = 1
@@ -70,7 +69,7 @@ rect_scale = Vector2( 0.5, 0.5 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 3
 custom_constants/shadow_offset_y = 3
-custom_fonts/font = ExtResource( 2 )
+custom_fonts/font = ExtResource( 1 )
 text = "Name"
 align = 1
 valign = 1
@@ -85,7 +84,7 @@ rect_scale = Vector2( 0.5, 0.5 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 3
 custom_constants/shadow_offset_y = 3
-custom_fonts/font = ExtResource( 2 )
+custom_fonts/font = ExtResource( 1 )
 text = "Level"
 align = 1
 valign = 1
@@ -101,7 +100,7 @@ rect_scale = Vector2( 0.5, 0.5 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 3
 custom_constants/shadow_offset_y = 3
-custom_fonts/font = ExtResource( 2 )
+custom_fonts/font = ExtResource( 1 )
 text = "Chips"
 align = 1
 valign = 1
@@ -117,7 +116,7 @@ rect_scale = Vector2( 0.5, 0.5 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 3
 custom_constants/shadow_offset_y = 3
-custom_fonts/font = ExtResource( 2 )
+custom_fonts/font = ExtResource( 1 )
 text = "Morality"
 align = 1
 valign = 1
@@ -137,7 +136,7 @@ margin_bottom = -3.0
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 2
 custom_constants/shadow_offset_y = 2
-custom_fonts/font = ExtResource( 3 )
+custom_fonts/font = ExtResource( 5 )
 text = "Timeline"
 align = 1
 valign = 1
@@ -157,7 +156,7 @@ margin_bottom = -3.0
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 2
 custom_constants/shadow_offset_y = 2
-custom_fonts/font = ExtResource( 3 )
+custom_fonts/font = ExtResource( 5 )
 text = "Player List"
 align = 1
 valign = 1
@@ -180,7 +179,7 @@ margin_left = 5.0
 margin_top = -5.0
 margin_right = 5.0
 margin_bottom = 9.0
-custom_fonts/font = ExtResource( 2 )
+custom_fonts/font = ExtResource( 1 )
 text = "X"
 
 [node name="TextureRect" type="TextureRect" parent="CloseButton"]
@@ -189,7 +188,7 @@ anchor_bottom = 1.0
 margin_right = 10.0
 margin_bottom = 10.0
 rect_scale = Vector2( 0.75, 0.75 )
-texture = ExtResource( 4 )
+texture = ExtResource( 3 )
 stretch_mode = 4
 __meta__ = {
 "_edit_use_anchors_": false
