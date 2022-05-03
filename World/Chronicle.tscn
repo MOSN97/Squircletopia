@@ -11,7 +11,7 @@ margin_top = -300.0
 margin_right = 300.0
 margin_bottom = 300.0
 script = ExtResource( 1 )
-entries = [ "3/5/2022 - [color=#3ce320]MOSN[/color] has moved into Squircletown!", "3/5/2022 - [color=#e267c0]Sejepelle2[/color] has moved into Squircletown!", "3/5/2022 - [color=#e267c0]Sejepelle2[/color] has exterminated the Spooks! - Brutal, but Squircletopia is safer!", "3/5/2022 - [color=#e267c0]Sejepelle2[/color] has slain fellow squircle [color=#3ce320]MOSN[/color]!! - A dark day in Squircletopia...", "3/5/2022 - [color=#e267c0]Sejepelle2[/color] has defeated [color=#e18200]Rat With Nuke[/color]!!! - What a feat!", "3/5/2022 - [color=#e267c0]Sejepelle2[/color] has exterminated the Armed Rats! - Incredible! ...But was there no other way?" ]
+entries = [ "3/5/2022 - [color=#3ce320]MOSN[/color] has moved into Squircletown!", "3/5/2022 - [color=#fa00ff]Bongoballademager[/color] has moved into Squircletown!", "3/5/2022 - [color=#e267c0]Sejepelle2[/color] has moved into Squircletown!", "3/5/2022 - [color=#e267c0]Sejepelle2[/color] has exterminated the Spooks! - Brutal, but Squircletopia is safer!", "3/5/2022 - [color=#e267c0]Sejepelle2[/color] has slain fellow squircle [color=#3ce320]MOSN[/color]!! - A dark day in Squircletopia...", "3/5/2022 - [color=#e267c0]Sejepelle2[/color] has defeated [color=#e18200]Rat With Nuke[/color]!!! - What a feat!", "3/5/2022 - [color=#e267c0]Sejepelle2[/color] has exterminated the Armed Rats! - Incredible! ...But was there no other way?" ]
 
 [node name="Timeline" type="ScrollContainer" parent="."]
 anchor_right = 1.0
