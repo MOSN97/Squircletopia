@@ -18,4 +18,4 @@ The game automactically takes you to a survey after you save and quit, but if so
 - Music and SFX by FreeSFX.co.uk
 - Tileset by ArMM1998 (OpenGameArt.org)
 - Various battle SFX by Bart K., tarfmagougou, p0ss and Inspector J (OpenGameArt.org)
-- And thanks to the beta tester team!
+- And thanks to the various beta testers!
