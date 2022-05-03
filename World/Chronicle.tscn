@@ -11,7 +11,7 @@ margin_top = -300.0
 margin_right = 300.0
 margin_bottom = 300.0
 script = ExtResource( 1 )
-entries = [ "3/5/2022 - [color=#3ce320]MOSN[/color] has moved into Squircletown!" ]
+entries = [ "3/5/2022 - [color=#3ce320]MOSN[/color] has moved into Squircletown!", "3/5/2022 - [color=#fa00ff]Bongoballademager[/color] has moved into Squircletown!", "3/5/2022 - [color=#fa00ff]Bongoballademager[/color] has made peace with the Spooks! - How noble!", "3/5/2022 - [color=#fa00ff]Bongoballademager[/color] has broken the peace with the Spooks! - A dark day in Squircletopia...", "3/5/2022 - [color=#fa00ff]Bongoballademager[/color] has made peace with the Spooks! - You've done good kid.", "3/5/2022 - [color=#fa00ff]Bongoballademager[/color] has made peace with the Armed Rats! - You've done good kid.", "3/5/2022 - [color=#fa00ff]Bongoballademager[/color] has broken the peace with the Armed Rats! - How- how could they?", "3/5/2022 - [color=#fa00ff]Bongoballademager[/color] has calmed down [color=#e18200]Rat With Nuke[/color]!!! - A battle to remember!", "3/5/2022 - [color=#fa00ff]Bongoballademager[/color] has made peace with the Armed Rats! - How noble!" ]
 
 [node name="Timeline" type="ScrollContainer" parent="."]
 anchor_right = 1.0
@@ -19,6 +19,7 @@ anchor_bottom = 1.0
 margin_left = 10.0
 margin_top = 100.0
 margin_right = -2.0
+scroll_vertical = 196
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Timeline"]
 margin_right = 588.0
