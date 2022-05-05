@@ -16,16 +16,16 @@
 radius = 6.5
 
 [sub_resource type="CircleShape2D" id=4]
-radius = 60.0
+radius = 4.0
 
 [sub_resource type="CircleShape2D" id=5]
 radius = 60.0
 
-[node name="Squircle" type="KinematicBody2D"]
+[node name="@Squircle@167" type="KinematicBody2D"]
 pause_mode = 1
-position = Vector2( 1074.7, -681.067 )
+position = Vector2( 940.013, -280.489 )
 z_index = 1
-collision_layer = 10
+collision_layer = 9
 script = ExtResource( 1 )
 character_name = "Shostakovich"
 alive = true
@@ -56,8 +56,9 @@ scale = Vector2( 0.125, 0.125 )
 texture = ExtResource( 5 )
 
 [node name="FaceSprite" type="Sprite" parent="."]
+visible = false
 modulate = Color( 0.39573, 0.330085, 0.500937, 1 )
-position = Vector2( 0, 0.5 )
+position = Vector2( 0, -0.5 )
 scale = Vector2( 0.125, 0.125 )
 texture = ExtResource( 6 )
 
