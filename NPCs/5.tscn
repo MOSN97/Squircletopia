@@ -32,9 +32,8 @@ radius = 60.0
 
 [node name="@Squircle@161" type="KinematicBody2D"]
 pause_mode = 1
-position = Vector2( -464.591, -329.495 )
+position = Vector2( -90.4588, -329.052 )
 z_index = 1
-collision_layer = 9
 script = ExtResource( 1 )
 character_name = "squiggly squircle"
 alive = true
@@ -42,11 +41,11 @@ guts = 6
 wisdom = 12
 charm = 6
 max_health = 25
-health = 25
+health = 16
 level = 7
 xp = 46.0
-morality = -19.75
-inclination = [ 0, 28, 0 ]
+morality = -20.25
+inclination = [ 1, 30, 0 ]
 abilities = [ "ATTACK" ]
 spells = [ "FIREBALL", "CHILLBOLT", "HEAL", "EARTHQUAKE", "LIGHTNING" ]
 topics = [ "SMALL TALK", "JOKE" ]
@@ -57,7 +56,7 @@ hat = ExtResource( 9 )
 weapon = null
 greeting = "Magic!"
 recruit_condition = "WISDOM"
-frenzy = false
+frenzy = true
 
 [node name="BodySprite" type="Sprite" parent="."]
 modulate = Color( 0, 1, 0, 1 )
@@ -74,6 +73,7 @@ texture = ExtResource( 15 )
 [node name="HatSprite" type="Sprite" parent="."]
 scale = Vector2( 0.15, 0.15 )
 texture = ExtResource( 16 )
+flip_h = true
 
 [node name="Shadow" type="Sprite" parent="."]
 position = Vector2( 0, 6 )
@@ -86,6 +86,7 @@ visible = false
 shape = SubResource( 3 )
 
 [node name="Control" type="Node2D" parent="."]
+modulate = Color( 1, 0.1, 0.1, 1 )
 position = Vector2( 0, -10 )
 scale = Vector2( 0.15, 0.15 )
 z_index = 1
@@ -141,7 +142,6 @@ shape = SubResource( 4 )
 visible = false
 collision_layer = 0
 collision_mask = 2
-monitoring = false
 monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerScanner"]
