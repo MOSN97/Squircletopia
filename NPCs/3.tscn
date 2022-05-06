@@ -19,17 +19,17 @@ radius = 60.0
 
 [node name="@Squircle@149" type="KinematicBody2D"]
 pause_mode = 1
-position = Vector2( -268.409, -646.576 )
+position = Vector2( 38.3962, -713.637 )
 z_index = 1
-collision_layer = 9
+collision_layer = 8
 script = ExtResource( 1 )
 character_name = "soon"
-alive = true
+alive = false
 guts = 3
 wisdom = 3
 charm = 4
 max_health = 12
-health = 12
+health = -12
 level = 2
 xp = 13.0
 morality = -0.875
@@ -47,17 +47,21 @@ recruit_condition = "MORALITY"
 frenzy = false
 
 [node name="BodySprite" type="Sprite" parent="."]
-modulate = Color( 0.987835, 0.746996, 0.0742763, 1 )
+modulate = Color( 0.987835, 0.746996, 0.0742763, 0.5 )
+position = Vector2( 0, -1.13 )
 scale = Vector2( 0.125, 0.125 )
 texture = ExtResource( 2 )
 
 [node name="FaceSprite" type="Sprite" parent="."]
+visible = false
 modulate = Color( 0.131917, 0.880619, 0.971026, 1 )
-position = Vector2( -1, 0 )
+position = Vector2( 0, -1.63 )
 scale = Vector2( 0.125, 0.125 )
 texture = ExtResource( 3 )
 
 [node name="HatSprite" type="Sprite" parent="."]
+modulate = Color( 1, 1, 1, 0.5 )
+position = Vector2( 0, -1.13 )
 scale = Vector2( 0.15, 0.15 )
 flip_h = true
 
