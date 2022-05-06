@@ -1,4 +1,4 @@
-[gd_scene load_steps=67 format=2]
+[gd_scene load_steps=65 format=2]
 
 [ext_resource path="res://Scripts/GameWorld.gd" type="Script" id=1]
 [ext_resource path="res://Enemies/RatWithBat.tres" type="Resource" id=2]
@@ -35,8 +35,8 @@
 [ext_resource path="res://Scripts/Oneshots/PressurePlate.gd" type="Script" id=33]
 [ext_resource path="res://Scenes/GameObjects/TreasureChest.tscn" type="PackedScene" id=34]
 [ext_resource path="res://Scripts/Oneshots/TreasureChest.gd" type="Script" id=35]
-[ext_resource path="res://Items/Consumables/BagOfChips.tres" type="Resource" id=36]
-[ext_resource path="res://Items/Consumables/Cookie.tres" type="Resource" id=37]
+[ext_resource path="res://Items/Consumables/Cookie.tres" type="Resource" id=36]
+[ext_resource path="res://Items/Consumables/BagOfChips.tres" type="Resource" id=37]
 [ext_resource path="res://Items/Consumables/Spaghetti.tres" type="Resource" id=38]
 [ext_resource path="res://Items/Consumables/Signpost.tres" type="Resource" id=39]
 [ext_resource path="res://Items/Hats/HornedHelmet.tres" type="Resource" id=40]
@@ -60,8 +60,6 @@
 [ext_resource path="res://Scenes/GameObjects/Signpost.tscn" type="PackedScene" id=58]
 [ext_resource path="res://Scripts/Oneshots/Signpost.gd" type="Script" id=59]
 [ext_resource path="res://Scenes/Tiles.tscn" type="PackedScene" id=60]
-[ext_resource path="res://Items/Hats/Crown.tres" type="Resource" id=61]
-[ext_resource path="res://Items/Hats/TopHat.tres" type="Resource" id=62]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 6.5
@@ -78,7 +76,7 @@ extents = Vector2( 700, 650 )
 [node name="GameWorld" type="Node2D"]
 script = ExtResource( 1 )
 factions = [ "Armed Rats", "Spooks", "Flightless Birds", "Geology Gang" ]
-faction_power = [ 0.0, 1.0, 40, 40 ]
+faction_power = [ 0.0, 0.0, 40, 40 ]
 faction_aggression = [ 100.0, 100.0, 75, 75 ]
 faction_creep_types = [ [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ) ], [ ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ) ], [  ], [  ] ]
 faction_peace = [ 0, 0, 0, 0 ]
@@ -261,7 +259,7 @@ texture = ExtResource( 14 )
 
 [node name="FaceSprite" type="Sprite" parent="DefaultNPCs/Healer"]
 modulate = Color( 0.0392157, 0.254902, 0.784314, 1 )
-position = Vector2( 0, 0.5 )
+position = Vector2( 1, 0.5 )
 scale = Vector2( 0.125, 0.125 )
 texture = ExtResource( 15 )
 
@@ -408,182 +406,19 @@ script = ExtResource( 21 )
 
 [node name="Enemies" type="Node2D" parent="."]
 
-[node name="@Enemy@1477" type="KinematicBody2D" parent="Enemies" instance=ExtResource( 28 )]
+[node name="@Enemy@560" type="KinematicBody2D" parent="Enemies" instance=ExtResource( 28 )]
 pause_mode = 1
-position = Vector2( 964.258, 822.576 )
+position = Vector2( 218.742, -1821.57 )
 z_index = 1
 collision_layer = 4
 script = ExtResource( 29 )
 aggressive = true
-type = ExtResource( 8 )
-
-[node name="@Enemy@185" type="KinematicBody2D" parent="Enemies" instance=ExtResource( 28 )]
-pause_mode = 1
-position = Vector2( 401.228, 578.943 )
-z_index = 1
-collision_layer = 4
-script = ExtResource( 29 )
-aggressive = true
-type = ExtResource( 9 )
-
-[node name="@Enemy@189" type="KinematicBody2D" parent="Enemies" instance=ExtResource( 28 )]
-pause_mode = 1
-position = Vector2( 308.822, -101.315 )
-z_index = 1
-collision_layer = 4
-script = ExtResource( 29 )
-aggressive = true
-type = ExtResource( 8 )
-
-[node name="@Enemy@206" type="KinematicBody2D" parent="Enemies" instance=ExtResource( 28 )]
-pause_mode = 1
-position = Vector2( 714.675, 56.9045 )
-z_index = 1
-collision_layer = 4
-script = ExtResource( 29 )
-aggressive = true
-type = ExtResource( 8 )
-
-[node name="Enemy" type="KinematicBody2D" parent="Enemies" instance=ExtResource( 28 )]
-pause_mode = 1
-position = Vector2( 1134.58, 1625.5 )
-z_index = 1
-collision_layer = 4
-script = ExtResource( 29 )
-aggressive = true
-type = ExtResource( 8 )
-
-[node name="@Enemy@232" type="KinematicBody2D" parent="Enemies" instance=ExtResource( 28 )]
-pause_mode = 1
-position = Vector2( 1966.42, 1398.58 )
-z_index = 1
-collision_layer = 4
-script = ExtResource( 29 )
-aggressive = true
-type = ExtResource( 8 )
-
-[node name="@Enemy@234" type="KinematicBody2D" parent="Enemies" instance=ExtResource( 28 )]
-pause_mode = 1
-position = Vector2( 481.447, 1670.58 )
-z_index = 1
-collision_layer = 4
-script = ExtResource( 29 )
-aggressive = true
-type = ExtResource( 9 )
-
-[node name="@Enemy@289" type="KinematicBody2D" parent="Enemies" instance=ExtResource( 28 )]
-pause_mode = 1
-position = Vector2( 1091.88, 1001.73 )
-z_index = 1
-collision_layer = 4
-script = ExtResource( 29 )
-aggressive = true
-type = ExtResource( 8 )
-
-[node name="@Enemy@175" type="KinematicBody2D" parent="Enemies" instance=ExtResource( 28 )]
-pause_mode = 1
-position = Vector2( 1739.73, 1745.41 )
-z_index = 1
-collision_layer = 4
-script = ExtResource( 29 )
-aggressive = true
-type = ExtResource( 9 )
-
-[node name="@Enemy@178" type="KinematicBody2D" parent="Enemies" instance=ExtResource( 28 )]
-pause_mode = 1
-position = Vector2( 389.101, 652.26 )
-z_index = 1
-collision_layer = 4
-script = ExtResource( 29 )
-aggressive = true
-type = ExtResource( 9 )
-
-[node name="@Enemy@184" type="KinematicBody2D" parent="Enemies" instance=ExtResource( 28 )]
-pause_mode = 1
-position = Vector2( 376.466, 609.409 )
-z_index = 1
-collision_layer = 4
-script = ExtResource( 29 )
-aggressive = true
-type = ExtResource( 7 )
-
-[node name="@Enemy@651" type="KinematicBody2D" parent="Enemies" instance=ExtResource( 28 )]
-pause_mode = 1
-position = Vector2( 1681.58, 1290.73 )
-z_index = 1
-collision_layer = 4
-script = ExtResource( 29 )
-aggressive = true
-type = ExtResource( 8 )
+type = ExtResource( 2 )
 
 [node name="WorldObejcts" type="Node2D" parent="."]
 
 [node name="Graveyard" type="Node2D" parent="WorldObejcts"]
 position = Vector2( 560, -80 )
-
-[node name="@Grave@633" type="KinematicBody2D" parent="WorldObejcts/Graveyard" instance=ExtResource( 30 )]
-position = Vector2( -48, 32 )
-collision_layer = 9
-script = ExtResource( 31 )
-text = "\"I'll be back.\""
-grave_owner = "squiggly squircle"
-owner_color = Color( 0, 1, 0, 1 )
-
-[node name="@Grave@645" type="KinematicBody2D" parent="WorldObejcts/Graveyard" instance=ExtResource( 30 )]
-position = Vector2( -16, 32 )
-collision_layer = 9
-script = ExtResource( 31 )
-text = "A squircle among squircles."
-grave_owner = "Sejepelle2"
-owner_color = Color( 0.887122, 0.402912, 0.754142, 1 )
-
-[node name="@Grave@971" type="KinematicBody2D" parent="WorldObejcts/Graveyard" instance=ExtResource( 30 )]
-position = Vector2( 32, 32 )
-collision_layer = 9
-script = ExtResource( 31 )
-text = "Had a falling out with Spooky Skull."
-grave_owner = "squiggly squircle"
-owner_color = Color( 0, 1, 0, 1 )
-
-[node name="@Grave@1247" type="KinematicBody2D" parent="WorldObejcts/Graveyard" instance=ExtResource( 30 )]
-position = Vector2( 64, 32 )
-collision_layer = 9
-script = ExtResource( 31 )
-text = "Had a falling out with Spooky Pumpkin."
-grave_owner = "squiggly squircle"
-owner_color = Color( 0, 1, 0, 1 )
-
-[node name="@Grave@1475" type="KinematicBody2D" parent="WorldObejcts/Graveyard" instance=ExtResource( 30 )]
-position = Vector2( 96, 32 )
-collision_layer = 9
-script = ExtResource( 31 )
-text = "Pwned by Spooky Pumpkin."
-grave_owner = "squiggly squircle"
-owner_color = Color( 0, 1, 0, 1 )
-
-[node name="@Grave@230" type="KinematicBody2D" parent="WorldObejcts/Graveyard" instance=ExtResource( 30 )]
-position = Vector2( -80, -96 )
-collision_layer = 9
-script = ExtResource( 31 )
-text = "Slain in glorious combat by the mighty Spooky Bat."
-grave_owner = "Conrad wellington"
-owner_color = Color( 0.897739, 0.755842, 0.0413112, 1 )
-
-[node name="Grave" type="KinematicBody2D" parent="WorldObejcts/Graveyard" instance=ExtResource( 30 )]
-position = Vector2( -48, -96 )
-collision_layer = 9
-script = ExtResource( 31 )
-text = "Slain in glorious combat by the mighty Rat With Gun."
-grave_owner = "Conrad wellington"
-owner_color = Color( 0.897739, 0.755842, 0.0413112, 1 )
-
-[node name="@Grave@275" type="KinematicBody2D" parent="WorldObejcts/Graveyard" instance=ExtResource( 30 )]
-position = Vector2( -16, -96 )
-collision_layer = 9
-script = ExtResource( 31 )
-text = "Defeated by their arch-nemesis Rat With Gun."
-grave_owner = "Conrad wellington"
-owner_color = Color( 0.897739, 0.755842, 0.0413112, 1 )
 
 [node name="@Grave@282" type="KinematicBody2D" parent="WorldObejcts/Graveyard" instance=ExtResource( 30 )]
 position = Vector2( 32, -96 )
@@ -665,6 +500,70 @@ text = "Tried their best... And failed."
 grave_owner = "squiggly squircle"
 owner_color = Color( 0, 1, 0, 1 )
 
+[node name="@Grave@443" type="KinematicBody2D" parent="WorldObejcts/Graveyard" instance=ExtResource( 30 )]
+position = Vector2( -48, 32 )
+collision_layer = 9
+script = ExtResource( 31 )
+text = "Had a falling out with Rat With Nuke."
+grave_owner = "flunk trunk"
+owner_color = Color( 0.758263, 0.644417, 0.360298, 1 )
+
+[node name="@Grave@445" type="KinematicBody2D" parent="WorldObejcts/Graveyard" instance=ExtResource( 30 )]
+position = Vector2( -16, 32 )
+collision_layer = 9
+script = ExtResource( 31 )
+text = "Met their end at the hands of Rat With Nuke."
+grave_owner = "HULK"
+owner_color = Color( 0.0758812, 0.604057, 0.00238988, 1 )
+
+[node name="@Grave@453" type="KinematicBody2D" parent="WorldObejcts/Graveyard" instance=ExtResource( 30 )]
+position = Vector2( 32, 32 )
+collision_layer = 9
+script = ExtResource( 31 )
+text = "Defeated by their arch-nemesis flunk trunk."
+grave_owner = "Shostakovich"
+owner_color = Color( 0.885222, 0.288256, 0.314331, 1 )
+
+[node name="@Grave@461" type="KinematicBody2D" parent="WorldObejcts/Graveyard" instance=ExtResource( 30 )]
+position = Vector2( 64, 32 )
+collision_layer = 9
+script = ExtResource( 31 )
+text = "A squircle among squircles."
+grave_owner = "Conrad wellington"
+owner_color = Color( 0.897739, 0.755842, 0.0413112, 1 )
+
+[node name="@Grave@479" type="KinematicBody2D" parent="WorldObejcts/Graveyard" instance=ExtResource( 30 )]
+position = Vector2( 96, 32 )
+collision_layer = 9
+script = ExtResource( 31 )
+text = "\"I'll be back.\""
+grave_owner = "MOSN"
+owner_color = Color( 0.235162, 0.892155, 0.123983, 1 )
+
+[node name="@Grave@552" type="KinematicBody2D" parent="WorldObejcts/Graveyard" instance=ExtResource( 30 )]
+position = Vector2( -80, -96 )
+collision_layer = 9
+script = ExtResource( 31 )
+text = "Pwned by flunk trunk."
+grave_owner = "soon"
+owner_color = Color( 0.987835, 0.746996, 0.0742763, 1 )
+
+[node name="@Grave@555" type="KinematicBody2D" parent="WorldObejcts/Graveyard" instance=ExtResource( 30 )]
+position = Vector2( -48, -96 )
+collision_layer = 9
+script = ExtResource( 31 )
+text = "They died as they lived: fairly quickly."
+grave_owner = "HULK"
+owner_color = Color( 0.0758812, 0.604057, 0.00238988, 1 )
+
+[node name="Grave" type="KinematicBody2D" parent="WorldObejcts/Graveyard" instance=ExtResource( 30 )]
+position = Vector2( -16, -96 )
+collision_layer = 9
+script = ExtResource( 31 )
+text = "Defeated by their arch-nemesis HULK."
+grave_owner = "flunk trunk"
+owner_color = Color( 0.758263, 0.644417, 0.360298, 1 )
+
 [node name="GraveyardRevive" type="Area2D" parent="WorldObejcts" instance=ExtResource( 32 )]
 position = Vector2( 568, -240 )
 collision_layer = 0
@@ -676,16 +575,17 @@ type = "REVIVE"
 [node name="PermanentTreasureChests" type="Node2D" parent="WorldObejcts"]
 
 [node name="TreasureChest" type="KinematicBody2D" parent="WorldObejcts/PermanentTreasureChests" instance=ExtResource( 34 )]
+visible = false
 position = Vector2( 688, -688 )
 collision_layer = 8
 collision_mask = 0
 script = ExtResource( 35 )
 large = true
 tier = 0
-enabled = true
-contents = [ ExtResource( 36 ) ]
-contents_count = [ 1 ]
-loot_pool = [ [ ExtResource( 37 ), ExtResource( 36 ) ], [ ExtResource( 37 ), ExtResource( 36 ), ExtResource( 38 ), ExtResource( 39 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 42 ), ExtResource( 43 ), ExtResource( 44 ), ExtResource( 44 ), ExtResource( 45 ), ExtResource( 46 ), ExtResource( 47 ) ], [ ExtResource( 38 ), ExtResource( 48 ), ExtResource( 39 ), ExtResource( 49 ), ExtResource( 50 ), ExtResource( 51 ), ExtResource( 52 ), ExtResource( 53 ), ExtResource( 54 ), ExtResource( 55 ), ExtResource( 56 ), ExtResource( 57 ) ] ]
+enabled = false
+contents = [  ]
+contents_count = [  ]
+loot_pool = [ [ ExtResource( 36 ), ExtResource( 37 ) ], [ ExtResource( 36 ), ExtResource( 37 ), ExtResource( 38 ), ExtResource( 39 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 42 ), ExtResource( 43 ), ExtResource( 44 ), ExtResource( 44 ), ExtResource( 45 ), ExtResource( 46 ), ExtResource( 47 ) ], [ ExtResource( 38 ), ExtResource( 48 ), ExtResource( 39 ), ExtResource( 49 ), ExtResource( 50 ), ExtResource( 51 ), ExtResource( 52 ), ExtResource( 53 ), ExtResource( 54 ), ExtResource( 55 ), ExtResource( 56 ), ExtResource( 57 ) ] ]
 
 [node name="TreasureChest26" type="KinematicBody2D" parent="WorldObejcts/PermanentTreasureChests" instance=ExtResource( 34 )]
 visible = false
@@ -698,7 +598,7 @@ tier = 0
 enabled = false
 contents = [  ]
 contents_count = [  ]
-loot_pool = [ [ ExtResource( 37 ), ExtResource( 36 ) ], [ ExtResource( 37 ), ExtResource( 36 ), ExtResource( 38 ), ExtResource( 39 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 42 ), ExtResource( 43 ), ExtResource( 44 ), ExtResource( 44 ), ExtResource( 45 ), ExtResource( 46 ), ExtResource( 47 ) ], [ ExtResource( 38 ), ExtResource( 48 ), ExtResource( 39 ), ExtResource( 49 ), ExtResource( 50 ), ExtResource( 51 ), ExtResource( 52 ), ExtResource( 53 ), ExtResource( 54 ), ExtResource( 55 ), ExtResource( 56 ), ExtResource( 57 ) ] ]
+loot_pool = [ [ ExtResource( 36 ), ExtResource( 37 ) ], [ ExtResource( 36 ), ExtResource( 37 ), ExtResource( 38 ), ExtResource( 39 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 42 ), ExtResource( 43 ), ExtResource( 44 ), ExtResource( 44 ), ExtResource( 45 ), ExtResource( 46 ), ExtResource( 47 ) ], [ ExtResource( 38 ), ExtResource( 48 ), ExtResource( 39 ), ExtResource( 49 ), ExtResource( 50 ), ExtResource( 51 ), ExtResource( 52 ), ExtResource( 53 ), ExtResource( 54 ), ExtResource( 55 ), ExtResource( 56 ), ExtResource( 57 ) ] ]
 
 [node name="TreasureChest21" type="KinematicBody2D" parent="WorldObejcts/PermanentTreasureChests" instance=ExtResource( 34 )]
 visible = false
@@ -711,7 +611,7 @@ tier = 0
 enabled = false
 contents = [  ]
 contents_count = [  ]
-loot_pool = [ [ ExtResource( 37 ), ExtResource( 36 ) ], [ ExtResource( 37 ), ExtResource( 36 ), ExtResource( 38 ), ExtResource( 39 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 42 ), ExtResource( 43 ), ExtResource( 44 ), ExtResource( 44 ), ExtResource( 45 ), ExtResource( 46 ), ExtResource( 47 ) ], [ ExtResource( 38 ), ExtResource( 48 ), ExtResource( 39 ), ExtResource( 49 ), ExtResource( 50 ), ExtResource( 51 ), ExtResource( 52 ), ExtResource( 53 ), ExtResource( 54 ), ExtResource( 55 ), ExtResource( 56 ), ExtResource( 57 ) ] ]
+loot_pool = [ [ ExtResource( 36 ), ExtResource( 37 ) ], [ ExtResource( 36 ), ExtResource( 37 ), ExtResource( 38 ), ExtResource( 39 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 42 ), ExtResource( 43 ), ExtResource( 44 ), ExtResource( 44 ), ExtResource( 45 ), ExtResource( 46 ), ExtResource( 47 ) ], [ ExtResource( 38 ), ExtResource( 48 ), ExtResource( 39 ), ExtResource( 49 ), ExtResource( 50 ), ExtResource( 51 ), ExtResource( 52 ), ExtResource( 53 ), ExtResource( 54 ), ExtResource( 55 ), ExtResource( 56 ), ExtResource( 57 ) ] ]
 
 [node name="TreasureChest28" type="KinematicBody2D" parent="WorldObejcts/PermanentTreasureChests" instance=ExtResource( 34 )]
 visible = false
@@ -724,7 +624,7 @@ tier = 0
 enabled = false
 contents = [  ]
 contents_count = [  ]
-loot_pool = [ [ ExtResource( 37 ), ExtResource( 36 ) ], [ ExtResource( 37 ), ExtResource( 36 ), ExtResource( 38 ), ExtResource( 39 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 42 ), ExtResource( 43 ), ExtResource( 44 ), ExtResource( 44 ), ExtResource( 45 ), ExtResource( 46 ), ExtResource( 47 ) ], [ ExtResource( 38 ), ExtResource( 48 ), ExtResource( 39 ), ExtResource( 49 ), ExtResource( 50 ), ExtResource( 51 ), ExtResource( 52 ), ExtResource( 53 ), ExtResource( 54 ), ExtResource( 55 ), ExtResource( 56 ), ExtResource( 57 ) ] ]
+loot_pool = [ [ ExtResource( 36 ), ExtResource( 37 ) ], [ ExtResource( 36 ), ExtResource( 37 ), ExtResource( 38 ), ExtResource( 39 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 42 ), ExtResource( 43 ), ExtResource( 44 ), ExtResource( 44 ), ExtResource( 45 ), ExtResource( 46 ), ExtResource( 47 ) ], [ ExtResource( 38 ), ExtResource( 48 ), ExtResource( 39 ), ExtResource( 49 ), ExtResource( 50 ), ExtResource( 51 ), ExtResource( 52 ), ExtResource( 53 ), ExtResource( 54 ), ExtResource( 55 ), ExtResource( 56 ), ExtResource( 57 ) ] ]
 
 [node name="TreasureChest10" type="KinematicBody2D" parent="WorldObejcts/PermanentTreasureChests" instance=ExtResource( 34 )]
 visible = false
@@ -737,7 +637,7 @@ tier = 0
 enabled = false
 contents = [  ]
 contents_count = [  ]
-loot_pool = [ [ ExtResource( 37 ), ExtResource( 36 ) ], [ ExtResource( 37 ), ExtResource( 36 ), ExtResource( 38 ), ExtResource( 39 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 42 ), ExtResource( 43 ), ExtResource( 44 ), ExtResource( 44 ), ExtResource( 45 ), ExtResource( 46 ), ExtResource( 47 ) ], [ ExtResource( 38 ), ExtResource( 48 ), ExtResource( 39 ), ExtResource( 49 ), ExtResource( 50 ), ExtResource( 51 ), ExtResource( 52 ), ExtResource( 53 ), ExtResource( 54 ), ExtResource( 55 ), ExtResource( 56 ), ExtResource( 57 ) ] ]
+loot_pool = [ [ ExtResource( 36 ), ExtResource( 37 ) ], [ ExtResource( 36 ), ExtResource( 37 ), ExtResource( 38 ), ExtResource( 39 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 42 ), ExtResource( 43 ), ExtResource( 44 ), ExtResource( 44 ), ExtResource( 45 ), ExtResource( 46 ), ExtResource( 47 ) ], [ ExtResource( 38 ), ExtResource( 48 ), ExtResource( 39 ), ExtResource( 49 ), ExtResource( 50 ), ExtResource( 51 ), ExtResource( 52 ), ExtResource( 53 ), ExtResource( 54 ), ExtResource( 55 ), ExtResource( 56 ), ExtResource( 57 ) ] ]
 
 [node name="TreasureChest11" type="KinematicBody2D" parent="WorldObejcts/PermanentTreasureChests" instance=ExtResource( 34 )]
 visible = false
@@ -750,19 +650,20 @@ tier = 0
 enabled = false
 contents = [  ]
 contents_count = [  ]
-loot_pool = [ [ ExtResource( 37 ), ExtResource( 36 ) ], [ ExtResource( 37 ), ExtResource( 36 ), ExtResource( 38 ), ExtResource( 39 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 42 ), ExtResource( 43 ), ExtResource( 44 ), ExtResource( 44 ), ExtResource( 45 ), ExtResource( 46 ), ExtResource( 47 ) ], [ ExtResource( 38 ), ExtResource( 48 ), ExtResource( 39 ), ExtResource( 49 ), ExtResource( 50 ), ExtResource( 51 ), ExtResource( 52 ), ExtResource( 53 ), ExtResource( 54 ), ExtResource( 55 ), ExtResource( 56 ), ExtResource( 57 ) ] ]
+loot_pool = [ [ ExtResource( 36 ), ExtResource( 37 ) ], [ ExtResource( 36 ), ExtResource( 37 ), ExtResource( 38 ), ExtResource( 39 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 42 ), ExtResource( 43 ), ExtResource( 44 ), ExtResource( 44 ), ExtResource( 45 ), ExtResource( 46 ), ExtResource( 47 ) ], [ ExtResource( 38 ), ExtResource( 48 ), ExtResource( 39 ), ExtResource( 49 ), ExtResource( 50 ), ExtResource( 51 ), ExtResource( 52 ), ExtResource( 53 ), ExtResource( 54 ), ExtResource( 55 ), ExtResource( 56 ), ExtResource( 57 ) ] ]
 
 [node name="TreasureChest12" type="KinematicBody2D" parent="WorldObejcts/PermanentTreasureChests" instance=ExtResource( 34 )]
+visible = false
 position = Vector2( 320, 1760 )
 collision_layer = 8
 collision_mask = 0
 script = ExtResource( 35 )
 large = true
 tier = 1
-enabled = true
-contents = [ ExtResource( 36 ) ]
-contents_count = [ 1 ]
-loot_pool = [ [ ExtResource( 37 ), ExtResource( 36 ) ], [ ExtResource( 37 ), ExtResource( 36 ), ExtResource( 38 ), ExtResource( 39 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 42 ), ExtResource( 43 ), ExtResource( 44 ), ExtResource( 44 ), ExtResource( 45 ), ExtResource( 46 ), ExtResource( 47 ) ], [ ExtResource( 38 ), ExtResource( 48 ), ExtResource( 39 ), ExtResource( 49 ), ExtResource( 50 ), ExtResource( 51 ), ExtResource( 52 ), ExtResource( 53 ), ExtResource( 54 ), ExtResource( 55 ), ExtResource( 56 ), ExtResource( 57 ) ] ]
+enabled = false
+contents = [  ]
+contents_count = [  ]
+loot_pool = [ [ ExtResource( 36 ), ExtResource( 37 ) ], [ ExtResource( 36 ), ExtResource( 37 ), ExtResource( 38 ), ExtResource( 39 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 42 ), ExtResource( 43 ), ExtResource( 44 ), ExtResource( 44 ), ExtResource( 45 ), ExtResource( 46 ), ExtResource( 47 ) ], [ ExtResource( 38 ), ExtResource( 48 ), ExtResource( 39 ), ExtResource( 49 ), ExtResource( 50 ), ExtResource( 51 ), ExtResource( 52 ), ExtResource( 53 ), ExtResource( 54 ), ExtResource( 55 ), ExtResource( 56 ), ExtResource( 57 ) ] ]
 
 [node name="TreasureChest23" type="KinematicBody2D" parent="WorldObejcts/PermanentTreasureChests" instance=ExtResource( 34 )]
 visible = false
@@ -775,7 +676,7 @@ tier = 0
 enabled = false
 contents = [  ]
 contents_count = [  ]
-loot_pool = [ [ ExtResource( 37 ), ExtResource( 36 ) ], [ ExtResource( 37 ), ExtResource( 36 ), ExtResource( 38 ), ExtResource( 39 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 42 ), ExtResource( 43 ), ExtResource( 44 ), ExtResource( 44 ), ExtResource( 45 ), ExtResource( 46 ), ExtResource( 47 ) ], [ ExtResource( 38 ), ExtResource( 48 ), ExtResource( 39 ), ExtResource( 49 ), ExtResource( 50 ), ExtResource( 51 ), ExtResource( 52 ), ExtResource( 53 ), ExtResource( 54 ), ExtResource( 55 ), ExtResource( 56 ), ExtResource( 57 ) ] ]
+loot_pool = [ [ ExtResource( 36 ), ExtResource( 37 ) ], [ ExtResource( 36 ), ExtResource( 37 ), ExtResource( 38 ), ExtResource( 39 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 42 ), ExtResource( 43 ), ExtResource( 44 ), ExtResource( 44 ), ExtResource( 45 ), ExtResource( 46 ), ExtResource( 47 ) ], [ ExtResource( 38 ), ExtResource( 48 ), ExtResource( 39 ), ExtResource( 49 ), ExtResource( 50 ), ExtResource( 51 ), ExtResource( 52 ), ExtResource( 53 ), ExtResource( 54 ), ExtResource( 55 ), ExtResource( 56 ), ExtResource( 57 ) ] ]
 
 [node name="TreasureChest27" type="KinematicBody2D" parent="WorldObejcts/PermanentTreasureChests" instance=ExtResource( 34 )]
 visible = false
@@ -788,7 +689,7 @@ tier = 0
 enabled = false
 contents = [  ]
 contents_count = [  ]
-loot_pool = [ [ ExtResource( 37 ), ExtResource( 36 ) ], [ ExtResource( 37 ), ExtResource( 36 ), ExtResource( 38 ), ExtResource( 39 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 42 ), ExtResource( 43 ), ExtResource( 44 ), ExtResource( 44 ), ExtResource( 45 ), ExtResource( 46 ), ExtResource( 47 ) ], [ ExtResource( 38 ), ExtResource( 48 ), ExtResource( 39 ), ExtResource( 49 ), ExtResource( 50 ), ExtResource( 51 ), ExtResource( 52 ), ExtResource( 53 ), ExtResource( 54 ), ExtResource( 55 ), ExtResource( 56 ), ExtResource( 57 ) ] ]
+loot_pool = [ [ ExtResource( 36 ), ExtResource( 37 ) ], [ ExtResource( 36 ), ExtResource( 37 ), ExtResource( 38 ), ExtResource( 39 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 42 ), ExtResource( 43 ), ExtResource( 44 ), ExtResource( 44 ), ExtResource( 45 ), ExtResource( 46 ), ExtResource( 47 ) ], [ ExtResource( 38 ), ExtResource( 48 ), ExtResource( 39 ), ExtResource( 49 ), ExtResource( 50 ), ExtResource( 51 ), ExtResource( 52 ), ExtResource( 53 ), ExtResource( 54 ), ExtResource( 55 ), ExtResource( 56 ), ExtResource( 57 ) ] ]
 
 [node name="TreasureChest13" type="KinematicBody2D" parent="WorldObejcts/PermanentTreasureChests" instance=ExtResource( 34 )]
 visible = false
@@ -801,7 +702,7 @@ tier = 2
 enabled = false
 contents = [  ]
 contents_count = [  ]
-loot_pool = [ [ ExtResource( 37 ), ExtResource( 36 ) ], [ ExtResource( 37 ), ExtResource( 36 ), ExtResource( 38 ), ExtResource( 39 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 42 ), ExtResource( 43 ), ExtResource( 44 ), ExtResource( 44 ), ExtResource( 45 ), ExtResource( 46 ), ExtResource( 47 ) ], [ ExtResource( 38 ), ExtResource( 48 ), ExtResource( 39 ), ExtResource( 49 ), ExtResource( 50 ), ExtResource( 51 ), ExtResource( 52 ), ExtResource( 53 ), ExtResource( 54 ), ExtResource( 55 ), ExtResource( 56 ), ExtResource( 57 ) ] ]
+loot_pool = [ [ ExtResource( 36 ), ExtResource( 37 ) ], [ ExtResource( 36 ), ExtResource( 37 ), ExtResource( 38 ), ExtResource( 39 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 42 ), ExtResource( 43 ), ExtResource( 44 ), ExtResource( 44 ), ExtResource( 45 ), ExtResource( 46 ), ExtResource( 47 ) ], [ ExtResource( 38 ), ExtResource( 48 ), ExtResource( 39 ), ExtResource( 49 ), ExtResource( 50 ), ExtResource( 51 ), ExtResource( 52 ), ExtResource( 53 ), ExtResource( 54 ), ExtResource( 55 ), ExtResource( 56 ), ExtResource( 57 ) ] ]
 
 [node name="TreasureChest14" type="KinematicBody2D" parent="WorldObejcts/PermanentTreasureChests" instance=ExtResource( 34 )]
 visible = false
@@ -814,19 +715,20 @@ tier = 1
 enabled = false
 contents = [  ]
 contents_count = [  ]
-loot_pool = [ [ ExtResource( 37 ), ExtResource( 36 ) ], [ ExtResource( 37 ), ExtResource( 36 ), ExtResource( 38 ), ExtResource( 39 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 42 ), ExtResource( 43 ), ExtResource( 44 ), ExtResource( 44 ), ExtResource( 45 ), ExtResource( 46 ), ExtResource( 47 ) ], [ ExtResource( 38 ), ExtResource( 48 ), ExtResource( 39 ), ExtResource( 49 ), ExtResource( 50 ), ExtResource( 51 ), ExtResource( 52 ), ExtResource( 53 ), ExtResource( 54 ), ExtResource( 55 ), ExtResource( 56 ), ExtResource( 57 ) ] ]
+loot_pool = [ [ ExtResource( 36 ), ExtResource( 37 ) ], [ ExtResource( 36 ), ExtResource( 37 ), ExtResource( 38 ), ExtResource( 39 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 42 ), ExtResource( 43 ), ExtResource( 44 ), ExtResource( 44 ), ExtResource( 45 ), ExtResource( 46 ), ExtResource( 47 ) ], [ ExtResource( 38 ), ExtResource( 48 ), ExtResource( 39 ), ExtResource( 49 ), ExtResource( 50 ), ExtResource( 51 ), ExtResource( 52 ), ExtResource( 53 ), ExtResource( 54 ), ExtResource( 55 ), ExtResource( 56 ), ExtResource( 57 ) ] ]
 
 [node name="TreasureChest15" type="KinematicBody2D" parent="WorldObejcts/PermanentTreasureChests" instance=ExtResource( 34 )]
+visible = false
 position = Vector2( 784, 848 )
 collision_layer = 8
 collision_mask = 0
 script = ExtResource( 35 )
 large = true
 tier = 1
-enabled = true
-contents = [ ExtResource( 36 ) ]
-contents_count = [ 1 ]
-loot_pool = [ [ ExtResource( 37 ), ExtResource( 36 ) ], [ ExtResource( 37 ), ExtResource( 36 ), ExtResource( 38 ), ExtResource( 39 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 42 ), ExtResource( 43 ), ExtResource( 44 ), ExtResource( 44 ), ExtResource( 45 ), ExtResource( 46 ), ExtResource( 47 ) ], [ ExtResource( 38 ), ExtResource( 48 ), ExtResource( 39 ), ExtResource( 49 ), ExtResource( 50 ), ExtResource( 51 ), ExtResource( 52 ), ExtResource( 53 ), ExtResource( 54 ), ExtResource( 55 ), ExtResource( 56 ), ExtResource( 57 ) ] ]
+enabled = false
+contents = [  ]
+contents_count = [  ]
+loot_pool = [ [ ExtResource( 36 ), ExtResource( 37 ) ], [ ExtResource( 36 ), ExtResource( 37 ), ExtResource( 38 ), ExtResource( 39 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 42 ), ExtResource( 43 ), ExtResource( 44 ), ExtResource( 44 ), ExtResource( 45 ), ExtResource( 46 ), ExtResource( 47 ) ], [ ExtResource( 38 ), ExtResource( 48 ), ExtResource( 39 ), ExtResource( 49 ), ExtResource( 50 ), ExtResource( 51 ), ExtResource( 52 ), ExtResource( 53 ), ExtResource( 54 ), ExtResource( 55 ), ExtResource( 56 ), ExtResource( 57 ) ] ]
 
 [node name="TreasureChest19" type="KinematicBody2D" parent="WorldObejcts/PermanentTreasureChests" instance=ExtResource( 34 )]
 visible = false
@@ -839,7 +741,7 @@ tier = 0
 enabled = false
 contents = [  ]
 contents_count = [  ]
-loot_pool = [ [ ExtResource( 37 ), ExtResource( 36 ) ], [ ExtResource( 37 ), ExtResource( 36 ), ExtResource( 38 ), ExtResource( 39 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 42 ), ExtResource( 43 ), ExtResource( 44 ), ExtResource( 44 ), ExtResource( 45 ), ExtResource( 46 ), ExtResource( 47 ) ], [ ExtResource( 38 ), ExtResource( 48 ), ExtResource( 39 ), ExtResource( 49 ), ExtResource( 50 ), ExtResource( 51 ), ExtResource( 52 ), ExtResource( 53 ), ExtResource( 54 ), ExtResource( 55 ), ExtResource( 56 ), ExtResource( 57 ) ] ]
+loot_pool = [ [ ExtResource( 36 ), ExtResource( 37 ) ], [ ExtResource( 36 ), ExtResource( 37 ), ExtResource( 38 ), ExtResource( 39 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 42 ), ExtResource( 43 ), ExtResource( 44 ), ExtResource( 44 ), ExtResource( 45 ), ExtResource( 46 ), ExtResource( 47 ) ], [ ExtResource( 38 ), ExtResource( 48 ), ExtResource( 39 ), ExtResource( 49 ), ExtResource( 50 ), ExtResource( 51 ), ExtResource( 52 ), ExtResource( 53 ), ExtResource( 54 ), ExtResource( 55 ), ExtResource( 56 ), ExtResource( 57 ) ] ]
 
 [node name="TreasureChest20" type="KinematicBody2D" parent="WorldObejcts/PermanentTreasureChests" instance=ExtResource( 34 )]
 visible = false
@@ -852,7 +754,7 @@ tier = 0
 enabled = false
 contents = [  ]
 contents_count = [  ]
-loot_pool = [ [ ExtResource( 37 ), ExtResource( 36 ) ], [ ExtResource( 37 ), ExtResource( 36 ), ExtResource( 38 ), ExtResource( 39 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 42 ), ExtResource( 43 ), ExtResource( 44 ), ExtResource( 44 ), ExtResource( 45 ), ExtResource( 46 ), ExtResource( 47 ) ], [ ExtResource( 38 ), ExtResource( 48 ), ExtResource( 39 ), ExtResource( 49 ), ExtResource( 50 ), ExtResource( 51 ), ExtResource( 52 ), ExtResource( 53 ), ExtResource( 54 ), ExtResource( 55 ), ExtResource( 56 ), ExtResource( 57 ) ] ]
+loot_pool = [ [ ExtResource( 36 ), ExtResource( 37 ) ], [ ExtResource( 36 ), ExtResource( 37 ), ExtResource( 38 ), ExtResource( 39 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 42 ), ExtResource( 43 ), ExtResource( 44 ), ExtResource( 44 ), ExtResource( 45 ), ExtResource( 46 ), ExtResource( 47 ) ], [ ExtResource( 38 ), ExtResource( 48 ), ExtResource( 39 ), ExtResource( 49 ), ExtResource( 50 ), ExtResource( 51 ), ExtResource( 52 ), ExtResource( 53 ), ExtResource( 54 ), ExtResource( 55 ), ExtResource( 56 ), ExtResource( 57 ) ] ]
 
 [node name="TreasureChest16" type="KinematicBody2D" parent="WorldObejcts/PermanentTreasureChests" instance=ExtResource( 34 )]
 visible = false
@@ -865,7 +767,7 @@ tier = 1
 enabled = false
 contents = [  ]
 contents_count = [  ]
-loot_pool = [ [ ExtResource( 37 ), ExtResource( 36 ) ], [ ExtResource( 37 ), ExtResource( 36 ), ExtResource( 38 ), ExtResource( 39 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 42 ), ExtResource( 43 ), ExtResource( 44 ), ExtResource( 44 ), ExtResource( 45 ), ExtResource( 46 ), ExtResource( 47 ) ], [ ExtResource( 38 ), ExtResource( 48 ), ExtResource( 39 ), ExtResource( 49 ), ExtResource( 50 ), ExtResource( 51 ), ExtResource( 52 ), ExtResource( 53 ), ExtResource( 54 ), ExtResource( 55 ), ExtResource( 56 ), ExtResource( 57 ) ] ]
+loot_pool = [ [ ExtResource( 36 ), ExtResource( 37 ) ], [ ExtResource( 36 ), ExtResource( 37 ), ExtResource( 38 ), ExtResource( 39 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 42 ), ExtResource( 43 ), ExtResource( 44 ), ExtResource( 44 ), ExtResource( 45 ), ExtResource( 46 ), ExtResource( 47 ) ], [ ExtResource( 38 ), ExtResource( 48 ), ExtResource( 39 ), ExtResource( 49 ), ExtResource( 50 ), ExtResource( 51 ), ExtResource( 52 ), ExtResource( 53 ), ExtResource( 54 ), ExtResource( 55 ), ExtResource( 56 ), ExtResource( 57 ) ] ]
 
 [node name="TreasureChest17" type="KinematicBody2D" parent="WorldObejcts/PermanentTreasureChests" instance=ExtResource( 34 )]
 visible = false
@@ -878,7 +780,7 @@ tier = 1
 enabled = false
 contents = [  ]
 contents_count = [  ]
-loot_pool = [ [ ExtResource( 37 ), ExtResource( 36 ) ], [ ExtResource( 37 ), ExtResource( 36 ), ExtResource( 38 ), ExtResource( 39 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 42 ), ExtResource( 43 ), ExtResource( 44 ), ExtResource( 44 ), ExtResource( 45 ), ExtResource( 46 ), ExtResource( 47 ) ], [ ExtResource( 38 ), ExtResource( 48 ), ExtResource( 39 ), ExtResource( 49 ), ExtResource( 50 ), ExtResource( 51 ), ExtResource( 52 ), ExtResource( 53 ), ExtResource( 54 ), ExtResource( 55 ), ExtResource( 56 ), ExtResource( 57 ) ] ]
+loot_pool = [ [ ExtResource( 36 ), ExtResource( 37 ) ], [ ExtResource( 36 ), ExtResource( 37 ), ExtResource( 38 ), ExtResource( 39 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 42 ), ExtResource( 43 ), ExtResource( 44 ), ExtResource( 44 ), ExtResource( 45 ), ExtResource( 46 ), ExtResource( 47 ) ], [ ExtResource( 38 ), ExtResource( 48 ), ExtResource( 39 ), ExtResource( 49 ), ExtResource( 50 ), ExtResource( 51 ), ExtResource( 52 ), ExtResource( 53 ), ExtResource( 54 ), ExtResource( 55 ), ExtResource( 56 ), ExtResource( 57 ) ] ]
 
 [node name="TreasureChest18" type="KinematicBody2D" parent="WorldObejcts/PermanentTreasureChests" instance=ExtResource( 34 )]
 visible = false
@@ -891,7 +793,7 @@ tier = 1
 enabled = false
 contents = [  ]
 contents_count = [  ]
-loot_pool = [ [ ExtResource( 37 ), ExtResource( 36 ) ], [ ExtResource( 37 ), ExtResource( 36 ), ExtResource( 38 ), ExtResource( 39 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 42 ), ExtResource( 43 ), ExtResource( 44 ), ExtResource( 44 ), ExtResource( 45 ), ExtResource( 46 ), ExtResource( 47 ) ], [ ExtResource( 38 ), ExtResource( 48 ), ExtResource( 39 ), ExtResource( 49 ), ExtResource( 50 ), ExtResource( 51 ), ExtResource( 52 ), ExtResource( 53 ), ExtResource( 54 ), ExtResource( 55 ), ExtResource( 56 ), ExtResource( 57 ) ] ]
+loot_pool = [ [ ExtResource( 36 ), ExtResource( 37 ) ], [ ExtResource( 36 ), ExtResource( 37 ), ExtResource( 38 ), ExtResource( 39 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 42 ), ExtResource( 43 ), ExtResource( 44 ), ExtResource( 44 ), ExtResource( 45 ), ExtResource( 46 ), ExtResource( 47 ) ], [ ExtResource( 38 ), ExtResource( 48 ), ExtResource( 39 ), ExtResource( 49 ), ExtResource( 50 ), ExtResource( 51 ), ExtResource( 52 ), ExtResource( 53 ), ExtResource( 54 ), ExtResource( 55 ), ExtResource( 56 ), ExtResource( 57 ) ] ]
 
 [node name="TreasureChest24" type="KinematicBody2D" parent="WorldObejcts/PermanentTreasureChests" instance=ExtResource( 34 )]
 visible = false
@@ -904,7 +806,7 @@ tier = 1
 enabled = false
 contents = [  ]
 contents_count = [  ]
-loot_pool = [ [ ExtResource( 37 ), ExtResource( 36 ) ], [ ExtResource( 37 ), ExtResource( 36 ), ExtResource( 38 ), ExtResource( 39 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 42 ), ExtResource( 43 ), ExtResource( 44 ), ExtResource( 44 ), ExtResource( 45 ), ExtResource( 46 ), ExtResource( 47 ) ], [ ExtResource( 38 ), ExtResource( 48 ), ExtResource( 39 ), ExtResource( 49 ), ExtResource( 50 ), ExtResource( 51 ), ExtResource( 52 ), ExtResource( 53 ), ExtResource( 54 ), ExtResource( 55 ), ExtResource( 56 ), ExtResource( 57 ) ] ]
+loot_pool = [ [ ExtResource( 36 ), ExtResource( 37 ) ], [ ExtResource( 36 ), ExtResource( 37 ), ExtResource( 38 ), ExtResource( 39 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 42 ), ExtResource( 43 ), ExtResource( 44 ), ExtResource( 44 ), ExtResource( 45 ), ExtResource( 46 ), ExtResource( 47 ) ], [ ExtResource( 38 ), ExtResource( 48 ), ExtResource( 39 ), ExtResource( 49 ), ExtResource( 50 ), ExtResource( 51 ), ExtResource( 52 ), ExtResource( 53 ), ExtResource( 54 ), ExtResource( 55 ), ExtResource( 56 ), ExtResource( 57 ) ] ]
 
 [node name="TreasureChest2" type="KinematicBody2D" parent="WorldObejcts/PermanentTreasureChests" instance=ExtResource( 34 )]
 visible = false
@@ -917,7 +819,7 @@ tier = 1
 enabled = false
 contents = [  ]
 contents_count = [  ]
-loot_pool = [ [ ExtResource( 37 ), ExtResource( 36 ) ], [ ExtResource( 37 ), ExtResource( 36 ), ExtResource( 38 ), ExtResource( 39 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 42 ), ExtResource( 43 ), ExtResource( 44 ), ExtResource( 44 ), ExtResource( 45 ), ExtResource( 46 ), ExtResource( 47 ) ], [ ExtResource( 38 ), ExtResource( 48 ), ExtResource( 39 ), ExtResource( 49 ), ExtResource( 50 ), ExtResource( 51 ), ExtResource( 52 ), ExtResource( 53 ), ExtResource( 54 ), ExtResource( 55 ), ExtResource( 56 ), ExtResource( 57 ) ] ]
+loot_pool = [ [ ExtResource( 36 ), ExtResource( 37 ) ], [ ExtResource( 36 ), ExtResource( 37 ), ExtResource( 38 ), ExtResource( 39 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 42 ), ExtResource( 43 ), ExtResource( 44 ), ExtResource( 44 ), ExtResource( 45 ), ExtResource( 46 ), ExtResource( 47 ) ], [ ExtResource( 38 ), ExtResource( 48 ), ExtResource( 39 ), ExtResource( 49 ), ExtResource( 50 ), ExtResource( 51 ), ExtResource( 52 ), ExtResource( 53 ), ExtResource( 54 ), ExtResource( 55 ), ExtResource( 56 ), ExtResource( 57 ) ] ]
 
 [node name="TreasureChest3" type="KinematicBody2D" parent="WorldObejcts/PermanentTreasureChests" instance=ExtResource( 34 )]
 position = Vector2( -32, -2008 )
@@ -929,19 +831,20 @@ tier = 1
 enabled = true
 contents = [ ExtResource( 42 ) ]
 contents_count = [ 1 ]
-loot_pool = [ [ ExtResource( 37 ), ExtResource( 36 ) ], [ ExtResource( 37 ), ExtResource( 36 ), ExtResource( 38 ), ExtResource( 39 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 42 ), ExtResource( 43 ), ExtResource( 44 ), ExtResource( 44 ), ExtResource( 45 ), ExtResource( 46 ), ExtResource( 47 ) ], [ ExtResource( 38 ), ExtResource( 48 ), ExtResource( 39 ), ExtResource( 49 ), ExtResource( 50 ), ExtResource( 51 ), ExtResource( 52 ), ExtResource( 53 ), ExtResource( 54 ), ExtResource( 55 ), ExtResource( 56 ), ExtResource( 57 ) ] ]
+loot_pool = [ [ ExtResource( 36 ), ExtResource( 37 ) ], [ ExtResource( 36 ), ExtResource( 37 ), ExtResource( 38 ), ExtResource( 39 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 42 ), ExtResource( 43 ), ExtResource( 44 ), ExtResource( 44 ), ExtResource( 45 ), ExtResource( 46 ), ExtResource( 47 ) ], [ ExtResource( 38 ), ExtResource( 48 ), ExtResource( 39 ), ExtResource( 49 ), ExtResource( 50 ), ExtResource( 51 ), ExtResource( 52 ), ExtResource( 53 ), ExtResource( 54 ), ExtResource( 55 ), ExtResource( 56 ), ExtResource( 57 ) ] ]
 
 [node name="TreasureChest22" type="KinematicBody2D" parent="WorldObejcts/PermanentTreasureChests" instance=ExtResource( 34 )]
+visible = false
 position = Vector2( -176, -1824 )
 collision_layer = 8
 collision_mask = 0
 script = ExtResource( 35 )
 large = true
 tier = 0
-enabled = true
-contents = [ ExtResource( 37 ) ]
-contents_count = [ 1 ]
-loot_pool = [ [ ExtResource( 37 ), ExtResource( 36 ) ], [ ExtResource( 37 ), ExtResource( 36 ), ExtResource( 38 ), ExtResource( 39 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 42 ), ExtResource( 43 ), ExtResource( 44 ), ExtResource( 44 ), ExtResource( 45 ), ExtResource( 46 ), ExtResource( 47 ) ], [ ExtResource( 38 ), ExtResource( 48 ), ExtResource( 39 ), ExtResource( 49 ), ExtResource( 50 ), ExtResource( 51 ), ExtResource( 52 ), ExtResource( 53 ), ExtResource( 54 ), ExtResource( 55 ), ExtResource( 56 ), ExtResource( 57 ) ] ]
+enabled = false
+contents = [  ]
+contents_count = [  ]
+loot_pool = [ [ ExtResource( 36 ), ExtResource( 37 ) ], [ ExtResource( 36 ), ExtResource( 37 ), ExtResource( 38 ), ExtResource( 39 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 42 ), ExtResource( 43 ), ExtResource( 44 ), ExtResource( 44 ), ExtResource( 45 ), ExtResource( 46 ), ExtResource( 47 ) ], [ ExtResource( 38 ), ExtResource( 48 ), ExtResource( 39 ), ExtResource( 49 ), ExtResource( 50 ), ExtResource( 51 ), ExtResource( 52 ), ExtResource( 53 ), ExtResource( 54 ), ExtResource( 55 ), ExtResource( 56 ), ExtResource( 57 ) ] ]
 
 [node name="TreasureChest4" type="KinematicBody2D" parent="WorldObejcts/PermanentTreasureChests" instance=ExtResource( 34 )]
 visible = false
@@ -954,7 +857,7 @@ tier = 1
 enabled = false
 contents = [  ]
 contents_count = [  ]
-loot_pool = [ [ ExtResource( 37 ), ExtResource( 36 ) ], [ ExtResource( 37 ), ExtResource( 36 ), ExtResource( 38 ), ExtResource( 39 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 42 ), ExtResource( 43 ), ExtResource( 44 ), ExtResource( 44 ), ExtResource( 45 ), ExtResource( 46 ), ExtResource( 47 ) ], [ ExtResource( 38 ), ExtResource( 48 ), ExtResource( 39 ), ExtResource( 49 ), ExtResource( 50 ), ExtResource( 51 ), ExtResource( 52 ), ExtResource( 53 ), ExtResource( 54 ), ExtResource( 55 ), ExtResource( 56 ), ExtResource( 57 ) ] ]
+loot_pool = [ [ ExtResource( 36 ), ExtResource( 37 ) ], [ ExtResource( 36 ), ExtResource( 37 ), ExtResource( 38 ), ExtResource( 39 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 42 ), ExtResource( 43 ), ExtResource( 44 ), ExtResource( 44 ), ExtResource( 45 ), ExtResource( 46 ), ExtResource( 47 ) ], [ ExtResource( 38 ), ExtResource( 48 ), ExtResource( 39 ), ExtResource( 49 ), ExtResource( 50 ), ExtResource( 51 ), ExtResource( 52 ), ExtResource( 53 ), ExtResource( 54 ), ExtResource( 55 ), ExtResource( 56 ), ExtResource( 57 ) ] ]
 
 [node name="TreasureChest25" type="KinematicBody2D" parent="WorldObejcts/PermanentTreasureChests" instance=ExtResource( 34 )]
 visible = false
@@ -967,7 +870,7 @@ tier = 1
 enabled = false
 contents = [  ]
 contents_count = [  ]
-loot_pool = [ [ ExtResource( 37 ), ExtResource( 36 ) ], [ ExtResource( 37 ), ExtResource( 36 ), ExtResource( 38 ), ExtResource( 39 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 42 ), ExtResource( 43 ), ExtResource( 44 ), ExtResource( 44 ), ExtResource( 45 ), ExtResource( 46 ), ExtResource( 47 ) ], [ ExtResource( 38 ), ExtResource( 48 ), ExtResource( 39 ), ExtResource( 49 ), ExtResource( 50 ), ExtResource( 51 ), ExtResource( 52 ), ExtResource( 53 ), ExtResource( 54 ), ExtResource( 55 ), ExtResource( 56 ), ExtResource( 57 ) ] ]
+loot_pool = [ [ ExtResource( 36 ), ExtResource( 37 ) ], [ ExtResource( 36 ), ExtResource( 37 ), ExtResource( 38 ), ExtResource( 39 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 42 ), ExtResource( 43 ), ExtResource( 44 ), ExtResource( 44 ), ExtResource( 45 ), ExtResource( 46 ), ExtResource( 47 ) ], [ ExtResource( 38 ), ExtResource( 48 ), ExtResource( 39 ), ExtResource( 49 ), ExtResource( 50 ), ExtResource( 51 ), ExtResource( 52 ), ExtResource( 53 ), ExtResource( 54 ), ExtResource( 55 ), ExtResource( 56 ), ExtResource( 57 ) ] ]
 
 [node name="TreasureChest5" type="KinematicBody2D" parent="WorldObejcts/PermanentTreasureChests" instance=ExtResource( 34 )]
 visible = false
@@ -980,7 +883,7 @@ tier = 1
 enabled = false
 contents = [  ]
 contents_count = [  ]
-loot_pool = [ [ ExtResource( 37 ), ExtResource( 36 ) ], [ ExtResource( 37 ), ExtResource( 36 ), ExtResource( 38 ), ExtResource( 39 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 42 ), ExtResource( 43 ), ExtResource( 44 ), ExtResource( 44 ), ExtResource( 45 ), ExtResource( 46 ), ExtResource( 47 ) ], [ ExtResource( 38 ), ExtResource( 48 ), ExtResource( 39 ), ExtResource( 49 ), ExtResource( 50 ), ExtResource( 51 ), ExtResource( 52 ), ExtResource( 53 ), ExtResource( 54 ), ExtResource( 55 ), ExtResource( 56 ), ExtResource( 57 ) ] ]
+loot_pool = [ [ ExtResource( 36 ), ExtResource( 37 ) ], [ ExtResource( 36 ), ExtResource( 37 ), ExtResource( 38 ), ExtResource( 39 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 42 ), ExtResource( 43 ), ExtResource( 44 ), ExtResource( 44 ), ExtResource( 45 ), ExtResource( 46 ), ExtResource( 47 ) ], [ ExtResource( 38 ), ExtResource( 48 ), ExtResource( 39 ), ExtResource( 49 ), ExtResource( 50 ), ExtResource( 51 ), ExtResource( 52 ), ExtResource( 53 ), ExtResource( 54 ), ExtResource( 55 ), ExtResource( 56 ), ExtResource( 57 ) ] ]
 
 [node name="TreasureChest8" type="KinematicBody2D" parent="WorldObejcts/PermanentTreasureChests" instance=ExtResource( 34 )]
 visible = false
@@ -993,7 +896,7 @@ tier = 1
 enabled = false
 contents = [  ]
 contents_count = [  ]
-loot_pool = [ [ ExtResource( 37 ), ExtResource( 36 ) ], [ ExtResource( 37 ), ExtResource( 36 ), ExtResource( 38 ), ExtResource( 39 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 42 ), ExtResource( 43 ), ExtResource( 44 ), ExtResource( 44 ), ExtResource( 45 ), ExtResource( 46 ), ExtResource( 47 ) ], [ ExtResource( 38 ), ExtResource( 48 ), ExtResource( 39 ), ExtResource( 49 ), ExtResource( 50 ), ExtResource( 51 ), ExtResource( 52 ), ExtResource( 53 ), ExtResource( 54 ), ExtResource( 55 ), ExtResource( 56 ), ExtResource( 57 ) ] ]
+loot_pool = [ [ ExtResource( 36 ), ExtResource( 37 ) ], [ ExtResource( 36 ), ExtResource( 37 ), ExtResource( 38 ), ExtResource( 39 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 42 ), ExtResource( 43 ), ExtResource( 44 ), ExtResource( 44 ), ExtResource( 45 ), ExtResource( 46 ), ExtResource( 47 ) ], [ ExtResource( 38 ), ExtResource( 48 ), ExtResource( 39 ), ExtResource( 49 ), ExtResource( 50 ), ExtResource( 51 ), ExtResource( 52 ), ExtResource( 53 ), ExtResource( 54 ), ExtResource( 55 ), ExtResource( 56 ), ExtResource( 57 ) ] ]
 
 [node name="TreasureChest9" type="KinematicBody2D" parent="WorldObejcts/PermanentTreasureChests" instance=ExtResource( 34 )]
 visible = false
@@ -1006,7 +909,7 @@ tier = 1
 enabled = false
 contents = [  ]
 contents_count = [  ]
-loot_pool = [ [ ExtResource( 37 ), ExtResource( 36 ) ], [ ExtResource( 37 ), ExtResource( 36 ), ExtResource( 38 ), ExtResource( 39 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 42 ), ExtResource( 43 ), ExtResource( 44 ), ExtResource( 44 ), ExtResource( 45 ), ExtResource( 46 ), ExtResource( 47 ) ], [ ExtResource( 38 ), ExtResource( 48 ), ExtResource( 39 ), ExtResource( 49 ), ExtResource( 50 ), ExtResource( 51 ), ExtResource( 52 ), ExtResource( 53 ), ExtResource( 54 ), ExtResource( 55 ), ExtResource( 56 ), ExtResource( 57 ) ] ]
+loot_pool = [ [ ExtResource( 36 ), ExtResource( 37 ) ], [ ExtResource( 36 ), ExtResource( 37 ), ExtResource( 38 ), ExtResource( 39 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 42 ), ExtResource( 43 ), ExtResource( 44 ), ExtResource( 44 ), ExtResource( 45 ), ExtResource( 46 ), ExtResource( 47 ) ], [ ExtResource( 38 ), ExtResource( 48 ), ExtResource( 39 ), ExtResource( 49 ), ExtResource( 50 ), ExtResource( 51 ), ExtResource( 52 ), ExtResource( 53 ), ExtResource( 54 ), ExtResource( 55 ), ExtResource( 56 ), ExtResource( 57 ) ] ]
 
 [node name="TreasureChest6" type="KinematicBody2D" parent="WorldObejcts/PermanentTreasureChests" instance=ExtResource( 34 )]
 visible = false
@@ -1019,7 +922,7 @@ tier = 1
 enabled = false
 contents = [  ]
 contents_count = [  ]
-loot_pool = [ [ ExtResource( 37 ), ExtResource( 36 ) ], [ ExtResource( 37 ), ExtResource( 36 ), ExtResource( 38 ), ExtResource( 39 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 42 ), ExtResource( 43 ), ExtResource( 44 ), ExtResource( 44 ), ExtResource( 45 ), ExtResource( 46 ), ExtResource( 47 ) ], [ ExtResource( 38 ), ExtResource( 48 ), ExtResource( 39 ), ExtResource( 49 ), ExtResource( 50 ), ExtResource( 51 ), ExtResource( 52 ), ExtResource( 53 ), ExtResource( 54 ), ExtResource( 55 ), ExtResource( 56 ), ExtResource( 57 ) ] ]
+loot_pool = [ [ ExtResource( 36 ), ExtResource( 37 ) ], [ ExtResource( 36 ), ExtResource( 37 ), ExtResource( 38 ), ExtResource( 39 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 42 ), ExtResource( 43 ), ExtResource( 44 ), ExtResource( 44 ), ExtResource( 45 ), ExtResource( 46 ), ExtResource( 47 ) ], [ ExtResource( 38 ), ExtResource( 48 ), ExtResource( 39 ), ExtResource( 49 ), ExtResource( 50 ), ExtResource( 51 ), ExtResource( 52 ), ExtResource( 53 ), ExtResource( 54 ), ExtResource( 55 ), ExtResource( 56 ), ExtResource( 57 ) ] ]
 
 [node name="TreasureChest7" type="KinematicBody2D" parent="WorldObejcts/PermanentTreasureChests" instance=ExtResource( 34 )]
 visible = false
@@ -1032,7 +935,7 @@ tier = 2
 enabled = false
 contents = [  ]
 contents_count = [  ]
-loot_pool = [ [ ExtResource( 37 ), ExtResource( 36 ) ], [ ExtResource( 37 ), ExtResource( 36 ), ExtResource( 38 ), ExtResource( 39 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 42 ), ExtResource( 43 ), ExtResource( 44 ), ExtResource( 44 ), ExtResource( 45 ), ExtResource( 46 ), ExtResource( 47 ) ], [ ExtResource( 38 ), ExtResource( 48 ), ExtResource( 39 ), ExtResource( 49 ), ExtResource( 50 ), ExtResource( 51 ), ExtResource( 52 ), ExtResource( 53 ), ExtResource( 54 ), ExtResource( 55 ), ExtResource( 56 ), ExtResource( 57 ) ] ]
+loot_pool = [ [ ExtResource( 36 ), ExtResource( 37 ) ], [ ExtResource( 36 ), ExtResource( 37 ), ExtResource( 38 ), ExtResource( 39 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 42 ), ExtResource( 43 ), ExtResource( 44 ), ExtResource( 44 ), ExtResource( 45 ), ExtResource( 46 ), ExtResource( 47 ) ], [ ExtResource( 38 ), ExtResource( 48 ), ExtResource( 39 ), ExtResource( 49 ), ExtResource( 50 ), ExtResource( 51 ), ExtResource( 52 ), ExtResource( 53 ), ExtResource( 54 ), ExtResource( 55 ), ExtResource( 56 ), ExtResource( 57 ) ] ]
 
 [node name="Points" type="Node2D" parent="."]
 
@@ -1099,9 +1002,9 @@ script = ExtResource( 35 )
 large = false
 tier = 0
 enabled = false
-contents = [ ExtResource( 37 ) ]
+contents = [ ExtResource( 36 ) ]
 contents_count = [ 1 ]
-loot_pool = [ [ ExtResource( 37 ), ExtResource( 36 ) ], [ ExtResource( 37 ), ExtResource( 36 ), ExtResource( 38 ), ExtResource( 39 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 42 ), ExtResource( 43 ), ExtResource( 44 ), ExtResource( 44 ), ExtResource( 45 ), ExtResource( 46 ), ExtResource( 47 ) ], [ ExtResource( 38 ), ExtResource( 48 ), ExtResource( 39 ), ExtResource( 49 ), ExtResource( 50 ), ExtResource( 51 ), ExtResource( 52 ), ExtResource( 53 ), ExtResource( 54 ), ExtResource( 55 ), ExtResource( 56 ), ExtResource( 57 ) ] ]
+loot_pool = [ [ ExtResource( 36 ), ExtResource( 37 ) ], [ ExtResource( 36 ), ExtResource( 37 ), ExtResource( 38 ), ExtResource( 39 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 42 ), ExtResource( 43 ), ExtResource( 44 ), ExtResource( 44 ), ExtResource( 45 ), ExtResource( 46 ), ExtResource( 47 ) ], [ ExtResource( 38 ), ExtResource( 48 ), ExtResource( 39 ), ExtResource( 49 ), ExtResource( 50 ), ExtResource( 51 ), ExtResource( 52 ), ExtResource( 53 ), ExtResource( 54 ), ExtResource( 55 ), ExtResource( 56 ), ExtResource( 57 ) ] ]
 
 [node name="@Signpost@178" type="KinematicBody2D" parent="PlayerCreatedObjects" instance=ExtResource( 58 )]
 position = Vector2( 2.98177, -49.4342 )
@@ -1175,19 +1078,61 @@ text = "Jeg vandt"
 creator = "flunk trunk"
 creator_color = Color( 0.758263, 0.644417, 0.360298, 1 )
 
-[node name="Tiles" type="Node2D" parent="." instance=ExtResource( 60 )]
-
-[node name="TreasureChest" type="KinematicBody2D" parent="." instance=ExtResource( 34 )]
-position = Vector2( -69.0928, -342.791 )
+[node name="@Signpost@384" type="KinematicBody2D" parent="PlayerCreatedObjects" instance=ExtResource( 58 )]
+position = Vector2( 688.694, -647.835 )
 collision_layer = 8
 collision_mask = 0
-script = ExtResource( 35 )
-large = false
-tier = 0
-enabled = false
-contents = [ ExtResource( 36 ), ExtResource( 37 ), ExtResource( 40 ), ExtResource( 38 ), ExtResource( 42 ), ExtResource( 41 ), ExtResource( 61 ), ExtResource( 43 ), ExtResource( 62 ), ExtResource( 39 ) ]
-contents_count = [ 3, 31, 2, 11, 2, 1, 1, 2, 1, 2 ]
-loot_pool = [ [ ExtResource( 37 ), ExtResource( 36 ) ], [ ExtResource( 37 ), ExtResource( 36 ), ExtResource( 38 ), ExtResource( 39 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 42 ), ExtResource( 43 ), ExtResource( 44 ), ExtResource( 44 ), ExtResource( 45 ), ExtResource( 46 ), ExtResource( 47 ) ], [ ExtResource( 38 ), ExtResource( 48 ), ExtResource( 39 ), ExtResource( 49 ), ExtResource( 50 ), ExtResource( 51 ), ExtResource( 52 ), ExtResource( 53 ), ExtResource( 54 ), ExtResource( 55 ), ExtResource( 56 ), ExtResource( 57 ) ] ]
+script = ExtResource( 59 )
+text = "Du lugter"
+creator = "HULK"
+creator_color = Color( 0.0758812, 0.604057, 0.00238988, 1 )
+
+[node name="@Signpost@865" type="KinematicBody2D" parent="PlayerCreatedObjects" instance=ExtResource( 58 )]
+position = Vector2( 1715.13, -1890.45 )
+collision_layer = 8
+collision_mask = 0
+script = ExtResource( 59 )
+text = "du er ikke sej"
+creator = "HULK"
+creator_color = Color( 0.0758812, 0.604057, 0.00238988, 1 )
+
+[node name="@Signpost@986" type="KinematicBody2D" parent="PlayerCreatedObjects" instance=ExtResource( 58 )]
+position = Vector2( 419.336, 1499.36 )
+collision_layer = 8
+collision_mask = 0
+script = ExtResource( 59 )
+text = "warning the grass is wet"
+creator = "HULK"
+creator_color = Color( 0.0758812, 0.604057, 0.00238988, 1 )
+
+[node name="@Signpost@1303" type="KinematicBody2D" parent="PlayerCreatedObjects" instance=ExtResource( 58 )]
+position = Vector2( 35.7868, 71.7477 )
+collision_layer = 8
+collision_mask = 0
+script = ExtResource( 59 )
+text = "protect bongoballedemager"
+creator = "HULK"
+creator_color = Color( 0.0758812, 0.604057, 0.00238988, 1 )
+
+[node name="@Signpost@1335" type="KinematicBody2D" parent="PlayerCreatedObjects" instance=ExtResource( 58 )]
+position = Vector2( 15.7868, 86.7477 )
+collision_layer = 8
+collision_mask = 0
+script = ExtResource( 59 )
+text = "he is a cutiepie"
+creator = "HULK"
+creator_color = Color( 0.0758812, 0.604057, 0.00238988, 1 )
+
+[node name="@Signpost@1367" type="KinematicBody2D" parent="PlayerCreatedObjects" instance=ExtResource( 58 )]
+position = Vector2( 846.198, 1859.94 )
+collision_layer = 8
+collision_mask = 0
+script = ExtResource( 59 )
+text = "i am steve the pumpkin"
+creator = "HULK"
+creator_color = Color( 0.0758812, 0.604057, 0.00238988, 1 )
+
+[node name="Tiles" type="Node2D" parent="." instance=ExtResource( 60 )]
 
 [connection signal="pressed" from="DefaultNPCs/Mayor/Button" to="DefaultNPCs/Mayor" method="interact"]
 [connection signal="pressed" from="DefaultNPCs/Shopkeeper/Button" to="DefaultNPCs/Shopkeeper" method="interact"]
