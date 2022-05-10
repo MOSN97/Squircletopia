@@ -21,7 +21,7 @@ radius = 60.0
 
 [node name="Squircle" type="KinematicBody2D"]
 pause_mode = 1
-position = Vector2( 1937.5, 1961.42 )
+position = Vector2( 832.573, 1366.89 )
 z_index = 1
 collision_layer = 9
 script = ExtResource( 1 )
