@@ -21,27 +21,27 @@ radius = 60.0
 
 [node name="@Squircle@147" type="KinematicBody2D"]
 pause_mode = 1
-position = Vector2( 1104.57, 1472.35 )
+position = Vector2( 972.276, -1799.22 )
 z_index = 1
-collision_layer = 9
+collision_layer = 8
 script = ExtResource( 1 )
 character_name = "Bongoballademager"
 alive = true
 guts = 3
 wisdom = 4
-charm = 14
-max_health = 30
-health = 30
-level = 11
-xp = 2.0
-morality = 47.9
-inclination = [ 1, 1, 0 ]
+charm = 17
+max_health = 36
+health = 36.0
+level = 14
+xp = 19.0
+morality = 58.15
+inclination = [ 0, 0, 0 ]
 abilities = [ "ATTACK" ]
 spells = [ "FIREBALL" ]
 topics = [ "SMALL TALK", "JOKE", "DEBATE", "INTIMIDATE", "COMPLIMENT" ]
 inventory = [  ]
 inventory_count = [  ]
-chips = 44.0
+chips = 77.0
 hat = ExtResource( 2 )
 weapon = null
 greeting = "Looking for trouble?"
@@ -102,7 +102,6 @@ rect_scale = Vector2( 0.5, 0.5 )
 focus_mode = 0
 
 [node name="Glow" type="Sprite" parent="."]
-modulate = Color( 1, 1, 1, 0 )
 scale = Vector2( 0.3, 0.3 )
 z_index = -1
 texture = ExtResource( 8 )
